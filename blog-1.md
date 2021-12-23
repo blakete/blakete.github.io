@@ -35,6 +35,11 @@ A: No. Knowledge increases in proportion to the amount of information.
 Q: How do we maximize information?
 A: We maximize information by maximizing the number of questions we ask.
 
+Q: How do we maximize the number of questions we ask?
+A: We maximize the number of questions we ask by maximizing the number of people we ask.
+
+Q: 
+
 ## session 3
 
 
