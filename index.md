@@ -1,5 +1,3 @@
-# Blake's Notes
-
 ## Tables of Contents
 * [Product rule](pages/product_rule.md)
 * [Chain rule](pages/chain_rule.m)
