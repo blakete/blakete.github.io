@@ -1,3 +1,2 @@
-# Blake's Research Index
-http://blakete.github.io
-
+# Blake's Notes
+https://blakesnotes.io or https://blakete.github.io
