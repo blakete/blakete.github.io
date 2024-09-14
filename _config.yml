@@ -1,3 +1,5 @@
 theme: minima
 title: Blake's Notes
 description: a set of incomplete ideas
+plugins:
+  - jekyll-feed
