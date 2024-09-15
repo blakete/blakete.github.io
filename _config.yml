@@ -1,5 +1,6 @@
 theme: minima
-skin: dark
+minima:
+  skin: dark
 title: Blake's Notes
 description: a set of incomplete ideas
 email: blakete@mit.edu
