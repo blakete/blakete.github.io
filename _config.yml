@@ -13,4 +13,5 @@ github_username: blakete
 
 header_pages:
   - about.md
-  - portfolio.md
+  - blog.md
+  - curriculum_vitae.md
