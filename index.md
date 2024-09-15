@@ -26,3 +26,5 @@ Pursuing rigorous, innovative research to advance scientific knowledge and addre
         </li>
     {%- endfor -%}
 </ul>
+
+<a href="/blog" class="older-posts-link">Older posts</a>
