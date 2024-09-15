@@ -1,5 +1,7 @@
 theme: minima
 title: Blake's Notes
 description: a set of incomplete ideas
+email: blakete@mit.edu
+github_username: blakete
 plugins:
   - jekyll-feed
