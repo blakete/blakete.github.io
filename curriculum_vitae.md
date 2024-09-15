@@ -3,5 +3,6 @@ layout: page
 title: Curriculum Vitae
 permalink: /cv/
 ---
+# Curriculum Vitae
 
-CV coming soon.
+Coming soon.
