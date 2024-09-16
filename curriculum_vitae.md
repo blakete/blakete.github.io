@@ -11,10 +11,12 @@ permalink: /cv/
     }
     .image-container img {
         max-width: none;
+        min-height: 400px;
+        max-height: 600px;
         height: auto;
+        width: auto;
     }
 </style>
-
 # Curriculum Vitae
 <div class="image-container">
     <img src="https://blakesnotes.io/assets/images/work_history_gantt.png" alt="Work history Gantt chart">
