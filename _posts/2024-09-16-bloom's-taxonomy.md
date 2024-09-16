@@ -7,7 +7,7 @@ author:
 ---
 There are many learning taxonomies blah blah. What is a learning taxonomy? Why should I care?
 
-![Bloom's Taxonomy](assets/blooms_taxonomy.png)
+![Bloom's Taxonomy](blooms_taxonomy.png)
 
 TODO
 
