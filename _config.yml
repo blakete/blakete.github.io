@@ -15,6 +15,7 @@ social:
   linkedin: blakete
 
 header_pages:
+  - index.md
   - blog.md
   - projects.md
   - publications.md
