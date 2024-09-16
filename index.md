@@ -4,7 +4,7 @@ permalink: /
 ---
 # Welcome to Blake's Notes
 
-I research topics related to intelligent, autonomou, trustworthy robotic systems. Keep tabs on this page to stay up to date on my most recent work.
+I research topics related to intelligent, autonomous, trustworthy robotic systems. I also occassionally write blog posts on many random technical topics. Keep tabs on this page to stay up to date on my most recent work.
 
 <hr>
 
