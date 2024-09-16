@@ -17,7 +17,7 @@ permalink: /cv/
 
 # Curriculum Vitae
 <div class="image-container">
-    <img src="assets/images/work_history_gantt.png" alt="Work history Gantt chart">
+    <img src="https://blakesnotes.io/assets/images/work_history_gantt.png" alt="Work history Gantt chart">
 </div>
 
 Coming soon.
