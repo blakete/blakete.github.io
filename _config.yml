@@ -10,6 +10,10 @@ author:
   email: "blakete@mit.edu"
 email: blakete@mit.edu
 github_username: blakete
+social:
+  github: blakete
+  linkedin: blakete
+  orcid: 0000-0002-8770-1429
 
 header_pages:
   - blog.md
