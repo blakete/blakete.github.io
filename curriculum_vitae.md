@@ -11,13 +11,14 @@ permalink: /cv/
     }
     .image-container img {
         max-width: none;
-        min-height: 400px;
-        max-height: 600px;
+        min-height: 300px;
+        max-height: 400px;
         height: auto;
         width: auto;
     }
 </style>
 # Curriculum Vitae
+A comprehensive statement of my educational background, teaching, and research experience.
 <div class="image-container">
     <img src="https://blakesnotes.io/assets/images/work_history_gantt.png" alt="Work history Gantt chart">
 </div>
