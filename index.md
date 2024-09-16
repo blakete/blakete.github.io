@@ -1,3 +1,7 @@
+---
+title: Home
+permalink: /
+---
 # Welcome to Blake's Notes
 
 I research topics related to intelligent, autonomou, trustworthy robotic systems. Keep tabs on this page to stay up to date on my most recent work.
