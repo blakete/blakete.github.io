@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "Taxonomies of Learning"
-categories: cognition, learning
 author:
 - Blake Edwards
 ---
 There are many learning taxonomies blah blah. What is a learning taxonomy? Why should I care?
 
-![Bloom's Taxonomy](blooms_taxonomy.png)
+<div class="image-container">
+    <img src="https://blakesnotes.io/assets/images/blooms_taxonomy.png" alt="Bloom's Taxonomy">
+</div>
 
 TODO
 
