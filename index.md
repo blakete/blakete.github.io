@@ -13,7 +13,7 @@ Pursuing rigorous, innovative research to advance scientific knowledge and addre
 
 <hr>
 
-# Recent Posts
+# Recent Teaching Posts
 <ul class="post-list">
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- for post in site.posts limit:3 -%}
@@ -31,4 +31,4 @@ Pursuing rigorous, innovative research to advance scientific knowledge and addre
     {%- endfor -%}
 </ul>
 
-<a href="/blog" class="older-posts-link">Older posts</a>
+<a href="/teaching" class="older-posts-link">Older posts</a>
