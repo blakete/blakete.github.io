@@ -5,8 +5,6 @@ author:
 - Blake Edwards
 ---
 
-<img href="https://blakesnotes.io/assets/images/fundamentals_viz.webp"></img>
-
 <div class="image-container">
     <img src="https://blakesnotes.io/assets/images/fundamentals_viz.webp" alt="Graph Visualization of Fundamentals">
 </div>
@@ -16,4 +14,4 @@ author:
 * If a the set of concepts that make up a field are put into a graph data structure, the nodes in the graph that represent fundamentals 
   
 ## References
-n/a
+1. OpenAI image asset generation.
