@@ -6,7 +6,7 @@ author:
 ---
 
 <div class="image-container">
-    <img src="https://blakesnotes.io/assets/images/fundamentals_viz.webp" alt="Graph Visualization of Fundamentals">
+    <img src="/assets/images/fundamentals_viz.webp" alt="Graph Visualization of Fundamentals">
 </div>
 
 ## What are fundamentals?

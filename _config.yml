@@ -1,9 +1,20 @@
+plugins:
+  - jekyll-feed
+  - jekyll-scholar
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 theme: minima
 minima:
   skin: dark
-plugins:
-  - jekyll-feed
+
+scholar:
+  style: apa
+  locale: en
+  source: "./_bibliography"
+  bibliography: "references.bib"
   
+timezone: "America/New_York"
 title: Blake's Notes
 author:
   name: Blake Edwards
@@ -16,8 +27,7 @@ social:
 
 header_pages:
   - index.md
-  - teaching.md
-  - projects.md
+  - posts.md
   - publications.md
   - contact.md
   - curriculum_vitae.md

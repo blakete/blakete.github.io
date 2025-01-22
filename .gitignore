@@ -1,0 +1,19 @@
+# Jekyll's compiled site
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Sass / temp folders
+.sass-cache/
+.cache/
+
+# Bundler artifacts
+vendor/
+.bundle/
+
+# Node modules (if you use npm/yarn)
+node_modules/
+
+# OS/Editor cache files
+.DS_Store
+Thumbs.db
