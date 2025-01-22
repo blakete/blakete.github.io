@@ -31,4 +31,4 @@ jobs:
           bundle exec jekyll build
 
       - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@
+        uses: actions/upload-pages-artifact@v1
