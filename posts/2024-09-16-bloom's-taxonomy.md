@@ -7,7 +7,7 @@ author:
 There are many learning taxonomies blah blah. What is a learning taxonomy? Why should I care?
 
 <div class="image-container">
-    <img src="https://blakesnotes.io/assets/images/blooms_taxonomy.png" alt="Bloom's Taxonomy">
+    <img src="/assets/images/blooms_taxonomy.png" alt="Bloom's Taxonomy">
 </div>
 
 TODO
