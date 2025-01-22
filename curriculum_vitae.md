@@ -17,10 +17,13 @@ permalink: /cv/
         width: auto;
     }
 </style>
+
 # Curriculum Vitae
-A comprehensive statement of my educational background, teaching, and research experience.
+A comprehensive summary of a my career, qualifications, education, teaching, and research experience.
+
+## Career Timeline
 <div class="image-container">
-    <img src="https://blakesnotes.io/assets/images/work_history_gantt.png" alt="Work history Gantt chart">
+    <img src="/assets/images/work_history_gantt.png" alt="Work history Gantt chart">
 </div>
 
-Coming soon.
+More coming soon.
