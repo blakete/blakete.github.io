@@ -7,13 +7,14 @@ plugins:
 theme: minima
 minima:
   skin: dark
-  social_links:
-    - label: "GitHub"
-      icon: "github"
-      url: "https://github.com/blakete"
-    - label: "LinkedIn"
-      icon: "linkedin"
-      url: "https://linkedin.com/in/blakete"
+
+social_links:
+  - platform: github
+    user_url: "https://github.com/blakete"
+  - platform: linkedin
+    user_url: "https://linkedin.com/in/blakete"
+  - platform: google_scholar
+    user_url: "https://scholar.google.com/citations?user=xiM0_6sAAAAJ&hl=en"
 
 scholar:
   style: apa
@@ -28,9 +29,6 @@ author:
   email: "blakete [at] mit [dot] edu"
 email: blakete@mit.edu
 github_username: blakete
-social:
-  github: blakete
-  linkedin: blakete
 
 header_pages:
   - index.md

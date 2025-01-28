@@ -1,7 +1,10 @@
-<li>{% assign entry = include.item %}
-  <a {% unless entry.platform == 'rss' %}rel="me" {% endunless %}href="{{ entry.user_url }}" target="_blank" title="{{ entry.title | default: entry.platform }}">
-    <svg class="svg-icon grey">
-      <use xlink:href="{{ '/assets/minima-social-icons.svg#' | append: entry.platform | relative_url }}"></use>
+<li>
+  {% assign entry = include.item %}
+  <a {% unless entry.platform == 'rss' %}rel="me" {% endunless %}
+     href="{{ entry.user_url }}" target="_blank"
+     title="{{ entry.title | default: entry.platform }}">
+     <svg class="svg-icon grey" role="img" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor">
+      {%- include social-icons/{{ entry.platform }}.svg -%}
     </svg>
   </a>
 </li>

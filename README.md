@@ -5,7 +5,11 @@ This is a Jekyll page.
 <br><br>
 Here is the page's [`_config.yml`](/Users/blake/repos/blakete.github.io/_config.yml)
 
-## Testing Locally
+## Build and Test Locally
+
+```console
+rm Gemfile.lock 
+```
 
 ```console
 bundle install
