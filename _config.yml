@@ -7,6 +7,13 @@ plugins:
 theme: minima
 minima:
   skin: dark
+  social_links:
+    - label: "GitHub"
+      icon: "github"
+      url: "https://github.com/blakete"
+    - label: "LinkedIn"
+      icon: "linkedin"
+      url: "https://linkedin.com/in/blakete"
 
 scholar:
   style: apa
