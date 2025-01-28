@@ -26,6 +26,11 @@ todo
 
 ## Currently Misc Dumped
 
+### Timeline
+- U.S. sanctions advanced chips to China.
+
+### Currently Unorganized
+
 Here are some notable quotes from their accompanying paper (linked below):
 - “The findings reveal that RL empower DeepSeek-R1-Zero to attain robust reasoning capabilities without the need for any supervised fine-tuning data. This is a noteworthy achievement, as it underscores the model’s ability to learn and generalize effectively through RL alone.”
 - “The self-evolution process of DeepSeek-R1-Zero is a fascinating demonstration of how RL can drive a model to improve its reasoning capabilities autonomously.”

@@ -5,11 +5,11 @@ permalink: /
 ---
 # Welcome to Blake's Notes
 
-I research topics related to intelligent, autonomous, trustworthy robotic systems. I also occasionally write blog posts on many random technical topics. Keep tabs on this page to stay up to date on my most recent work.  
+I research topics related to intelligent, autonomous, trustworthy robotic systems. I also occasionally write blog posts on many topics including AI, robotics, world events, and geopolitics. Keep tabs on this page to stay up to date on my most recent work.
 
-Beyond my research, I am deeply curious about understanding the world and the universe. I am pro-humanity and believe in supporting ideas and efforts that advance our collective well-being.  
+Beyond my research, I am deeply curious about understanding the world and the universe. I am pro-humanity and believe in supporting ideas and efforts that advance our collective well-being.
 
-This page is also a space for me to gather and organize important information on topics that pique my interest. By aggregating insights on world events and phenomena, I hope to create a central hub that fosters deeper understanding and reflection. While I’m still exploring the best way to communicate these ideas, this space will grow with my discoveries and evolving perspectives. 
+This page is also a space for me to gather and organize important information on topics that pique my interest. By aggregating insights on world events and phenomena, I hope to create a central hub that fosters deeper understanding and reflection. While I’m still exploring the best way to communicate these ideas, this space will grow with my discoveries and evolving perspectives.
 
 <hr>
 
