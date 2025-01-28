@@ -5,7 +5,9 @@ permalink: /
 ---
 # Welcome to Blake's Notes
 
-I research topics related to intelligent, autonomous, trustworthy robotic systems. I also occasionally write blog posts on many topics including AI, robotics, world events, and geopolitics. Keep tabs on this page to stay up to date on my most recent work.
+Hello, I am Blake! I am currently researching topics related to intelligent, autonomous, trustworthy robotic systems as a graduate student at MIT AeroAstro. Keep tabs on this page to stay up to date on my most recent work.
+
+I also occasionally write blog posts on AI, robotics, cybersecurity, open-source intelligence (OSINT), global dynamics, and world events. Here, I aggregate and assess competing diverse perspectives, arguments, and narratives—recognizing that each may hold fragments of truth. My aim is to synthesize these insights to better grasp the nature of the world as it is, not as it’s often portrayed in our respective social media filter bubbles or mainstream media.
 
 Beyond my research, I am deeply curious about understanding the world and the universe. I am pro-humanity and believe in supporting ideas and efforts that advance our collective well-being.
 
