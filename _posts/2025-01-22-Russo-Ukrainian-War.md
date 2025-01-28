@@ -5,7 +5,7 @@ author:
 - Blake Edwards
 ---
 
-The purpose of this page is to aggregate information to understand the true nature of the Russo-Ukrainian conflict.
+The purpose of this page is to continuously aggregate information to understand the true nature of the Russo-Ukrainian conflict.
 
 ---
 
