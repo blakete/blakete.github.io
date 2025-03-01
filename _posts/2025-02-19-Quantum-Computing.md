@@ -6,7 +6,9 @@ author:
 ---
 **Last Updated:** 2025-02-19T21:42:18+0000
 
-### State of Quantum Computing (Feb 2025)
+No hype, just facts—quantum’s creeping closer.
+
+### State of Quantum Computing
 Microsoft’s Majorana 1 chip, with 8 topological qubits, promises a breakthrough: slashing error rates via physics, not fixes, aiming for smaller, simpler, scalable quantum computers. It’s a prototype—cryogenic, not room-temp—but a big step toward millions of qubits. Others (Google, IBM) lead in qubit count, but errors hobble them.
 
 ### Why Care?
@@ -19,5 +21,3 @@ Quantum computing could crack problems—crypto, drug design, logistics—that c
 - **2011:** D-Wave sells first commercial quantum annealer (limited use).
 - **1998:** First 2-qubit quantum computer demos basic ops.
 - **1994:** Shor’s algorithm shows quantum can break encryption, sparking interest.
-
-No hype, just facts—quantum’s creeping closer.
