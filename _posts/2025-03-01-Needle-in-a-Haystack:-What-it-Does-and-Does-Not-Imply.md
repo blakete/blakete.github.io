@@ -37,7 +37,10 @@ In this case, the model must blend reasoning and multi-hop retrieval across seve
 
 The ‘Needle in a Haystack’ test is a method to gauge how well large language models (LLMs) and retrieval-augmented generation (RAG) systems perform with varying context sizes. It involves hiding a specific detail—the ‘needle’—within a big, complicated chunk of text, called the ‘haystack.’ This concept is visually illustrated in Figure 1.
 
-![Figure 1: A classic depiction of GPT-4's NIH performance. Figure credits to [^4]](/assets/images/posts/Needle-in-a-Haystack/haystack-gpt-4-results.png)
+<figure>
+  <img src="/assets/images/posts/Needle-in-a-Haystack/haystack-gpt-4-results.png" alt="GPT-4's performance on NIH test">
+  <figcaption>Figure 1: A classic depiction of GPT-4's NIH performance. Figure credits to <a href="https://arize.com/blog-course/the-needle-in-a-haystack-test-evaluating-the-performance-of-llm-rag-systems/">The Needle In a Haystack Test</a>.</figcaption>
+</figure>
 
 The test was popularized by Greg Kamradt, who explored how models handle retrieval in extended texts [^1]. Today, a widely used version comes from OpenCompass’s NeedleBench, which tests various retrieval and reasoning skills over long contexts [^2].
 
