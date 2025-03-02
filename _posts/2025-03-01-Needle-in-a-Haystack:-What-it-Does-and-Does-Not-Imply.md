@@ -10,14 +10,14 @@ author:
 NIH tests effectively measure basic retrieval—like pinpointing a single fact within a large text—but fall short in providing a useful metric for today’s reasoning models. Today's models need to perform transitive and hierarchical lookup tasks interleaved with reasoning. For example, consider a scenario where the model is given:
 
 Input:
-```console
+```txt
 <Initial large context>
 <User prompt>
 ```
 A robust response might look like:
 
 Output:
-```console
+```txt
 Output:
 <think>
     Reasoning step A (on preceding input context)
