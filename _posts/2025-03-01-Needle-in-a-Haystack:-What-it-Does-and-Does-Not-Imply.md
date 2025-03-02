@@ -37,8 +37,8 @@ In this case, the model must blend reasoning and multi-hop retrieval across seve
 
 The ‘Needle in a Haystack’ test is a method to gauge how well large language models (LLMs) and retrieval-augmented generation (RAG) systems perform with varying context sizes. It involves hiding a specific detail—the ‘needle’—within a big, complicated chunk of text, called the ‘haystack.’ This concept is visually illustrated in Figure 1.
 
-<figure>
-  <img src="/assets/images/posts/Needle-in-a-Haystack/haystack-gpt-4-results.png" alt="GPT-4's performance on NIH test">
+<figure style="margin: auto; text-align: center;">
+  <img src="/assets/images/posts/Needle-in-a-Haystack/haystack-gpt-4-results.png" alt="GPT-4's performance on NIH test" style="display: block; margin: auto;">
   <figcaption>Figure 1: A classic depiction of GPT-4's NIH performance. Figure credits to <a href="https://arize.com/blog-course/the-needle-in-a-haystack-test-evaluating-the-performance-of-llm-rag-systems/">The Needle In a Haystack Test</a>.</figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ These tasks, detailed in NeedleBench documentation [^2], show that while basic N
 
 
 ## References
-[^1]: Kamradt’s early work noted in [The Needle In a Haystack Test: Evaluating the Performance of LLM RAG Systems](https://arize.com/blog-course/the-needle-in-a-haystack-test-evaluating-the-performance-of-llm-rag-systems/).
+[^1]: [Greg Kamradt’s X post](https://x.com/GregKamradt/status/1722386725635580292).
 [^2]: [Needle In A Haystack Experimental Evaluation](https://opencompass.readthedocs.io/en/latest/advanced_guides/needleinahaystack_eval.html).
 [^3]: [Needle in the Haystack for Memory Based Large Language Models](https://arXiv.org/abs/2407.01437).
 [^4]: [The Needle In a Haystack Test: Evaluating the Performance of LLM RAG Systems](https://arize.com/blog-course/the-needle-in-a-haystack-test-evaluating-the-performance-of-llm-rag-systems/)
