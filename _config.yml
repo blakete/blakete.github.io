@@ -6,7 +6,7 @@ plugins:
 
 theme: minima
 minima:
-  skin: dark
+  skin: auto
 
 social_links:
   - platform: github
