@@ -18,7 +18,6 @@ A robust response might look like:
 
 Output:
 ```txt
-Output:
 <think>
     Reasoning step A (on preceding input context)
     --> Retrieval step A (from preceding input + output context)
