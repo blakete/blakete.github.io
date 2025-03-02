@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Home
-permalink: /
+title: About
+permalink: /about
 ---
 # Welcome to Blake's Notes
 
