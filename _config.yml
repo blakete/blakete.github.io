@@ -32,7 +32,7 @@ github_username: blakete
 
 header_pages:
   - index.md
-  - posts.md
+  - about.md
   - publications.md
   - contact.md
   - curriculum_vitae.md
