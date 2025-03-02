@@ -31,8 +31,8 @@ email: blakete@mit.edu
 github_username: blakete
 
 header_pages:
-  - index.md
   - about.md
+  - index.md
   - publications.md
   - curriculum_vitae.md
   - contact.md
