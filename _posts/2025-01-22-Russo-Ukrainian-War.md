@@ -3,6 +3,8 @@ layout: post
 title: "Russo-Ukrainian War"
 author:
 - Blake Edwards
+tags: [post, geopolitics, conflict]
+last_updated: 2025-01-22
 ---
 
 The purpose of this page is to continuously aggregate information to understand the true nature of the Russo-Ukrainian conflict.
