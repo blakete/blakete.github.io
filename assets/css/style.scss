@@ -5,3 +5,37 @@
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
+
+// Custom styles for tags
+.post-tag, .wiki-tag {
+  display: inline-block;
+  background-color: #444;
+  color: #fff;
+  padding: 2px 8px;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+.post-tag {
+  background-color: #2a7ae2;
+}
+
+.wiki-tag {
+  background-color: #5e9b42;
+}
+
+.post-tags, .wiki-tags {
+  margin-bottom: 15px;
+}
+
+.post-item, .wiki-entry {
+  margin-bottom: 30px;
+}
+
+.post-date {
+  color: #828282;
+  font-size: 0.9em;
+  display: block;
+  margin-bottom: 10px;
+}
