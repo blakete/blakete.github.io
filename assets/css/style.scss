@@ -39,3 +39,14 @@
   display: block;
   margin-bottom: 10px;
 }
+
+// Add styling for Published, Last Updated, and Tags paragraphs
+.wiki-entry p, .post-item p {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+// Keep the default margin-bottom for the last paragraph (Tags)
+.wiki-entry p:last-of-type, .post-item p:last-of-type {
+  margin-bottom: 15px;
+}
