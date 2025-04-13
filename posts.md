@@ -6,6 +6,8 @@ permalink: /posts/
 
 # Posts
 
+Emissions from my stream of consciousness 🪄
+
 <div class="post-list">
   <hr>
   {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
