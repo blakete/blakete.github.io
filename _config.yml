@@ -26,13 +26,20 @@ timezone: "America/New_York"
 title: Blake's Notes
 author:
   name: Blake Edwards
-  email: "blakete [at] mit [dot] edu"
 email: blakete@mit.edu
 github_username: blakete
 
+# Define collections
+collections:
+  wiki:
+    output: true
+    permalink: /wiki/:path/
+
+# Navigation
 header_pages:
-  - about.md
-  - index.md
+  - notes.md
+  - posts.md
   - publications.md
-  - curriculum_vitae.md
+  - about.md
+  - contact.md
   - contact.md

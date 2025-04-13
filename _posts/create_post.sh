@@ -22,6 +22,8 @@ layout: post
 title: "$title"
 author:
 - Blake Edwards
+tags: [post]
+last_updated: $current_date
 ---
 EOF
 

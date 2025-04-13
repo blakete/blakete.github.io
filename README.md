@@ -1,8 +1,9 @@
 # Blake's Notes
+
 https://blakesnotes.io or https://blakete.github.io
 <br><br>
 
-## Build and Test Locally
+## Build and Server Locally
 
 ```console
 rm Gemfile.lock 
