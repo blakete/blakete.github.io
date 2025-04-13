@@ -6,7 +6,7 @@ permalink: /
 
 # Notes
 
-Welcome to my personal wiki. This is where I post curated sets notes on various topics. I hope you find them useful! 😊
+Welcome to my personal wiki 😊
 
 <!-- ## Wiki Entries -->
 
