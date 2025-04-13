@@ -6,7 +6,7 @@ permalink: /
 
 # Notes
 
-Welcome to my personal wiki 😊
+My personal wiki ✨
 
 <!-- ## Wiki Entries -->
 
