@@ -4,9 +4,7 @@ title: Posts
 permalink: /posts/
 ---
 
-# Blog Posts
-
-Here you can find all my blog posts organized by date.
+# Posts
 
 <div class="post-list">
   <hr>
