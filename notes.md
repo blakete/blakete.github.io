@@ -16,7 +16,7 @@ Welcome to my personal wiki. This is where I post curated sets notes on various 
   {% for wiki_page in sorted_wiki %}
     <div class="wiki-entry">
       <h3>
-        <a href="{{ wiki_page.url | relative_url }}">{{ wiki_page.title }}</a>
+        <a class="post-link" href="{{ wiki_page.url | relative_url }}">{{ wiki_page.title }}</a>
       </h3>
       <p><strong>Published:</strong> {{ wiki_page.date | default: site.time | date: "%B %-d, %Y" }}</p>
       
