@@ -16,3 +16,6 @@ bundle install
 ```console
 bundle exec jekyll serve
 ```
+
+## Design Inspiration Credits
+- https://siboehm.com/
