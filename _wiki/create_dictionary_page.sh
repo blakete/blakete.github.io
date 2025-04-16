@@ -27,22 +27,17 @@ date: $current_date
 last_updated: $current_date
 tags: [wiki, dictionary]
 permalink: /wiki/${slug}/
+hidden_from_wiki: true
 ---
 
-A brief introduction to $title.
+## $title
 
-## Section 1
+TODO: definition
 
-Content for section 1.
+#### References
 
-## Section 2
+[^1]: [Posterior probability - Wikipedia](https://en.wikipedia.org/wiki/Posterior_probability)
 
-Content for section 2.
-
-## References
-
-1. Reference 1
-2. Reference 2
 EOF
 
 echo "Wiki page created: $filename"
