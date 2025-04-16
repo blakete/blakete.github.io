@@ -42,7 +42,6 @@ header_pages:
   - publications.md
   - about.md
   - contact.md
-  - contact.md
 
 exclude:
   - _private_local
