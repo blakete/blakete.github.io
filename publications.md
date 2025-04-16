@@ -7,7 +7,7 @@ permalink: /publications/
 
 View my [Google Scholar profile](https://scholar.google.com/citations?user=xiM0_6sAAAAJ&hl=en).
 
-### 2024
+## 2024
 
 <ul class="bibliography">
   <li>
@@ -26,7 +26,7 @@ View my [Google Scholar profile](https://scholar.google.com/citations?user=xiM0_
   </li>
 </ul>
 
-### 2023
+## 2023
 
 <ul class="bibliography">
   <li>
