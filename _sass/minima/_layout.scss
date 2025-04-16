@@ -283,6 +283,11 @@
   h6 {
     @include relative-font-size(1.0625);
   }
+
+  word-spacing: 0.1em; /* Slight increase */
+  letter-spacing: 0.01em; /* Optional: tiny tweak for letters too */
+  line-height: 1.6; /* Bonus: improve line spacing if it's tight */
+
 }
 
 
