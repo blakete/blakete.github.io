@@ -56,6 +56,12 @@ https://blakesnotes.io or https://blakete.github.io
     ```console
     bundle exec jekyll serve
     ```
+    
+* (If you are using `_private_local` staging) Build and serve locally
+
+    ```console
+    bundle exec jekyll serve --config _config.yml,_config_local.yml
+    ```
 
 ## Webpage Design Inspiration Credits
 
