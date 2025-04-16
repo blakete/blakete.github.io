@@ -21,6 +21,10 @@ scholar:
   locale: en
   source: "./_bibliography"
   bibliography: "references.bib"
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
   
 timezone: "America/New_York"
 title: Blake's Notes
@@ -43,5 +47,5 @@ header_pages:
   - about.md
   - contact.md
 
-exclude:
-  - _private_local
+include:
+  - private_local

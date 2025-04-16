@@ -7,29 +7,10 @@ permalink: /publications/
 
 View my [Google Scholar profile](https://scholar.google.com/citations?user=xiM0_6sAAAAJ&hl=en).
 
-## Published Papers
+### 2024
 
 <ul class="bibliography">
-    <li>
-    <span id="Kouvaros2023">
-    Kouvaros, P., Leofante, F., Edwards, B., Chung, C., Margineantu, D., and Lomuscio, A., 
-    "<b>Verification of Semantic Key Point Detection for Aircraft Pose Estimation</b>," <i>In Proceedings of the 20th International Conference on Principles of Knowledge Representation and Reasoning</i>, Pages 757–762, 2023.
-    </span>
-    <a href="https://proceedings.kr.org/2023/77/">[PDF]</a>
-    <a href="javascript:toggleInfo('Kouvaros2023');" class="js-no-ajax">[BibTeX]</a>
-    <pre id="bib_Kouvaros2023" class="bibtex noshow">@inproceedings{Kouvaros2023,
-    author = {Kouvaros, Panagiotis and Leofante, Francesco and Edwards, Blake and Chung, Calvin and Margineantu, Dragos and Lomuscio, Alessio},
-    title = {Verification of Semantic Key Point Detection for Aircraft Pose Estimation},
-    booktitle = {Proceedings of the 20th International Conference on Principles of Knowledge Representation and Reasoning},
-    pages = {757--762},
-    year = {2023},
-    doi = {10.24963/kr.2023/77},
-    url = {https://proceedings.kr.org/2023/77/kr2023-0077-kouvaros-et-al.pdf}
-    }
-    </pre>
-</li>
-
-<li>
+  <li>
     <span id="Bhattiprolu2023">
         Bhattiprolu, A., Hamel, J., Nguyen, C., Edwards, B., Tapanainen, N., Isaacs, S., and de Weck, O. L.,
         "<b>Improving Autonomous Surface Vehicle adaptability by decreasing complexity using low-cost PANTHER environmenctal monitoring module</b>."
@@ -42,10 +23,29 @@ View my [Google Scholar profile](https://scholar.google.com/citations?user=xiM0_
     note = {Public paper link coming soon}
     }
     </pre>
-    </li>
+  </li>
 </ul>
 
-## Acknowledgements
+### 2023
+
+<ul class="bibliography">
+  <li>
+    <span id="Bhattiprolu2023">
+        Bhattiprolu, A., Hamel, J., Nguyen, C., Edwards, B., Tapanainen, N., Isaacs, S., and de Weck, O. L.,
+        "<b>Improving Autonomous Surface Vehicle adaptability by decreasing complexity using low-cost PANTHER environmenctal monitoring module</b>."
+    </span>
+    [PDF coming soon!]
+    <a href="javascript:toggleInfo('Bhattiprolu2023');" class="js-no-ajax">[BibTeX]</a>
+    <pre id="bib_Bhattiprolu2023" class="bibtex noshow">@article{Bhattiprolu2023,
+    author = {Bhattiprolu, Abhishek and Hamel, John and Nguyen, Christina and Edwards, Blake and Tapanainen, Nikolas and Isaacs, Stewart and de Weck, Olivier L.},
+    title = {Improving Autonomous Surface Vehicle adaptability by decreasing complexity using low-cost PANTHER environmental monitoring module},
+    note = {Public paper link coming soon}
+    }
+    </pre>
+  </li>
+</ul>
+
+## Acknowledged
 
 <ul class="bibliography">
 <li><span id="Muthali2023">Muthali, A., Shen, H., Deglurkar, S., Lim, M. H., Roelofs, R., Faust, A., and Tomlin, C., "<b>Multi-Agent Reachability Calibration with Conformal Prediction</b>," <i>arXiv</i>, Dec 13, 2023. <i>Acknowledged as a key contributor</i>.</span>

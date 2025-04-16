@@ -1,5 +1,5 @@
 # IMPORTANT: Local files that are private until later publication
-_private_local/
+private_local/
 
 # Jekyll's compiled site
 _site/
