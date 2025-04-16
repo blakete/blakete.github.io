@@ -1,2 +1,7 @@
 include:
-  - _private_local
+  - private_local
+
+collections:
+  private_local:
+    output: true
+    permalink: /private_local/:path/
