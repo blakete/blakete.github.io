@@ -1,10 +1,11 @@
 ---
 layout: page
-title: "Sample Wiki Page: AI Concepts"
+title: "Fundamental AI Concepts"
 date: 2025-01-30
 last_updated: 2025-01-30
-tags: [wiki, ai, concepts]
+tags: [Artificial Intelligence, Machine Learning]
 permalink: /wiki/ai-concepts/
+hidden_from_wiki: true
 ---
 
 # AI Concepts Wiki

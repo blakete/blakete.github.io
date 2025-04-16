@@ -50,3 +50,21 @@
 .wiki-entry p:last-of-type, .post-item p:last-of-type {
   margin-bottom: 15px;
 }
+
+.invisible-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: none;
+  background: none;
+}
+
+.invisible-table td,
+.invisible-table tr {
+  border: none !important;
+  background: none !important;
+  white-space: normal !important;
+  // TODO: fix the word-break not working properly, e.g. in `private_local/towards_VERUS.md`
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  padding: 4px 12px !important;
+}
