@@ -22,6 +22,16 @@ Even if you design a Bayesian credible interval to be wider (more conservative) 
 
 This is why in critical fields (e.g., aerospace, nuclear, medical), regulators often prefer Clopper–Pearson or other frequentist methods, where the coverage guarantees are mathematically provable.
 
+### **Which to Use When?**
+A short decision table:
+
+| Requirement                           | Frequentist SMC | Bayesian SMC |
+|---------------------------------------|:---------------:|:------------:|
+| Hard coverage guarantees              |      ✅          |      ⚠️      |
+| Direct probability statements on $p$  |      ❌          |      ✅      |
+| Incorporate prior knowledge           |      ❌          |      ✅      |
+| Tool support in PRISM / UPPAAL SMC    |      ✅          |      ⚠️      |
+
 ### **Why frequentist SMC dominates in practice**
 1. No priors required  
 2. Repeatability & guaranteed coverage  
@@ -47,7 +57,6 @@ This is why in critical fields (e.g., aerospace, nuclear, medical), regulators o
 - **Example 1**: "Based on the posterior mean $\mathbb{E}[p \mid \text{data}] = \frac{3}{102} \approx 0.0294,$ the point-estimate expected loss is $0.0294 \times \\$50\text{M} = \\$1.47\text{M}.$ Furthermore, with 95% probability (given the data and a uniform prior), the true failure probability lies in the interval $[0.0034, 0.0617],$ so the expected loss lies between $0.0034 \times \\$50\text{M} = \\$0.17\text{M}$ and $0.0617 \times \\$50\text{M} = \\$3.085\text{M}.$"
 - **Example 2**: "Given the test data and a uniform prior, there’s a 95% probability that the catastrophic-failure rate is below $4\times10^{-10}$ per flight-hour,  equivalent to fewer than one failure in about 2.5 billion flight-hours."
 - **Key Takeaway**: You obtain a direct probability statement about $p$ (and hence about risk) *given* the data, plus both a “best‐estimate” (the posterior mean) and a 95% credible range on the expected loss.
-
 
 ---
 
@@ -91,18 +100,6 @@ This is why in critical fields (e.g., aerospace, nuclear, medical), regulators o
   * Incorporating expert or historical data into SMC  
   * Sequential updating as new simulation results arrive  
   * Generating direct probability statements for risk-based decisions  
-
----
-
-### **Which to Use When?**
-A short decision table:
-
-| Requirement                           | Frequentist SMC | Bayesian SMC |
-|---------------------------------------|:---------------:|:------------:|
-| Hard coverage guarantees              |      ✅          |      ⚠️      |
-| Direct probability statements on $p$  |      ❌          |      ✅      |
-| Incorporate prior knowledge           |      ❌          |      ✅      |
-| Tool support in PRISM / UPPAAL SMC    |      ✅          |      ⚠️      |
 
 ---
 
