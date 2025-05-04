@@ -42,7 +42,7 @@ A short decision table:
 
 ## Comparison of Approaches
 
-## Frequentist Interpretation
+### Frequentist Interpretation
 
 - Interpretation: Given your observed $k$ failures in $N$ trials and confidence level $1-\alpha$, the CP method yields an interval $[L,U]$ such that, if you repeated the same $N$-trial experiment infinitely often, then a fraction $(1-\alpha)$ of those intervals would contain the true failure probability $p$.
 <!-- - **Example 1**: "With 95% confidence, the true failure probability is at most $U\approx0.0707$, so the maximum expected loss is $0.0707 \times \\$50 \text{M} \approx \\$3.54 \text{M}$." -->
@@ -50,7 +50,7 @@ A short decision table:
 - **Example 2**: “With 95% confidence, the true catastrophic-failure rate is no more than $5\times10^{-10}$ failures per flight-hour, i.e., we can bound the risk at at most one failure in 2 billion flight-hours in 95% of identical test programs.”
 - **Key Takeaway**: You get a worst-case bound on risk that holds in at least 95% of repeated experiments, but you do not get a probability statement about $p$ in this single experiment.
 
-## Bayesian Interpretation
+### Bayesian Interpretation
 
 - **Interpretation**: Given your observed $k$ failures in $N$ trials, a prior distribution on $p$ (e.g. $\mathrm{Beta}(1,1)$), and confidence level $1-\alpha$, the Bayesian method yields a posterior $\mathrm{Beta}(1+k,\,1+N-k)$ and constructs an interval $[L,U]$ such that  
   $$\Pr\bigl(p\in[L,U]\mid\text{data}\bigr)=1-\alpha.$$
