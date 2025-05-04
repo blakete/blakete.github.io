@@ -4,7 +4,8 @@ title: "DeepSeek-R1-Zero"
 author:
 - Blake Edwards
 tags: [post, ai, research]
-last_updated: 2025-01-28T19:20:59+0000
+last_updated: 2025-01-28
+hidden_from_posts: false
 ---
 
 **Please come back later this article is under construction!**

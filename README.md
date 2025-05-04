@@ -65,6 +65,24 @@ https://blakesnotes.io or https://blakete.github.io
 
     * Private locally staged pages are served to `http://127.0.0.1:4000/private_local`
 
+
+## Content Management
+
+### Hiding Wiki Pages
+To hide a wiki page from the main wiki listing, add the following to the frontmatter:
+```yaml
+hidden_from_wiki: true
+```
+
+### Hiding Blog Posts
+To hide a blog post from the posts listing, add the following to the frontmatter:
+```yaml
+hidden_from_posts: true
+```
+
+This allows you to create drafts or private content that won't appear in public listings but can still be accessed directly by URL if you know the path.
+
+
 ## Webpage Design Inspiration Credits
 
 - https://siboehm.com/
