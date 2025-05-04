@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "Frequentist vs. Bayesian Approaches to SMC"
 date: 2025-05-02
 last_updated: 2025-05-02
@@ -8,11 +8,11 @@ permalink: /wiki/frequentist-vs-bayesian-smc
 hidden_from_wiki: false
 ---
 
-### **Introduction**
+## Introduction
 
 Statistical Model Checking (SMC) seeks to estimate or bound the probability $p$ that a stochastic system violates (or satisfies) a formally specified logical property (e.g., temporal logic, PCTL) by sampling executions of the system through simulation. In high‐assurance domains, where certification and safety are paramount, engineers must balance **frequentist guarantees**, which provide hard, long‐run coverage properties, against **Bayesian interpretability**, which offers direct probability statements about model parameters given the observed data. This page explores how each approach frames risk and uncertainty in SMC and when to favor one over the other.
 
-### **TLDR**
+## TLDR
 
 **Frequentist methods have a key guaranteed coverage property**: "Over repeated experiments, the interval covers the true parameter at least $(1-\alpha)$ of the time, regardless of the true value of $p$."
 
@@ -22,7 +22,7 @@ Even if you design a Bayesian credible interval to be wider (more conservative) 
 
 This is why in critical fields (e.g., aerospace, nuclear, medical), regulators often prefer Clopper–Pearson or other frequentist methods, where the coverage guarantees are mathematically provable.
 
-### **Which to Use When?**
+## Which to Use When?
 A short decision table:
 
 | Requirement                           | Frequentist SMC | Bayesian SMC |
@@ -32,7 +32,7 @@ A short decision table:
 | Incorporate prior knowledge           |      ❌          |      ✅      |
 | Tool support in PRISM / UPPAAL SMC    |      ✅          |      ⚠️      |
 
-### **Why frequentist SMC dominates in practice**
+## Why frequentist SMC dominates in practice
 1. No priors required  
 2. Repeatability & guaranteed coverage  
 3. Conservatism for safety/regulation  
@@ -40,17 +40,17 @@ A short decision table:
 
 ---
 
-### **Comparison of Approaches**
+## Comparison of Approaches
 
-#### **Frequentist Interpretation**
+## Frequentist Interpretation
 
-- **Interpretation**: Given your observed $k$ failures in $N$ trials and confidence level $1-\alpha$, the CP method yields an interval $[L,U]$ such that, if you repeated the same $N$-trial experiment infinitely often, then a fraction $(1-\alpha)$ of those intervals would contain the true failure probability $p$.
+- Interpretation: Given your observed $k$ failures in $N$ trials and confidence level $1-\alpha$, the CP method yields an interval $[L,U]$ such that, if you repeated the same $N$-trial experiment infinitely often, then a fraction $(1-\alpha)$ of those intervals would contain the true failure probability $p$.
 <!-- - **Example 1**: "With 95% confidence, the true failure probability is at most $U\approx0.0707$, so the maximum expected loss is $0.0707 \times \\$50 \text{M} \approx \\$3.54 \text{M}$." -->
 - **Example 1**: "Based on the observed failure rate $\hat p = \frac{k}{N} = \frac{2}{100} = 0.02,$ the point-estimate expected loss is $\hat p \times \\$50\text{M} = \\$1\text{M}.$ Furthermore, with 95% confidence, the true failure probability is at most $U \approx 0.0707$, so the maximum expected loss is $0.0707 \times \\$50\text{M} \;\approx\; \\$3.54\text{M}.$”
 - **Example 2**: “With 95% confidence, the true catastrophic-failure rate is no more than $5\times10^{-10}$ failures per flight-hour, i.e., we can bound the risk at at most one failure in 2 billion flight-hours in 95% of identical test programs.”
 - **Key Takeaway**: You get a worst-case bound on risk that holds in at least 95% of repeated experiments, but you do not get a probability statement about $p$ in this single experiment.
 
-#### **Bayesian Interpretation**
+## Bayesian Interpretation
 
 - **Interpretation**: Given your observed $k$ failures in $N$ trials, a prior distribution on $p$ (e.g. $\mathrm{Beta}(1,1)$), and confidence level $1-\alpha$, the Bayesian method yields a posterior $\mathrm{Beta}(1+k,\,1+N-k)$ and constructs an interval $[L,U]$ such that  
   $$\Pr\bigl(p\in[L,U]\mid\text{data}\bigr)=1-\alpha.$$
@@ -60,9 +60,9 @@ A short decision table:
 
 ---
 
-### **Deep Dive**
+## Deep Dive
 
-#### **Frequentist SMC**
+### Frequentist SMC
 
 – **Core procedures**  
   * Clopper–Pearson intervals for fixed-sample inference  
@@ -79,7 +79,7 @@ A short decision table:
   * Quick violation detection via SPRT when failures are rare  
   * Use in toolchains (PRISM, UPPAAL SMC) that default to frequentist tests  
 
-#### **Bayesian SMC**
+### Bayesian SMC
 
 – **Choosing priors**  
   * Uniform $\mathrm{Beta}(1,1)$ for non-informative baseline  
@@ -103,6 +103,6 @@ A short decision table:
 
 ---
 
-### **References & Further Reading**
+## References & Further Reading
 
 * See papers on Clopper-Pearson vs. Jeffreys intervals, confidence posteriors, and robust Bayesian SMC.

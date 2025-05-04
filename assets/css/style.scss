@@ -1,5 +1,5 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Only the main Sass file needs front matter
 ---
 
 @import
@@ -25,13 +25,17 @@
   background-color: #5e9b42;
 }
 
-.post-tags, .wiki-tags {
-  margin-bottom: 15px;
-}
+// .post-tags, .wiki-tags {
+//   margin-bottom: 15px;
+// }
 
-.post-item, .wiki-entry {
-  margin-bottom: 30px;
-}
+// .post-item, .wiki-entry {
+//   // margin-bottom: 30px;
+// }
+
+// hr {
+//   margin-bottom: 20px;
+// }
 
 .post-date {
   color: #828282;
