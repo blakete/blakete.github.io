@@ -1,0 +1,64 @@
+/* Custom heading styles with CSS variables for easier adjustment */
+:root {
+  /* Base font size - change this one value to scale everything */
+  --base-font-size: 18px; 
+  
+  /* Multipliers for headings - modify these to change relative sizes */
+  --h1-scale: 2.25;
+  --h2-scale: 1.75;
+  --h3-scale: 1.375;
+  --h4-scale: 1.125;
+  --h5-scale: 1.05;
+  --h6-scale: 1;
+}
+
+/* Direct element styling using the CSS variables */
+h1 {
+  font-size: calc(var(--base-font-size) * var(--h1-scale)) !important;
+}
+
+h2 {
+  font-size: calc(var(--base-font-size) * var(--h2-scale)) !important;
+}
+
+h3 {
+  font-size: calc(var(--base-font-size) * var(--h3-scale)) !important;
+}
+
+h4 {
+  font-size: calc(var(--base-font-size) * var(--h4-scale)) !important;
+}
+
+h5 {
+  font-size: calc(var(--base-font-size) * var(--h5-scale)) !important;
+}
+
+h6 {
+  font-size: calc(var(--base-font-size) * var(--h6-scale)) !important;
+  font-weight: bold;
+}
+
+/* More specific selectors with the same values for better specificity */
+.post-content h1, .page-content h1, article h1, main h1 {
+  font-size: calc(var(--base-font-size) * var(--h1-scale)) !important;
+}
+
+.post-content h2, .page-content h2, article h2, main h2 {
+  font-size: calc(var(--base-font-size) * var(--h2-scale)) !important;
+}
+
+.post-content h3, .page-content h3, article h3, main h3 {
+  font-size: calc(var(--base-font-size) * var(--h3-scale)) !important;
+}
+
+.post-content h4, .page-content h4, article h4, main h4 {
+  font-size: calc(var(--base-font-size) * var(--h4-scale)) !important;
+}
+
+.post-content h5, .page-content h5, article h5, main h5 {
+  font-size: calc(var(--base-font-size) * var(--h5-scale)) !important;
+}
+
+.post-content h6, .page-content h6, article h6, main h6 {
+  font-size: calc(var(--base-font-size) * var(--h6-scale)) !important;
+} 

@@ -24,6 +24,7 @@ author:
 - Blake Edwards
 tags: [post]
 last_updated: $current_date
+hidden_from_posts: false
 ---
 EOF
 
