@@ -60,7 +60,7 @@ https://blakesnotes.io or https://blakete.github.io
 * (If you are using `_private_local` staging) Build and serve locally
 
     ```console
-    **bundle exec jekyll serve --open-url --livereload --force_polling --config _config.yml,_config_local.yml**
+    bundle exec jekyll serve --open-url --livereload --force_polling --config _config.yml,_config_local.yml
     ```
 
     * Private locally staged pages are served to `http://127.0.0.1:4000/private_local`
