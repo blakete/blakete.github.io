@@ -42,7 +42,6 @@ collections:
 # Navigation
 header_pages:
   - notes.md
-  - posts.md
   - publications.md
   - about.md
   - contact.md
