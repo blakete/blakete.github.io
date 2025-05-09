@@ -10,7 +10,7 @@ permalink: /wiki/neural-networks-discovering-new-computational-reducibility
 hidden_from_wiki: false
 ---
 
-When a neural network (NN) achieves drastic runtime improvements (sometimes 1000x!) or more—while maintaining or exceeding traditional algorithmic performance across a representative domain (e.g., 5000x speedup with 100% accuracy across all test cases), it raises a compelling set of questions:
+When a neural network (NN) achieves drastic runtime improvements (sometimes 1000x!) or more, while maintaining or exceeding traditional algorithmic performance across a representative domain (e.g., 5000x speedup with 100% accuracy across all test cases), it raises a compelling set of questions:
 
 1. Has the NN discovered a more efficient algorithm?
 2. Is it simply better at utilizing modern compute (e.g., parallelism, GPUs)?
@@ -24,7 +24,7 @@ Recent examples suggest that neural networks are capable of uncovering parsimoni
 * AlphaTensor [^3] discovered novel matrix multiplication algorithms faster than previously known human-designed ones, revealing entirely new computational approaches.
 * Research by Desai & Strachanand [^4] and by Cranmer, Lemos et al. [^5] showed neural networks rediscovering known physical principles (including orbital mechanics) purely from data, again hinting at hidden structural patterns.
 
-While this doesn't directly confirm that NNs are discovering fundamentally more efficient algorithms (as posed in question 1 above), it does strongly suggest that such a capability may exist under the right conditions. Building on this, I believe that neural networks may ultimately reveal genuinely novel computational shortcuts—indicating forms of hidden reducibility that traditional algorithmic approaches have not yet formalized.
+While this doesn't directly confirm that NNs are discovering fundamentally more efficient algorithms (as posed in question 1 above), it does strongly suggest that such a capability may exist under the right conditions. Building on this, I believe that neural networks may ultimately reveal genuinely novel computational shortcuts, indicating forms of hidden reducibility that traditional algorithmic approaches have not yet formalized.
 
 I have not properly surveyed published research in this domain, but **I strongly suspect that using neural networks as tools for discovering latent algorithmic structure is under-explored and rich with potential.** If we can successfully extract or synthesize formalized algorithms from neural networks (which are often viewed as opaque "black boxes" due to their complexity) then we could potentially combine the best aspects of both approaches: interpretable algorithms that we can formally reason about (e.g., providing rigorous safety guarantees), while potentially achieving even better performance by avoiding reliance on over-parameterized, overfit neural approximations.
 
