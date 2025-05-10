@@ -3,7 +3,6 @@ layout: page
 title: Publications
 permalink: /publications/
 ---
-# Publications
 
 View my [Google Scholar profile](https://scholar.google.com/citations?user=xiM0_6sAAAAJ&hl=en).
 

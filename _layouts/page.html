@@ -3,15 +3,36 @@ layout: base
 ---
 <article class="post">
 
-  <div class="post-content">
-    <!-- <h2><b>{{ page.title }}</b></h2>
-    
-    {% if page.last_updated %}
-      <p><strong>Last Updated:</strong> {{ page.last_updated | date: "%B %-d, %Y" }}</p>
-    {% endif %} -->
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- if page.author -%}
+        {% for author in page.author %}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">{{ author }}</span>
+          </span>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+        • 
+      {%- endif -%}
+      <span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: date_format }}
+        </time>
+      </span>
+      {%- if page.last_updated and page.last_updated != page.date -%}
+        • 
+        <span>
+          Last Updated:
+          <time datetime="{{ page.last_updated | date_to_xmlschema }}">
+            {{ page.last_updated | date: date_format }}
+          </time>
+        </span>
+      {%- endif -%}
+    </p>
+  </header>
 
-    <!-- <p><strong>Published:</strong> {{ page.date | default: site.time | date: "%B %-d, %Y" }}</p> -->
-    
+  <div class="post-content">
     {{ content }}
   </div>
 
