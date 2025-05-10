@@ -24,7 +24,10 @@ My personal private notes 🔒
         <p>
           <time>{{ private_page.date | date: "%B %-d, %Y" }}</time>
           
-          {% if private_page.last_updated and private_page.last_updated != private_page.date %}
+          {% assign date_str = private_page.date | date: "%Y-%m-%d" %}
+          {% assign updated_str = private_page.last_updated | date: "%Y-%m-%d" %}
+          
+          {% if private_page.last_updated and updated_str != date_str %}
             • <span>Last Updated: {{ private_page.last_updated | date: "%B %-d, %Y" }}</span>
           {% endif %}
         </p>
