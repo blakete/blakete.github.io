@@ -28,7 +28,24 @@ While this doesn't directly confirm that NNs are discovering fundamentally more 
 
 **If we develop methods to successfully extract or synthesize formalized algorithms from neural networks, then we could potentially combine the best aspects of both approaches: interpretable algorithms that we can formally reason about (e.g., providing rigorous safety guarantees), while potentially achieving even better performance by avoiding reliance on over-parameterized, overfit neural approximations.** I have not properly surveyed published research in this domain, but I suspect that using neural networks as tools for discovering latent algorithmic structure and synthesizing new algorithms is under-explored and rich with potential.
 
+Outstanding key questions I have:
+
+1. What criteria distinguish algorithmic behavior from data interpolation or memorization?
+2. How to convert NN weights into symbolic and/or procedural logic?
+    * NNs knowledge is highly distributed and entangled across its many weights and activations. Tools to reverse engineer (like mechanistic interpretability) or distill these learned computational procedures into symbolic or procedural forms.
+3. How should we train NNs to make them amenable to this type of program extraction / synthesis?
+
 I look forward to seeing more researchers explore this promising intersection between neural network discovery and formal algorithm synthesis, as it may hold significant potential for advancing both theory and practice.
+
+---
+
+### UPDATE (05-10-2025)
+
+Further investigation confirms that researchers have recently made meaningful strides toward the goal of extracting interpretable algorithms from trained neural networks:
+
+* Decision Trees from Neural Policies: SymbolicPCC [^7] distilled a deep RL congestion control policy into a symbolic decision tree that retains and even exceeds the original NN performance, providing a white-box, verifiable algorithm that can replace the "black-box" NN policy.
+* Finite-State Machines from Transformers: this work [^8] showed how to extract Moore machines (a type of deterministic finite automata) from transformer models by abstracting attention dynamics into structured automaton transitions, revealing formal grammar-like behavior in learned models.
+* Pseudocode from Recurrent Networks: Mechanistic Interpretable Program Synthesis (MIPS) [^9] [^10] directly reverse-engineered trained RNNs into human-readable Python code for dozens of algorithmic tasks. MIPS is one of the clearest example to date of converting raw neural weights into symbolic, procedural logic.
 
 ### References
 
@@ -37,3 +54,8 @@ I look forward to seeing more researchers explore this promising intersection be
 [^3]: [Fawzi et al. (2022). Discovering faster matrix multiplication algorithms with reinforcement learning. *Nature*, 610(7930), 47–53.](https://www.nature.com/articles/s41586-022-05172-4)  
 [^4]: [Desai & Strachan (2021). Parsimonious neural networks learn interpretable physical laws. *Scientific Reports*, 11, 12761.](https://www.nature.com/articles/s41598-021-92278-w)  
 [^5]: [Lemos et al. (2023). Rediscovering orbital mechanics with machine learning. *MLST*, 4(4), 045002.](https://iopscience.iop.org/article/10.1088/2632-2153/acfa63/meta)
+[^6]: [Kant, N. (2018). Recent advances in neural program synthesis. arXiv preprint arXiv:1802.02353.]()
+[^7]: [Sharan, S. P., Zheng, W., Hsu, K. F., Xing, J., Chen, A., & Wang, Z. (2022). Symbolic distillation for learned TCP congestion control. Advances in Neural Information Processing Systems, 35, 10684-10695.](https://openreview.net/pdf?id=rDT-n9xysO)
+[^8]: [Adriaensen, R., & Maene, J. (2024). Extracting Finite State Machines from Transformers. arXiv preprint arXiv:2410.06045.](https://arxiv.org/abs/2410.06045)
+[^9]: [Tegmark, M., & Omohundro, S. (2023). Provably safe systems: the only path to controllable AGI. arXiv preprint arXiv:2309.01933.](https://arxiv.org/abs/2309.01933)
+[^10]: [Michaud, E. J., Liao, I., Lad, V., Liu, Z., Mudide, A., Loughridge, C., ... & Tegmark, M. (2024). Opening the ai black box: program synthesis via mechanistic interpretability. arXiv preprint arXiv:2402.05110.](https://arxiv.org/abs/2402.05110)

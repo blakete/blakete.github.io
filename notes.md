@@ -26,7 +26,7 @@ A growing digital garden of notes and ideas 🌱 ✨
           {% assign updated_str = wiki_page.last_updated | date: "%Y-%m-%d" %}
           
           {% if wiki_page.last_updated and date_str != updated_str %}
-            • Last Updated: {{ wiki_page.last_updated | date: "%B %-d, %Y" }}
+            • Last Update: {{ wiki_page.last_updated | date: "%B %-d, %Y" }}
           {% endif %}
         </p>
       
