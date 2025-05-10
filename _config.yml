@@ -45,6 +45,3 @@ header_pages:
   - publications.md
   - about.md
   - contact.md
-
-include:
-  - private_local
