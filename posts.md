@@ -26,7 +26,7 @@ Emissions from my stream of consciousness 🪄
           {% endif %}
           
           {% if post.last_updated and post.last_updated != post.date %}
-            • Last Updated: {{ post.last_updated | date: "%B %-d, %Y" }}
+            • Last Update: {{ post.last_updated | date: "%B %-d, %Y" }}
           {% endif %}
         </p>
         
