@@ -3,6 +3,8 @@ layout: post
 title: "Frequentist vs. Bayesian Approaches to SMC"
 date: 2025-05-02
 last_updated: 2025-05-02
+author:
+- Blake Edwards
 tags: [formal verification, model checking, statistical model checking]
 permalink: /wiki/frequentist-vs-bayesian-smc
 hidden_from_wiki: false

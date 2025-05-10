@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-# About
-
 Hello, I’m Blake! :) I am currently a graduate student at MIT AeroAstro, where I research intelligent, autonomous, robotic systems and how we can make them worthy of our trust. This page serves as a central hub for my work, thoughts, and evolving ideas.
 
 This site is also a space for me to experiment, explore, and organize topics that spark my interest. As I gather insights and learn more, I’ll continue to update and refine this archive.

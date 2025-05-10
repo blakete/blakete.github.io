@@ -4,8 +4,6 @@ title: Notes
 permalink: /
 ---
 
-# Notes
-
 My personal wiki ✨
 
 <div class="wiki-list">
