@@ -20,11 +20,15 @@ Emissions from my stream of consciousness 🪄
         <h3 style="margin-bottom: 0px; margin-top: 0px;">
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h3>
-        <p><strong>Published:</strong> {{ post.date | date: "%B %-d, %Y" }}</p>
-        
-        {% if post.last_updated %}
-          <p><strong>Last Update:</strong> {{ post.last_updated | date: "%B %-d, %Y" }}</p>
-        {% endif %}
+        <p>
+          {% if post.date %}
+            {{ post.date | date: "%B %-d, %Y" }}
+          {% endif %}
+          
+          {% if post.last_updated and post.last_updated != post.date %}
+            • Last Updated: {{ post.last_updated | date: "%B %-d, %Y" }}
+          {% endif %}
+        </p>
         
         <p><strong>Tags:</strong> 
           {% if post.tags %}
