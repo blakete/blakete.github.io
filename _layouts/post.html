@@ -25,23 +25,29 @@ layout: base
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.modified_date -%}
-        ~ 
-        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
-        </time>
-      {%- endif -%}
       {%- if page.author -%}
-        • {% for author in page.author %}
+        {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
+            <span class="p-author h-card" itemprop="name">{{ author }}</span>
+          </span>{% unless forloop.last %}, {% endunless %}
         {% endfor %}
-      {%- endif -%}</p>
+        • 
+      {%- endif -%}
+      <span>
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: date_format }}
+        </time>
+      </span>
+      {%- if page.last_updated and page.last_updated != page.date -%}
+        • 
+        <span>
+          Last Updated:
+          <time class="dt-modified" datetime="{{ page.last_updated | date_to_xmlschema }}" itemprop="dateModified">
+            {{ page.last_updated | date: date_format }}
+          </time>
+        </span>
+      {%- endif -%}
+    </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
