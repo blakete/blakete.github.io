@@ -13,13 +13,15 @@ layout: base
             <span class="p-author h-card" itemprop="name">{{ author }}</span>
           </span>{% unless forloop.last %}, {% endunless %}
         {% endfor %}
-        • 
+        {%- if page.date -%} • {% endif %}
       {%- endif -%}
+      {%- if page.date -%}
       <span>
         <time datetime="{{ page.date | date_to_xmlschema }}">
           {{ page.date | date: date_format }}
         </time>
       </span>
+      {%- endif -%}
       {%- if page.last_updated and page.last_updated != page.date -%}
         • 
         <span>
