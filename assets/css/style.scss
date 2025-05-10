@@ -7,7 +7,7 @@
   "minima/initialize";
 
 // Custom styles for tags
-.post-tag, .wiki-tag, .private-tag {
+.post-tag, .wiki-tag {
   display: inline-block;
   background-color: #444;
   color: #fff;
@@ -25,9 +25,10 @@
   background-color: #5e9b42;
 }
 
-.private-tag {
-  background-color: #8e44ad;
-}
+// Private-related styles are only used locally
+// .private-tag {
+//   background-color: #8e44ad;
+// }
 
 // .post-tags, .wiki-tags {
 //   margin-bottom: 15px;
@@ -49,13 +50,13 @@
 }
 
 // Add styling for Published, Last Updated, and Tags paragraphs
-.wiki-entry p, .post-item p, .private-entry p {
+.wiki-entry p, .post-item p {
   margin-top: 7px;
   margin-bottom: 7px;
 }
 
 // Keep the default margin-bottom for the last paragraph (Tags)
-.wiki-entry p:last-of-type, .post-item p:last-of-type, .private-entry p:last-of-type {
+.wiki-entry p:last-of-type, .post-item p:last-of-type {
   margin-bottom: 15px;
 }
 
