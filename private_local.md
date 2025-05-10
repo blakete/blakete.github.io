@@ -24,7 +24,7 @@ permalink: /private_local/
             <time>{{ private_page.date | date: "%B %-d, %Y" }}</time>
             
             {% if private_page.last_updated and private_page.last_updated != private_page.date %}
-              • <span>Last Updated: {{ private_page.last_updated | date: "%B %-d, %Y" }}</span>
+              • <span>Last Update: {{ private_page.last_updated | date: "%B %-d, %Y" }}</span>
             {% endif %}
           </p>
         {% endif %}
