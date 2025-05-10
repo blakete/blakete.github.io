@@ -22,14 +22,19 @@ layout: base
         </time>
       </span>
       {%- endif -%}
-      {%- if page.last_updated and page.last_updated != page.date -%}
-        • 
-        <span>
-          Last Updated:
-          <time datetime="{{ page.last_updated | date_to_xmlschema }}">
-            {{ page.last_updated | date: date_format }}
-          </time>
-        </span>
+      
+      {%- if page.last_updated -%}
+        {%- assign date_str = page.date | date: "%Y-%m-%d" -%}
+        {%- assign updated_str = page.last_updated | date: "%Y-%m-%d" -%}
+        {%- if date_str != updated_str -%}
+          • 
+          <span>
+            Last Updated:
+            <time datetime="{{ page.last_updated | date_to_xmlschema }}">
+              {{ page.last_updated | date: date_format }}
+            </time>
+          </span>
+        {%- endif -%}
       {%- endif -%}
     </p>
   </header>
