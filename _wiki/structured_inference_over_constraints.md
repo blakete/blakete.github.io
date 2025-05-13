@@ -17,7 +17,7 @@ This document also serves as a personal reference that I will use to study and i
 
 The remainder of this note presents the purpose, structure, and practical boundaries of the “Structured Inference Over Constraints” framework, showing how diverse tasks from search to learning to theorem proving can be unified, and where this perspective may fall short.
 
-## Why the name “Structured Inference Over Constraints”?
+### Why “Structured Inference Over Constraints”?
 
 We chose this name to emphasize two complementary dimensions of modern computational reasoning:
 
@@ -26,7 +26,7 @@ We chose this name to emphasize two complementary dimensions of modern computati
 
 This dual perspective transcends the narrower notion of “constrained optimization,” which implies only minimizing an objective subject to fixed conditions. Our terminology captures both optimizing within constraints and optimizing the constraints themselves, ensuring the framework is both comprehensive and nuanced.
 
-## Unifying Perspective: Structured Inference Over Constraints
+### Unifying Perspective: Structured Inference Over Constraints
 
 **Core Schema**
 - **Domain** ($\mathcal{S}$): states, proofs, parameters, programs, policies, etc.
@@ -69,11 +69,11 @@ This dual perspective transcends the narrower notion of “constrained optimizat
 
 ---
 
-## Where It's Useful & Where It's NOT
+### Where It's Useful & Where It's NOT
 
 As a high-level conceptual map, not a one-size-fits-all solution. Pair it with deep domain knowledge, careful representation design, and human-centered considerations to build real-world intelligent systems.
 
-### Key Limits & Pitfalls
+#### Key Limits & Pitfalls
 
 - **Representation & Structure**: Domain-specific grammars, inductive biases, and symbolic structures often lead to more efficient or meaningful solutions than generic formulations.
 - **Interaction & Dynamics**: Real-time systems, human-in-the-loop setups, and multi-agent environments involve feedback loops and adaptivity beyond a single static solution $s$.
