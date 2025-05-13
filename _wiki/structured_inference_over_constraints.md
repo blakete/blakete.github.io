@@ -17,12 +17,14 @@ This document also serves as a personal reference that I will use to study and i
 
 The remainder of this note presents the purpose, structure, and practical boundaries of the “Structured Inference Over Constraints” framework, showing how diverse tasks from search to learning to theorem proving can be unified, and where this perspective may fall short.
 
-> **Why “Structured Inference Over Constraints”?**
-> We chose this name to emphasize two complementary dimensions of modern computational reasoning:
-> 1. **Inference under Constraints**: Performing search, optimization, and verification within fixed hard constraints (logical, safety, feasibility) and soft objectives (costs, losses, rewards).
-> 2. **Meta-Inference over Constraints**: Treating constraints themselves as variables to be learned, abstracted, relaxed, or synthesized—optimizing over the space of possible specifications, abstractions, and reward functions.
->
-> This dual perspective transcends the narrower notion of “constrained optimization,” which implies only minimizing an objective subject to fixed conditions. Our terminology captures both optimizing within constraints and optimizing the constraints themselves, ensuring the framework is both comprehensive and nuanced.
+## Why the name “Structured Inference Over Constraints”?
+
+We chose this name to emphasize two complementary dimensions of modern computational reasoning:
+
+1. **Inference under Constraints**: Performing search, optimization, and verification within fixed hard constraints (logical, safety, feasibility) and soft objectives (costs, losses, rewards).
+2. **Meta-Inference over Constraints**: Treating constraints themselves as variables to be learned, abstracted, relaxed, or synthesized—optimizing over the space of possible specifications, abstractions, and reward functions.
+
+This dual perspective transcends the narrower notion of “constrained optimization,” which implies only minimizing an objective subject to fixed conditions. Our terminology captures both optimizing within constraints and optimizing the constraints themselves, ensuring the framework is both comprehensive and nuanced.
 
 ## Unifying Perspective: Structured Inference Over Constraints
 
