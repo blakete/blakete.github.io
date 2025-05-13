@@ -19,7 +19,7 @@ The remainder of this note presents the purpose, structure, and practical bounda
 
 ### Why “Structured Inference Over Constraints”?
 
-We chose this name to emphasize two complementary dimensions of modern computational reasoning:
+I chose this name to emphasize two complementary dimensions of modern computational reasoning:
 
 1. **Inference under Constraints**: Performing search, optimization, and verification within fixed hard constraints (logical, safety, feasibility) and soft objectives (costs, losses, rewards).
 2. **Meta-Inference over Constraints**: Treating constraints themselves as variables to be learned, abstracted, relaxed, or synthesized—optimizing over the space of possible specifications, abstractions, and reward functions.
@@ -72,7 +72,7 @@ This dual perspective transcends the narrower notion of “constrained optimizat
 
 - **Formal Verification (Model Checking)**
   - $\mathcal{S}$: system executions or transition paths
-  - $C(s)$: satisfaction of temporal logic formula (e.g., $P_{\geq 0.95}(\text{F } \text{safe})$ in a DTMC)
+  - $C(s)$: satisfaction of probabilistic temporal logic formula (e.g., $P_{\geq 0.95}(\text{F } \text{safe})$ in a DTMC)
   - $f$: counterexample length or probability of violation
 
 - **Abstraction & Meta-Inference**
