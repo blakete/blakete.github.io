@@ -42,27 +42,39 @@ This dual perspective transcends the narrower notion of “constrained optimizat
 - **Formal Verification**: Show $\forall s, C(s)$ holds, or find $s$ that violates it (e.g., symbolic model checking of DTMCs against PCTL or LTL specifications).
 
 **Example Instantiations**
+- **Pathfinding and Classical Search**
+  - $\mathcal{S}$: possible paths or action sequences
+  - $C(s)$: reaches goal state without violating constraints (e.g., obstacles, bounds)
+  - $f(s)$: path length or cost
+  - **Goal**: find an optimal or feasible path
+
 - **Constraint Satisfaction (CSP/SAT)**
   - $\mathcal{S}$: variable assignments
   - $C(s)$: formula or predicate satisfaction
   - $f$: none (pure feasibility search)
+
 - **Constrained Optimization**
   - $\mathcal{S} = \mathbb{R}^n$
   - $C$: algebraic constraints (e.g., $Ax \leq b$)
   - $f$: scalar cost or objective function
   - **Goal**: find a feasible $s$ that minimizes $f(s)$
-- **Learning (Empirical Risk Minimization)**
-  - $\mathcal{S}$: model parameters $\theta$
-  - $f(\theta)$: empirical loss on data
-  - $C$: regularization constraints, architectural priors
+
+- **Machine Learning (Classical Supervised Learning)**
+  - $\mathcal{S}$: model parameters or function classes
+  - $C$: satisfies training or architectural constraints (e.g., parameter bounds, input-output type)
+  - $f$: prediction error or generalization loss on data
+  - **Goal**: learn a model that minimizes error while remaining feasible
+
 - **Theorem Proving**
   - $\mathcal{S}$: sequences of inference steps
   - $C$: well-formed derivation from axioms to goal
   - $f$: proof length, complexity, or heuristic score
+
 - **Formal Verification (Model Checking)**
   - $\mathcal{S}$: system executions or transition paths
   - $C(s)$: satisfaction of temporal logic formula (e.g., $P_{\geq 0.95}(\text{F } \text{safe})$ in a DTMC)
   - $f$: counterexample length or probability of violation
+
 - **Abstraction & Meta-Inference**
   - $\mathcal{C}$: abstraction domains, specifications, or automata
   - **Goal**: choose a constraint representation $C$ that balances tractability and precision
