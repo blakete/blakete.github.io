@@ -1,16 +1,13 @@
-—
+---
 layout: post
-title: “Structured Inference Over Constraints: A Unifying Mental Model of Search, Optimization, Learning, Planning, …”
+title: "Structured Inference Over Constraints"
 date: 2025-05-13
 last_updated: 2025-05-13
 author:
 - Blake Edwards
 tags: [experimental, mental model, artificial intelligence]
-permalink: /wiki/structured-inference-over-constraints
-hidden_from_wiki: false
-—
-
-# Structured Inference Over Constraints
+permalink: /wiki/structured-inference
+---
 
 This note introduces the **Structured Inference Over Constraints** framework and mental model that I came up with and have been experimenting with. This mental model is intriguing because it attempts to provide a unified perspective that treats search, optimization, learning, theorem proving, and even constraint discovery as instances of inference over structured domains with hard and soft constraints.
 
