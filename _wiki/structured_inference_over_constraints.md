@@ -7,7 +7,7 @@ author:
 - Blake Edwards
 tags: [experimental, mental model, artificial intelligence]
 permalink: /wiki/structured-inference
-hidden_from_wiki: true
+hidden_from_wiki: false
 ---
 
 This note introduces the **Structured Inference Over Constraints** framework and mental model that I came up with and have been experimenting with. This mental model is intriguing because it attempts to provide a unified perspective that treats search, optimization, learning, theorem proving, and even constraint discovery as instances of inference over structured domains with hard and soft constraints.
