@@ -7,7 +7,7 @@ author:
 - Blake Edwards
 tags: [experimental, mental model, artificial intelligence]
 permalink: /wiki/structured-inference-over-constraints
-hidden_from_wiki: true
+hidden_from_wiki: false
 —
 
 # Structured Inference Over Constraints
