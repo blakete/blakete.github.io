@@ -35,7 +35,7 @@ This dual perspective transcends the narrower notion of “constrained optimizat
 - **Constraint Space** (optional, $\mathcal{C}$): for learning, abstracting, or optimizing the constraints themselves.
 
 **Inference Goals**
-- **Search**: Find $s$ such that $C(s) = \text{true}$ (e.g., CSPs, SAT solving, pathfinding).
+- **Search**: Find $s$ such that $C(s) = \text{true}$ (e.g., pathfinding, CSPs, SAT solving).
 - **Optimization**: Find $s^* = \arg\min_{C(s)} f(s)$ (e.g., numeric optimization, reinforcement learning).
 - **Learning / Synthesis**: Infer $\theta$ or $(s, C)$ to minimize loss and fit data or examples (e.g., supervised learning, inverse reinforcement learning).
 - **Theorem Proving**: Search over proof trees or derivation sequences $s$ such that $C(s)$ is a valid proof (e.g., Metamath, Coq, HOL).
@@ -67,13 +67,16 @@ This dual perspective transcends the narrower notion of “constrained optimizat
   - $\mathcal{C}$: abstraction domains, specifications, or automata
   - **Goal**: choose a constraint representation $C$ that balances tractability and precision
 
-—
+---
 
-## Limits & Pitfalls of the Model
+## Where It's Useful & Where It's NOT
+
+As a high-level conceptual map, not a one-size-fits-all solution. Pair it with deep domain knowledge, careful representation design, and human-centered considerations to build real-world intelligent systems.
+
+### Key Limits & Pitfalls
 
 - **Representation & Structure**: Domain-specific grammars, inductive biases, and symbolic structures often lead to more efficient or meaningful solutions than generic formulations.
 - **Interaction & Dynamics**: Real-time systems, human-in-the-loop setups, and multi-agent environments involve feedback loops and adaptivity beyond a single static solution $s$.
 - **Complexity Barriers**: Many problems are undecidable or computationally hard (e.g., PSPACE-complete), which may not be obvious under this abstraction.
 - **Normative & Semantic Depth**: Values like safety, fairness, or ethics often resist crisp formulation as $f$ or $C$ and require interpretability, stakeholder input, or procedural guarantees.
 
-Use this framework as a high-level conceptual map, not a one-size-fits-all solution. Pair it with deep domain knowledge, careful representation design, and human-centered considerations to build real-world intelligent systems.
