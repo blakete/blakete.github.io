@@ -6,7 +6,7 @@ last_updated: 2025-05-11
 author:
 - Blake Edwards
 tags: [safe AI, safe autonomy, verification]
-permalink: /wiki/neural-networks-discovering-new-computational-reducibility
+permalink: /wiki/keys-to-verifying-ai-and-autonomy
 hidden_from_wiki: true
 ---
 
