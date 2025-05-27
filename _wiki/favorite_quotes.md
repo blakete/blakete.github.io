@@ -7,7 +7,8 @@ author:
 - Blake Edwards
 tags: [experimental]
 permalink: /wiki/my-favorite-quotes
-hidden_from_wiki: false
+hidden_from_wiki: true
+hidden_from_secret_wiki: false
 ---
 
 <blockquote class="otro-blockquote">

@@ -7,7 +7,8 @@ author:
 - Blake Edwards
 tags: [test, experimental]
 permalink: /wiki/notes-on-Jaynes-prob-theory
-hidden_from_wiki: false
+hidden_from_wiki: true
+hidden_from_secret_wiki: false
 ---
 
 <div style="text-align: center; margin-top: 1em;">

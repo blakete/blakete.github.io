@@ -36,7 +36,7 @@ github_username: blakete
 collections:
   wiki:
     output: true
-    permalink: /wiki/:path/
+    permalink: /:collection/:title/
 
 # Navigation
 header_pages:

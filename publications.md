@@ -4,7 +4,7 @@ title: Publications
 permalink: /publications/
 ---
 
-View my [Google Scholar profile](https://scholar.google.com/citations?user=xiM0_6sAAAAJ&hl=en).
+<!-- View my [Google Scholar profile](https://scholar.google.com/citations?user=xiM0_6sAAAAJ&hl=en). -->
 
 ## 2024
 

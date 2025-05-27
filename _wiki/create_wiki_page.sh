@@ -18,15 +18,26 @@ slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9
 # Generate the filename
 filename="${slug}.md"
 
+# Ask if this should be a secret note
+read -p "Should this be a secret note? (y/n): " is_secret_note
+if [ "$is_secret_note" = "y" ]; then
+  hidden_from_wiki="true"
+  hidden_from_secret_wiki="false"
+else
+  hidden_from_wiki="false"
+  hidden_from_secret_wiki="true"
+fi
+
 # Create (or overwrite) the file with the wiki page header.
 cat > "$filename" <<EOF
 ---
-layout: page
+layout: wiki_page
 title: "$title"
 date: $current_date
 last_updated: $current_date
 tags: [wiki]
-permalink: /wiki/${slug}/
+hidden_from_wiki: ${hidden_from_wiki}
+hidden_from_secret_wiki: ${hidden_from_secret_wiki}
 ---
 
 A brief introduction to $title.

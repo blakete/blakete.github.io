@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: wiki_page
 title: "Fundamental AI Concepts"
 date: 2025-01-30
 last_updated: 2025-01-30
