@@ -1,11 +1,12 @@
 ---
-layout: page
+layout: wiki_page
 title: "Posterior"
 date: 2025-04-16
 last_updated: 2025-04-16
 tags: [wiki, dictionary]
 permalink: /wiki/posterior/
 hidden_from_wiki: true
+hidden_from_secret_wiki: false
 ---
 
 ## Posterior 

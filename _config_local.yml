@@ -4,4 +4,4 @@ include:
 collections:
   private_local:
     output: true
-    permalink: /private_local/:path/
+    permalink: /secret-notes/:path/

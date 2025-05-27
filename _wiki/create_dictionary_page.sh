@@ -21,13 +21,13 @@ filename="${slug}.md"
 # Create (or overwrite) the file with the wiki page header.
 cat > "$filename" <<EOF
 ---
-layout: page
+layout: wiki_page
 title: "$title"
 date: $current_date
 last_updated: $current_date
 tags: [wiki, dictionary]
-permalink: /wiki/${slug}/
 hidden_from_wiki: true
+hidden_from_secret_wiki: false
 ---
 
 ## $title
