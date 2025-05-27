@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Notes
-permalink: /
+title: Not So Secret Notes 🔮
+permalink: /not-so-secret-notes
 ---
 
-An evolving digital garden of <a href="https://en.wikipedia.org/wiki/Hypertext">hypertext</a> notes and ideas 🌱 <a href="/not-so-secret-notes" style="text-decoration: none;">✨</a>
+An evolving digital garden of <a href="https://en.wikipedia.org/wiki/Hypertext">hypertext</a> notes and ideas 🌱 <a href="/" style="text-decoration: none;">✨</a>
 
 <div class="wiki-list">
   <hr>
@@ -12,7 +12,7 @@ An evolving digital garden of <a href="https://en.wikipedia.org/wiki/Hypertext">
   {% assign visible_count = 0 %}
 
   {% for wiki_page in sorted_wiki %}
-    {% unless wiki_page.hidden_from_wiki %}
+    {% unless wiki_page.hidden_from_secret_wiki %}
       {% assign visible_count = visible_count | plus: 1 %}
       <div class="wiki-entry">
         <h3 style="margin-bottom: 0px;">

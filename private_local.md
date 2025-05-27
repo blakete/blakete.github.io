@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Private Notes
-permalink: /private_local/
+title: Secret Notes 🔒
+permalink: /secret-notes
 ---
 
 {% if jekyll.environment == "development" %}
-  My personal private notes 🔒
+  An evolving digital garden of hypertext notes and ideas 🌱 ✨
   
   <div class="private-list">
     <hr>

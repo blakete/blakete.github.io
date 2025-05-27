@@ -1,11 +1,11 @@
 ---
-layout: page
+layout: wiki_page
 title: "Boilerplate Wiki Page"
 date: 2025-01-01
 last_updated: 2025-01-01
 tags: [wiki, tag1, tag2]
-permalink: /wiki/url-slug/
 hidden_from_wiki: true
+hidden_from_secret_wiki: true
 ---
 
 Brief introduction to the topic.

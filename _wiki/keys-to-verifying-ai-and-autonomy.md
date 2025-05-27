@@ -5,9 +5,10 @@ date: 2025-05-11
 last_updated: 2025-05-11
 author:
 - Blake Edwards
-tags: [safe AI, safe autonomy, verification]
+tags: [incomplete, experimental, safe AI, safe autonomy, verification]
 permalink: /wiki/keys-to-verifying-ai-and-autonomy
 hidden_from_wiki: true
+hidden_from_secret_wiki: false
 ---
 
 ## Fundamental Basis and Motivation
