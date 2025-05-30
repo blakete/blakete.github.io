@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Minimum Free-Energy Principle ⚡"
+title: "Principle of Minimum Free-Energy ⚡"
 date: 2025-05-28
 last_updated: 2025-05-28
 author:
