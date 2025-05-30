@@ -1,0 +1,1 @@
+Boltzmann (Gibbs) distribution over trajectories
