@@ -8,7 +8,7 @@ author:
 tags: [control theory, artificial intelligence, robotics, computer science]
 permalink: /wiki/control_as_inference
 hidden_from_wiki: true
-hidden_from_secret_wiki: false
+hidden_from_secret_wiki: true
 ---
 
 ---
