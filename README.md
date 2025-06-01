@@ -85,6 +85,7 @@ hidden_from_posts: true
 
 This allows you to create drafts or private content that won't appear in public listings but can still be accessed directly by URL if you know the path.
 
-## Webpage Design Inspiration Credits
+## Inspiration Credits
 
 - https://siboehm.com/
+- https://dilithjay.com/
