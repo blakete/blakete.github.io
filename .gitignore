@@ -1,6 +1,8 @@
 # IMPORTANT: Local files that are private until later publication
 private_local/
 _private_local/
+_private_local
+_private_local_deprecated_bak/
 
 # Jekyll's compiled site
 _site/
@@ -20,5 +22,6 @@ node_modules/
 
 # OS/Editor cache files
 .DS_Store
-Thumbs.db_private_local_deprecated_bak/
+Thumbs.db
+
 Gemfile.lock
