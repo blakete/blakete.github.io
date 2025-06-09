@@ -20,4 +20,5 @@ node_modules/
 
 # OS/Editor cache files
 .DS_Store
-Thumbs.db
+Thumbs.db_private_local_deprecated_bak/
+Gemfile.lock
