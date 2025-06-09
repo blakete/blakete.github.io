@@ -12,6 +12,11 @@ hidden_from_secret_wiki: false
 ---
 
 <blockquote class="otro-blockquote">
+  “Design your data schema around your queries, not the other way around.”
+  <span>Unknown</span>
+</blockquote>
+
+<blockquote class="otro-blockquote">
   “If you can hold it in your head, you can hold it in your hand.”
   <span>Bob Proctor</span>
 </blockquote>
