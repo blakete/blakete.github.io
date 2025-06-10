@@ -6,8 +6,11 @@ permalink: /secret-notes/views
 
 {% if jekyll.environment == "development" %}
   <div class="view-navigation">
+<<<<<<< HEAD
     <p><a href="/secret-notes">← Back to Notes</a></p>
     
+=======
+>>>>>>> 322b291 (working symlink views)
     <p>Explore your notes by category:</p>
     
     <ul class="view-directory-list">
