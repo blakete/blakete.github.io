@@ -41,6 +41,14 @@ permalink: /secret-notes
               {% endif %}
             </p>
           {% endif %}
+          
+          {% if private_page.tags %}
+            <p class="tags">
+              {% for tag in private_page.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </p>
+          {% endif %}
         </div>
         <hr>
       {% endif %}
@@ -54,3 +62,19 @@ permalink: /secret-notes
 {% else %}
   <p>This content is only available in the local development environment.</p>
 {% endif %}
+
+<style>
+.tags {
+  margin-top: 0.5em;
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--brand-color-light, #f0f0f0);
+  padding: 0.2em 0.5em;
+  margin-right: 0.3em;
+  border-radius: 3px;
+  font-size: 0.8em;
+  color: var(--text-color, #333);
+}
+</style>
