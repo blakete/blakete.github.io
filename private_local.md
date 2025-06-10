@@ -7,9 +7,11 @@ permalink: /secret-notes
 {% if jekyll.environment == "development" %}
   An evolving digital garden of hypertext notes and ideas 🌱 ✨
   
+  <p><a href="/secret-notes/views" class="views-link">🗂️ Browse by View</a></p>
+  
   <div class="private-list">
     <hr>
-    {% assign sorted_private = site.private_local | sort: 'date' | reverse %}
+    {% assign sorted_private = site.private_local | where_exp: "item", "item.is_symlink != true" | sort: 'date' | reverse %}
     {% assign visible_count = 0 %}
   
     {% for private_page in sorted_private %}
