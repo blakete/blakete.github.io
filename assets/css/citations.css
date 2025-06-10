@@ -1,0 +1,33 @@
+/* Citation Styles */
+.noshow {
+  display: none;
+}
+
+.bibliography li {
+  margin-bottom: 20px;
+}
+
+.bibtex {
+  font-family: monospace;
+  white-space: pre-wrap;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+}
+
+.citation-links {
+  margin-left: 0;
+  font-size: 0.9em;
+}
+
+.citation-links a {
+  margin-right: 8px;
+  text-decoration: none;
+  color: #0077be;
+}
+
+.citation-links a:hover {
+  text-decoration: underline;
+} 
