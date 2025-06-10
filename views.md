@@ -6,6 +6,8 @@ permalink: /secret-notes/views
 
 {% if jekyll.environment == "development" %}
   <div class="view-navigation">
+    <p><a href="/secret-notes">← Back to Notes</a></p>
+    
     <p>Explore your notes by category:</p>
     
     <ul class="view-directory-list">
