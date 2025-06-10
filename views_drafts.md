@@ -7,8 +7,7 @@ permalink: /secret-notes/views/drafts
 {% if jekyll.environment == "development" %}
   <div class="view-navigation">
     <p><a href="/secret-notes/views">← Back to Views</a></p>
-    
-    <h2>Drafts</h2>
+    <!-- <h2>Drafts</h2> -->
     <p>Work in progress and draft notes:</p>
     
     <div class="private-list">

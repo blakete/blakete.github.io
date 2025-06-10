@@ -7,8 +7,7 @@ permalink: /secret-notes/views/definition
 {% if jekyll.environment == "development" %}
   <div class="view-navigation">
     <p><a href="/secret-notes/views">← Back to Views</a></p>
-    
-    <h2>Definitions</h2>
+    <!-- <h2>Definitions</h2> -->
     <p>Conceptual definitions and explanations:</p>
     
     <div class="private-list">

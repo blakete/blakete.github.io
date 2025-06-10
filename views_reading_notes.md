@@ -8,7 +8,7 @@ permalink: /secret-notes/views/reading_notes
   <div class="view-navigation">
     <p><a href="/secret-notes/views">← Back to Views</a></p>
     
-    <h2>Reading Notes</h2>
+    <!-- <h2>Reading Notes</h2> -->
     <p>Notes and insights from papers and research:</p>
     
     <div class="private-list">
