@@ -1,21 +1,21 @@
 ---
 layout: page
-title: Definitions 📖
-permalink: /secret-notes/views/definitions
+title: Wiki 📚
+permalink: /secret-notes/views/wiki
 ---
 
 {% if jekyll.environment == "development" %}
   <div class="view-navigation">
     <p><a href="/secret-notes/views">← Back to Views</a></p>
-    <!-- <h2>Definitions</h2> -->
-    <p>Conceptual definitions and explanations:</p>
+    <!-- <h2>Wiki</h2> -->
+    <p>Knowledge base and reference materials:</p>
     
     <div class="private-list">
       <hr>
-      {% assign definition_pages = site.private_local | where_exp: "item", "item.view_category == 'definition'" | sort: 'title' %}
+      {% assign wiki_pages = site.private_local | where_exp: "item", "item.view_category == 'wiki'" | sort: 'title' %}
       {% assign visible_count = 0 %}
     
-      {% for page in definition_pages %}
+      {% for page in wiki_pages %}
         {% assign visible_count = visible_count | plus: 1 %}
         <div class="private-entry">
           <h3>
@@ -44,7 +44,7 @@ permalink: /secret-notes/views/definitions
       {% endfor %}
     
       {% if visible_count == 0 %}
-        <p><em>No definition notes available yet ✍️</em></p>
+        <p><em>No wiki pages available yet ✍️</em></p>
       {% endif %}
     </div>
   </div>
