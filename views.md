@@ -10,7 +10,7 @@ permalink: /secret-notes/views
     <p>Explore your notes by category:</p>
     <ul class="view-directory-list">
           <li><a href="/secret-notes/views/wiki" class="directory-link">📚 Wiki</a></li>
-      <li><a href="/secret-notes/views/definitions" class="directory-link">📖 Definition</a></li>
+      <li><a href="/secret-notes/views/definitions" class="directory-link">📖 Definitions</a></li>
       <li><a href="/secret-notes/views/reading_notes" class="directory-link">📚 Reading Notes</a></li>
             <li><a href="/secret-notes/views/ideas" class="directory-link">💡 Ideas</a></li>
       <li><a href="/secret-notes/views/drafts" class="directory-link">✏️ Drafts</a></li>
