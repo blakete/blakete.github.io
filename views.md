@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Secret Notes Views 📂
+title: Secret Notes Views 📷
 permalink: /secret-notes/views
 ---
 
