@@ -8,18 +8,17 @@ permalink: /secret-notes/views/ideas
   <div class="view-navigation">
     <p><a href="/secret-notes/views">← Back to Views</a></p>
     <!-- <h2>Ideas</h2> -->
-    <p>Creative concepts and innovative thoughts:</p>
-    
+    <p>Creative ideas and inspirations:</p>
     <div class="private-list">
       <hr>
-      {% assign idea_pages = site.private_local | where_exp: "item", "item.view_category == 'idea'" | sort: 'title' %}
+      {% assign idea_pages = site.private_local | where_exp: "item", "item.view_category == 'ideas'" | sort: 'last_updated' | reverse %}
       {% assign visible_count = 0 %}
-    
       {% for page in idea_pages %}
         {% assign visible_count = visible_count | plus: 1 %}
         <div class="private-entry">
           <h3>
             <a class="post-link" href="{{ page.url | relative_url }}">{{ page.title }}</a>
+            <!-- <span class="idea-badge">IDEA</span> -->
           </h3>
     
           {% if page.date %}
@@ -44,7 +43,7 @@ permalink: /secret-notes/views/ideas
       {% endfor %}
     
       {% if visible_count == 0 %}
-        <p><em>No idea notes available yet ✍️</em></p>
+        <p><em>No idea notes available yet 💡</em></p>
       {% endif %}
     </div>
   </div>
@@ -66,5 +65,17 @@ permalink: /secret-notes/views/ideas
   border-radius: 3px;
   font-size: 0.8em;
   color: var(--text-color, #333);
+}
+
+.idea-badge {
+  display: inline-block;
+  background-color: #4ecdc4;
+  color: white;
+  padding: 0.2em 0.5em;
+  margin-left: 0.5em;
+  border-radius: 3px;
+  font-size: 0.7em;
+  font-weight: bold;
+  vertical-align: top;
 }
 </style> 
