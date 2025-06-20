@@ -5,7 +5,7 @@ date: 2025-06-20
 last_updated: 2025-06-20
 author:
 - Blake Edwards
-tags: [mathematics, education, pedagogy]
+tags: [opinion piece, mathematics, education, pedagogy]
 permalink: /wiki/mathematical-priests-and-peasants
 hidden_from_wiki: false
 hidden_from_secret_wiki: true
