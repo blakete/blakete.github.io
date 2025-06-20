@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mathematical Priests and Peasants: How 80 Years of Backwards Math Education Embedded the Wrong Philosophy of Reality"
+title: "Mathematical Priests and Peasants: 80 Years of Backwards Math Education"
 date: 2025-06-20
 last_updated: 2025-06-20
 author:
