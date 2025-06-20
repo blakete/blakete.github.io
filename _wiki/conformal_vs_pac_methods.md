@@ -7,6 +7,8 @@ author:
 - Blake Edwards
 tags: [wiki, machine learning, uncertainty quantification, learning theory, comparison]
 permalink: /wiki/conformal-vs-pac-methods
+hidden_from_wiki: true
+hidden_from_secret_wiki: false
 ---
 
 This page provides a comprehensive comparison between **Conformal Prediction** and **Probably Approximately Correct (PAC) Learning** methods, two fundamentally different approaches to providing guarantees in machine learning.
