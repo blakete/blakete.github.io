@@ -21,4 +21,4 @@ Even worse, this isn't just about what mathematical topics we teach first, it's 
 
 So even when students eventually encounter 'advanced' mathematics, they're still thinking in terms of objects with properties being sorted into categories, rather than understanding that mathematical properties emerge from participation in universal constructions. Therefore, we have not just taught math backwards, but we have embedded a fundamentally limiting philosophical framework about what mathematical reality even is!
 
-A Category Theoretic basis does not have to replace our classic pipeline of arithmetic --> algebra --> calculus --> ..., but at least introducing and weaving its structural insights in from the start could turn more students into “proto-priests” rather than lifelong “peasants.”
+A category-theoretic pedagogical foundation doesn't need to replace the classic pipeline of arithmetic -> algebra -> calculus -> ..., but we should at least introduce and weave its structural insights in from the start. Doing so could help more students become 'proto-priests' rather than remain lifelong 'peasants.'
