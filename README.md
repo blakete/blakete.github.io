@@ -63,7 +63,7 @@ https://blakesnotes.io or https://blakete.github.io
     bundle exec jekyll serve --open-url --livereload --force_polling --config _config.yml,_config_local.yml
     ```
 
-    * Private locally staged pages are served to `http://127.0.0.1:4000/secret-notes`
+  * Private locally staged pages are served to `http://127.0.0.1:4000/secret-notes`
 
 ## Content Management
 
