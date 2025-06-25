@@ -58,8 +58,8 @@ EOF
 
 echo "Wiki page created: $filename"
 
-# Make the script executable
-chmod +x "$0"
+# # Make the script executable
+# chmod +x "$0"
 
 # Open the created file in nvim.
-nvim "$filename" 
+# nvim "$filename" 
