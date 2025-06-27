@@ -22,7 +22,7 @@ Emissions from my stream of consciousness 🪄
         </h3>
         <p>
           {% if post.date %}
-            {{ post.date | date: "%B %-d, %Y" }}
+            Published: {{ post.date | date: "%B %-d, %Y" }}
           {% endif %}
           
           {% if post.last_updated and post.last_updated != post.date %}
