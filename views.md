@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: private_page
 title: Secret Notes Views 📷
 permalink: /secret-notes/views
 ---
@@ -9,7 +9,7 @@ permalink: /secret-notes/views
     <p><a href="/secret-notes">← Back to Notes</a></p>
     <p>Explore your notes by category:</p>
     <ul class="view-directory-list">
-          <li><a href="/secret-notes/views/wiki" class="directory-link">📚 Wiki</a></li>
+      <li><a href="/secret-notes/views/wiki" class="directory-link">📚 Wiki</a></li>
       <li><a href="/secret-notes/views/definitions" class="directory-link">📖 Definitions</a></li>
       <li><a href="/secret-notes/views/reading_notes" class="directory-link">📚 Reading Notes</a></li>
       <li><a href="/secret-notes/views/ideas" class="directory-link">💡 Ideas</a></li>
@@ -45,4 +45,14 @@ permalink: /secret-notes/views
   background-color: var(--brand-color, #ccc);
   text-decoration: none;
 }
-</style> 
+
+@media (prefers-color-scheme: dark) {
+  .directory-link {
+    background-color: #3a3a3a;
+  }
+  
+  .directory-link:hover {
+    background-color: #4a4a4a;
+  }
+}
+</style>

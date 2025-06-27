@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: private_page
 title: Drafts ✏️
 permalink: /secret-notes/views/drafts
 ---

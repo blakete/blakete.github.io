@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: private_page
 title: Ideas 💡
 permalink: /secret-notes/views/ideas
 ---
