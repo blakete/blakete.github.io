@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: private_page
 title: Wiki 📚
 permalink: /secret-notes/views/wiki
 ---

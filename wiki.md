@@ -8,4 +8,4 @@ permalink: /wiki/
   window.location.href = "/";
 </script>
 
-<p>Redirecting to <a href="/">Notes</a>...</p> 
+<p>Redirecting to <a href="/">Notes</a>...</p>
