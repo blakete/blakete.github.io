@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: private_page
 title: Reading Notes 📚
 permalink: /secret-notes/views/reading_notes
 ---
