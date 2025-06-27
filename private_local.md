@@ -1,6 +1,6 @@
 ---
 layout: private_page
-title: Secret Notes 🔒
+title: Private Local Notes 🌱
 permalink: /secret-notes
 ---
 
@@ -34,7 +34,7 @@ permalink: /secret-notes
     
           {% if private_page.date %}
             <p>
-              <time>{{ private_page.date | date: "%B %-d, %Y" }}</time>
+              <time>Published: {{ private_page.date | date: "%B %-d, %Y" }}</time>
               
               {% if private_page.last_updated and private_page.last_updated != private_page.date %}
                 • <span>Last Update: {{ private_page.last_updated | date: "%B %-d, %Y" }}</span>

@@ -5,7 +5,7 @@ https://blakesnotes.io or https://blakete.github.io
 
 ## Prerequisites for Locally Building and Serving
 
-*  Ruby
+* Ruby
 
     ```console
     sudo apt update
@@ -27,7 +27,7 @@ https://blakesnotes.io or https://blakete.github.io
     gem install bundler jekyll
     ```
 
-    * May need to opne a new terminal session if you get a permissions error (`source ~/.bashrc` didn't do the trick for some reason). 
+  * May need to opne a new terminal session if you get a permissions error (`source ~/.bashrc` didn't do the trick for some reason).
 
 * NodeJs and npm
 
@@ -63,6 +63,14 @@ https://blakesnotes.io or https://blakete.github.io
     bundle exec jekyll serve --open-url --livereload --force_polling --config _config.yml,_config_local.yml
     ```
 
+    ```console
+    bundle exec jekyll serve --livereload --force_polling --config _config.yml,_config_local.yml & sleep 2 && open "http://127.0.0.1:4000/secret-notes"
+    ```
+
+    ```console
+    bundle exec jekyll serve --livereload --force_polling --config _config.yml,_config_local.yml & sleep 1 && open "http://127.0.0.1:4000/secret-notes/utdmuu_root"
+    ```
+
   * Private locally staged pages are served to `http://127.0.0.1:4000/secret-notes`
 
 ## Content Management
@@ -87,5 +95,5 @@ This allows you to create drafts or private content that won't appear in public 
 
 ## Inspiration Credits
 
-- https://siboehm.com/
-- https://dilithjay.com/
+* https://siboehm.com/
+* https://dilithjay.com/
