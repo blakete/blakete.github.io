@@ -12,7 +12,7 @@ permalink: /secret-notes/views/definitions
     
     <div class="private-list">
       <hr>
-      {% assign definition_pages = site.private_local | where_exp: "item", "item.view_category == 'definition'" | sort: 'title' %}
+      {% assign definition_pages = site.private_local | where_exp: "item", "item.view_category == 'definitions'" | sort: 'title' %}
       {% assign visible_count = 0 %}
     
       {% for page in definition_pages %}
