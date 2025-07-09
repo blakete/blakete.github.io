@@ -15,19 +15,25 @@ Since my early white-hat hacking experiments building inter-LAN-based P2P “bot
 
 <div style="text-align: center;">
   <a href="https://x.com/jack/status/1941989435962212728">
-      <img src="/assets/images/P2P_offline_mesh_chat/IMG_7133.jpeg" alt="Jack Dorsey's announcement of BitChat" style="height: 600px;">
+    <img 
+      src="/assets/images/P2P_offline_mesh_chat/IMG_7133.jpeg" 
+      alt="Jack Dorsey's announcement of BitChat" 
+      style="max-height: 600px; height: auto; width: 100%; max-width: 100%;">
   </a>
   <p style="margin-top: 10px; font-style: italic;">
-      <a href="https://x.com/jack">@Jack</a>'s original X/Twitter post announcing the release of BitChat.
+    <a href="https://x.com/jack">@Jack</a>'s original X/Twitter post announcing the release of BitChat.
   </p>
 </div>
 
 <div style="text-align: center;">
   <a href="https://x.com/callebtc/status/1942658144011714829">
-      <img src="/assets/images/P2P_offline_mesh_chat/IMG_7134.png" alt="Dr. Calle's Android port of BitChat" style="height: 600px;">
+    <img 
+      src="/assets/images/P2P_offline_mesh_chat/IMG_7134.png" 
+      alt="Dr. Calle's Android port of BitChat" 
+      style="max-height: 600px; height: auto; width: 100%; max-width: 100%;">
   </a>
   <p style="margin-top: 10px; font-style: italic;">
-      <a href="https://x.com/callebtc">@callebtc</a>'s follow up X/Twitter post announcing the release of an Android port of BitChat that is interoperable with <a href="https://x.com/jack">@Jack</a>'s iOS app.
+    <a href="https://x.com/callebtc">@callebtc</a>'s follow up X/Twitter post announcing the release of an Android port of BitChat that is interoperable with <a href="https://x.com/jack">@Jack</a>'s iOS app.
   </p>
 </div>
 
