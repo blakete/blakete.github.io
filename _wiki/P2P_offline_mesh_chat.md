@@ -5,7 +5,7 @@ date: 2025-07-08
 last_updated: 2025-07-08
 author:
 - Blake Edwards
-tags: [p2p, decentralized, mesh networking, digital sovereignty]
+tags: [decentralization, mesh networking, P2P communication, digital sovereignty]
 permalink: /wiki/bitmesh-hybrid-mesh-chat
 hidden_from_wiki: false
 hidden_from_secret_wiki: true
