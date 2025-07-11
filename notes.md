@@ -4,7 +4,7 @@ title: Notes
 permalink: /
 ---
 
-An evolving digital garden of <a href="https://en.wikipedia.org/wiki/Hypertext">hyperartifacts</a> notes and ideas 🌱 <a href="/not-so-secret-notes" style="text-decoration: none;">✨</a>
+An evolving digital garden of <a href="https://en.wikipedia.org/wiki/Hypertext">hyperartifact</a> notes, ideas, and artwork 🌱 <a href="/not-so-secret-notes" style="text-decoration: none;">✨</a>
 
 <div class="wiki-list">
   <hr>
