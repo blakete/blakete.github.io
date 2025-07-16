@@ -18,7 +18,7 @@ Since my early white-hat hacking experiments building inter-LAN-based P2P “bot
     <img 
       src="/assets/images/P2P_offline_mesh_chat/IMG_7133.jpeg" 
       alt="Jack Dorsey's announcement of BitChat" 
-      style="max-height: 600px; height: auto; width: 100%; max-width: 100%;">
+      style="max-height: 800px; height: auto; width: 100%; max-width: 500px;">
   </a>
   <p style="margin-top: 10px; font-style: italic;">
     <a href="https://x.com/jack">@Jack</a>'s original X/Twitter post announcing the release of BitChat.
@@ -30,7 +30,7 @@ Since my early white-hat hacking experiments building inter-LAN-based P2P “bot
     <img 
       src="/assets/images/P2P_offline_mesh_chat/IMG_7134.png" 
       alt="Dr. Calle's Android port of BitChat" 
-      style="max-height: 600px; height: auto; width: 100%; max-width: 100%;">
+      style="max-height: 800px; height: auto; width: 100%; max-width: 400px;">
   </a>
   <p style="margin-top: 10px; font-style: italic;">
     <a href="https://x.com/callebtc">@callebtc</a>'s follow up X/Twitter post announcing the release of an Android port of BitChat that is interoperable with <a href="https://x.com/jack">@Jack</a>'s iOS app.
