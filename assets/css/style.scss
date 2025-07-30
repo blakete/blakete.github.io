@@ -10,7 +10,8 @@
 .post-tag, .wiki-tag {
   display: inline-block;
   background-color: #444;
-  color: #fff;
+  // color: #fff;
+  color: #d1d1d1;
   padding: 2px 8px;
   margin-right: 5px;
   border-radius: 3px;
@@ -58,6 +59,10 @@
 // Keep the default margin-bottom for the last paragraph (Tags)
 .wiki-entry p:last-of-type, .post-item p:last-of-type {
   margin-bottom: 15px;
+}
+
+.wiki-entry-meta {
+  color: var(--minima-brand-color);
 }
 
 .invisible-table {

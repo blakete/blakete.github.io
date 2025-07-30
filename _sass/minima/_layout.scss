@@ -240,7 +240,8 @@
  * Posts
  */
 .post-header {
-  margin-bottom: $spacing-unit;
+  // margin-bottom: $spacing-unit;
+  margin-bottom: calc($spacing-unit / 2) !important
 }
 
 .post-title,
@@ -259,10 +260,14 @@
   letter-spacing: -1px;
   line-height: 1.15;
   margin-bottom: 15px;
-  
+
   @media screen and (min-width: $on-large) {
     @include relative-font-size(1.8);
   }
+}
+
+.custom-page-title {
+  font-size: calc(var(--base-font-size) * var(--h1-scale)) !important
 }
 
 .post-content {
