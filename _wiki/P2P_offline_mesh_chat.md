@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why P2P Mesh Network Chats Like bitchat Won't Succeed... Yet"
+title: "Why P2P Mesh Network Chats Like bitchat Have't Succeed... Yet"
 date: 2025-07-08
 last_updated: 2025-07-16
 author:
@@ -11,7 +11,9 @@ hidden_from_wiki: false
 hidden_from_secret_wiki: true
 ---
 
-Ever since my white-hat hacking days back in 2012-2016, when I was tinkering with LAN traversal techniques for forming P2P [botnets](https://en.wikipedia.org/wiki/Botnet), the dream of a truly global, robust peer-to-peer (P2P) mesh network has been stuck in my head. That fire got reignited recently with [@jack](https://x.com/jack)'s [X post](https://x.com/jack/status/1941989435962212728) dropping [bitchat](https://github.com/permissionlesstech/bitchat), an open-source P2P Bluetooth Low Energy (BLE) chat app with that classic IRC feel, and [@callebtc](https://x.com/callebtc)'s quick follow-up [X post](https://x.com/callebtc/status/1942658144011714829) releasing an interoperable [Android port](https://github.com/callebtc/bitchat-android). I'm all in on this stuff—it could be a game-changer for digital sovereignty and keeping comms alive during blackouts, protests, or straight-up censorship. But looking back at apps like [FireChat](https://en.wikipedia.org/wiki/FireChat) and [Bridgefy](https://bridgefy.me/), it's obvious why these haven't blown up into everyday tools yet. There are some gnarly hurdles in the way: adoption roadblocks, incentive gaps, platform pushback, scalability snags, usability headaches, and regulatory BS. The good news? These aren't deal-breakers; they're just engineering puzzles waiting for the open-source crew to crack. If we want to move past "tech bro" experiments and hit mainstream, we've gotta face them head-on. Let's build this thing! 😃
+Ever since my white-hat hacking days back in 2012-2016, when I was tinkering with LAN traversal techniques for forming P2P [botnets](https://en.wikipedia.org/wiki/Botnet), the dream of a truly global, robust peer-to-peer (P2P) mesh network has been stuck in my head. That fire got reignited recently with [@jack](https://x.com/jack)'s [X post](https://x.com/jack/status/1941989435962212728) dropping [bitchat](https://github.com/permissionlesstech/bitchat), an open-source P2P Bluetooth Low Energy (BLE) chat app with that classic IRC feel, and [@callebtc](https://x.com/callebtc)'s quick follow-up [X post](https://x.com/callebtc/status/1942658144011714829) releasing an interoperable [Android port](https://github.com/callebtc/bitchat-android). 
+
+I'm very excited about and strongly support the development of decentralized P2P mesh networks for general data exchange, of which chat applications like bitchat are a subset, as they could be a game-changer for digital sovereignty and maintaining communications during blackouts, protests, or outright censorship, etc. But looking back at apps like [FireChat](https://en.wikipedia.org/wiki/FireChat) and [Bridgefy](https://bridgefy.me/), we can identify why apps like this haven't achieved mainstream adoption and everyday tools yet. There are some gnarly hurdles in the way: adoption roadblocks, incentive gaps, platform pushback, scalability snags, usability headaches, and regulatory BS. The good news? These aren't deal-breakers; they're mostly engineering puzzles waiting for the open-source community to crack. If we want to move past "tech bro" experiments and hit mainstream, we've gotta face them head on. Let's build this thing! 😃
 
 <div style="text-align: center;">
   <a href="https://x.com/jack/status/1941989435962212728">
