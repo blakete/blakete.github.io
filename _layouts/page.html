@@ -4,7 +4,8 @@ layout: base
 <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <!-- <h1 class="post-title">{{ page.title | escape }}</h1> -->
+    <div class="custom-page-title">{{ page.title | escape }}</div>
     <p class="post-meta">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- if page.author -%}

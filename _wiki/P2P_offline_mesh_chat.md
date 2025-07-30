@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why P2P Mesh Network Chats Like bitchat Have't Succeed... Yet"
+title: "Why P2P Mesh Network Chats Like 'bitchat mesh' Have't Succeed... Yet"
 date: 2025-07-08
 last_updated: 2025-07-16
 author:
