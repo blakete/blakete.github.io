@@ -11,11 +11,19 @@ hidden_from_wiki: true
 hidden_from_secret_wiki: false
 ---
 
-# Free Energy Minimization Principle
+# Where Science Meets Soul
 
+- one piece of a bigger puzzle that feels important.
+
+## Free Energy Minimization Principle
+
+All unified by this one principle:
 - Love
 - Truth
 - control, planning
 - theory of brain
 - physics
 - natural progression
+- manifestation matching reality waves with coherent waves held in your head.
+
+Mathematical definition of it.
