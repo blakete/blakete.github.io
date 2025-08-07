@@ -11,8 +11,6 @@ hidden_from_wiki: true
 hidden_from_secret_wiki: false
 ---
 
-# Where Science Meets Soul
-
 - one piece of a bigger puzzle that feels important.
 
 ## Free Energy Minimization Principle
