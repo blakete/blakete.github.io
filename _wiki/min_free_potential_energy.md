@@ -25,3 +25,25 @@ All unified by this one principle:
 - manifestation matching reality waves with coherent waves held in your head.
 
 Mathematical definition of it.
+
+---
+
+- future connect entropy and other ohysical  laws
+
+---
+
+Decision‑making under uncertainty is the information projection of a passive path law onto an exponentially tilted family induced by rewards/preferences.
+
+All of control, planning, and active inference are different factorizations/metrics/constraints of this one projection.
+
+To decide under uncertainty, pick a trajectory distribution your system can actually realize that is closest in KL to a Gibbs/tilted distribution that favors high-reward futures--everything else (control, planning, active inference) is just a different way of factorizing or constraining that same projection problem.
+
+
+---
+
+Decision-making under uncertainty = pick a trajectory distribution by KL-projecting the passive dynamics onto the Gibbs family defined by your rewards.
+
+Control, planning, and active inference are just different ways to factor and solve that same projection problem, or to swap in slightly different divergences/constraints.
+
+
+
