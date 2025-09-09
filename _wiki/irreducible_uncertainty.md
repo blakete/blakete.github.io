@@ -5,7 +5,7 @@ date: 2025-09-09
 last_updated: 2025-09-09
 author:
 - Blake Edwards
-tags: [quantum foundations, probability, epistemic uncertainty, aleatoric uncertainty, machine learning, decision theory]
+tags: [quantum mechanics, probability, uncertainty]
 permalink: /notes/irreducible-uncertainty
 hidden_from_wiki: true
 hidden_from_secret_wiki: false
