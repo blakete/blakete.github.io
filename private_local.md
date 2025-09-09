@@ -5,7 +5,7 @@ permalink: /secret-notes
 ---
 
 {% if jekyll.environment == "development" %}
-  An evolving digital garden of hyperartifact notes, ideas, and artwork 🌱 ✨
+  Welcome to my evolving digital garden of hypermedia artifacts: notes, ideas, and artwork 🌱 ✨
   
   <p><a href="/secret-notes/views" class="views-link">🗂️ Browse by View</a></p>
   
