@@ -4,7 +4,7 @@ title: Not So Secret Notes 🔮
 permalink: /not-so-secret-notes
 ---
 
-An evolving digital garden of <a href="https://en.wikipedia.org/wiki/Hypertext">hyperartifact</a> notes, ideas, and artwork 🌱 <a href="/" style="text-decoration: none;">✨</a>
+Welcome to my NOT SO SECRET evolving digital garden of hypermedia artifacts: notes, ideas, and artwork 🌱 <a href="/" style="text-decoration: none;">✨</a>
 
 <div class="wiki-list">
   <hr>
