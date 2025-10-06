@@ -11,8 +11,6 @@ hidden_from_wiki: false
 hidden_from_secret_wiki: true
 ---
 
-## Introduction
-
 Statistical Model Checking (SMC) seeks to estimate or bound the probability $p$ that a stochastic system violates (or satisfies) a formally specified logical property (e.g., temporal logic, PCTL) by sampling executions of the system through simulation. In high‐assurance domains, where certification and safety are paramount, engineers must balance **frequentist guarantees**, which provide hard, long‐run coverage properties, against **Bayesian interpretability**, which offers direct probability statements about model parameters given the observed data. This page explores how each approach frames risk and uncertainty in SMC and when to favor one over the other.
 
 ## TLDR

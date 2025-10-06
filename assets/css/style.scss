@@ -10,7 +10,6 @@
 .post-tag, .wiki-tag {
   display: inline-block;
   background-color: #444;
-  // color: #fff;
   color: #d1d1d1;
   padding: 2px 8px;
   margin-right: 5px;
@@ -25,23 +24,6 @@
 .wiki-tag {
   background-color: #5e9b42;
 }
-
-// Private-related styles are only used locally
-// .private-tag {
-//   background-color: #8e44ad;
-// }
-
-// .post-tags, .wiki-tags {
-//   margin-bottom: 15px;
-// }
-
-// .post-item, .wiki-entry {
-//   // margin-bottom: 30px;
-// }
-
-// hr {
-//   margin-bottom: 20px;
-// }
 
 .post-date {
   color: #828282;
@@ -77,7 +59,6 @@
   border: none !important;
   background: none !important;
   white-space: normal !important;
-  // TODO: fix the word-break not working properly, e.g. in `secret-notes/towards_VERUS.md`
   word-break: break-word !important;
   overflow-wrap: break-word !important;
   padding: 4px 12px !important;
@@ -105,13 +86,10 @@
   text-align: right;
 }
 
-
-
-
-
-
 .wiki-intro {
-  margin: 0 0 33px 0;
+  margin: 0 0 0 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Card Container */
@@ -119,6 +97,7 @@
   max-width: 800px;
   margin: 0 auto;
   background-color: rgb(22, 23, 24);
+  overflow: visible; /* Ensure borders aren't clipped */
 }
 
 /* Individual Card */
@@ -136,10 +115,6 @@
   margin: 0 -16px;
   padding: 24px 16px;
   border-radius: 4px;
-}
-
-.wiki-card:first-child {
-  padding-top: 0;
 }
 
 /* Card Content */
@@ -161,15 +136,6 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #999;
-}
-
-.wiki-card-date {
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #666;
-  margin-left: auto;
 }
 
 .wiki-card-author {
@@ -195,6 +161,15 @@
   color: #666;
 }
 
+.wiki-card-date {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666;
+  margin-left: auto;
+}
+
 .wiki-card-icon {
   font-size: 20px;
   line-height: 1;
@@ -218,9 +193,8 @@
 
 .wiki-card-description {
   margin: 0 0 8px 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
-  // color: #999;
   color: #ffffffa4;
 }
 
@@ -252,6 +226,7 @@
   object-fit: cover;
 }
 
+
 /* Responsive */
 @media (max-width: 640px) {
   .wiki-card {
@@ -264,28 +239,15 @@
   }
 }
 
-.wiki-card-first {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 24px;
-}
-
-
-
-
-
-
 .about-header {
   text-align: center;
-  // margin-bottom: 32px;
   margin-bottom: 18px;
 }
 
 .profile-pic {
   width: 250px;
   height: 250px;
-  // border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-

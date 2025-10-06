@@ -38,13 +38,6 @@ permalink: /
           {% elsif wiki_page.excerpt %}
             <p class="wiki-card-description">{{ wiki_page.excerpt | strip_html | truncatewords: 15 }}</p>
           {% endif %}
-          
-          <!-- Remove meta section entirely if it's now empty, or keep for tags if needed -->
-          <!-- {% if wiki_page.tags and wiki_page.tags.size > 0 %}
-            <div class="wiki-card-meta">
-              <span>{{ wiki_page.tags | join: ", " }}</span>
-            </div>
-          {% endif %} -->
         </div>
         
         {% if wiki_page.thumbnail %}
