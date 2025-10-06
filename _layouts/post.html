@@ -46,7 +46,7 @@ layout: base
         {%- assign date_str = page.date | date: "%Y-%m-%d" -%}
         {%- assign updated_str = page.last_updated | date: "%Y-%m-%d" -%}
         {%- if date_str != updated_str -%}
-          • 
+          •
           <span>
             Last Update:
             <time class="dt-modified" datetime="{{ page.last_updated | date_to_xmlschema }}" itemprop="dateModified">
@@ -54,6 +54,13 @@ layout: base
             </time>
           </span>
         {%- endif -%}
+      {%- endif -%}
+
+      {%- if page.reading_time -%}
+        •
+        <span>
+          {{ page.reading_time }} min read
+        </span>
       {%- endif -%}
     </p>
   </header>
