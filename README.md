@@ -95,6 +95,33 @@ hidden_from_posts: true
 
 This allows you to create drafts or private content that won't appear in public listings but can still be accessed directly by URL if you know the path.
 
+### Places to change fonts
+
+```_sass/minima/_layout.scss
+.post-link {
+  display: block;
+  @include relative-font-size(1.3);
+}
+```
+
+```assets/css/style.scss
+.post-tag, .wiki-tag {
+  display: inline-block;
+  background-color: #444;
+  // color: #fff;
+  color: #d1d1d1;
+  padding: 2px 8px;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 0.7em;  <---- here
+}
+```
+
+```_sass/minima/initialize.scss
+$base-font-size:   17px !default;
+$base-font-weight: 400 !default;
+```
+
 ## Inspiration Credits
 
 * https://siboehm.com/
