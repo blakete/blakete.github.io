@@ -9,6 +9,7 @@ tags: [decentralization, mesh networking, P2P communication, digital sovereignty
 permalink: /wiki/bitmesh-hybrid-mesh-chat
 hidden_from_wiki: false
 hidden_from_secret_wiki: true
+reading_time: 10
 ---
 
 Ever since my white-hat hacking days back in 2012-2016, when I was tinkering with LAN traversal techniques for forming P2P [botnets](https://en.wikipedia.org/wiki/Botnet), the dream of a truly global, robust peer-to-peer (P2P) mesh network has been stuck in my head. That fire got reignited recently with [@jack](https://x.com/jack)'s [X post](https://x.com/jack/status/1941989435962212728) dropping [bitchat](https://github.com/permissionlesstech/bitchat), an open-source P2P Bluetooth Low Energy (BLE) chat app with a classic IRC feel, and [@callebtc](https://x.com/callebtc)'s quick follow-up [X post](https://x.com/callebtc/status/1942658144011714829) releasing an interoperable [Android port](https://github.com/callebtc/bitchat-android). 

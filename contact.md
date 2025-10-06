@@ -4,7 +4,7 @@ title: Contact
 permalink: /contact/
 ---
 
-I welcome collaboration opportunities, research inquiries, and discussions related to AI, robotics, and the other topics covered on this site.
+I'm always happy to connect for collaborations, consultations, or discussions on shared interests.
 
 - **Full Name**: Blake Edwards
 - **Email**: blakete [at] mit [dot] edu

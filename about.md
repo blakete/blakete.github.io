@@ -4,9 +4,19 @@ title: About
 permalink: /about/
 ---
 
-Hello, I'm Blake! :) I am currently a graduate student at MIT AeroAstro, where I research intelligent, autonomous, robotic systems and how we can make them worthy of our trust. This page serves as a central hub for my work, thoughts, and evolving ideas.
+<div class="about-header">
+  <img src="/assets/images/profile.jpeg" alt="Blake Edwards" class="profile-pic">
+</div>
 
-This site is also a space for me to experiment, explore, and organize topics that spark my interest. As I gather insights and learn more, I'll continue to update and refine this archive. Along these lines, I live by this famous quote by George Box:
+<blockquote class="otro-blockquote">
+  "I aspire to see, preserve, and proliferate the truth."
+  "I strive to discern, uphold, and illuminate the truth."
+  <span>Blake T. Edwards</span>
+</blockquote>
+
+Hello, I'm Blake! :) I am currently a graduate student at MIT AeroAstro where I research intelligent, autonomous, robotic systems and how we can make them worthy of our trust. This page serves as a central hub for my work, thoughts, and evolving ideas I feel compelled to write about.
+
+This site is also a space for me to experiment, explore, and organize topics that spark my interest. As I gather insights and learn more, I'll continue to update and refine this repository. Along these lines, I live by this famous quote by George Box:
 
 <blockquote class="otro-blockquote">
   "All models are wrong, but some are useful."
@@ -27,7 +37,4 @@ I am committed to:
 - Supporting open science, ethical inquiry, and meaningful collaboration.
 - Promoting critical thinking and constructive dialogue across disciplines and ideologies.
 
-<blockquote class="otro-blockquote">
-  "I aspire to see and preserve the truth."
-  <span>Blake T. Edwards</span>
-</blockquote>
+

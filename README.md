@@ -104,23 +104,27 @@ This allows you to create drafts or private content that won't appear in public 
 }
 ```
 
-```assets/css/style.scss
-.post-tag, .wiki-tag {
-  display: inline-block;
-  background-color: #444;
-  // color: #fff;
-  color: #d1d1d1;
-  padding: 2px 8px;
-  margin-right: 5px;
-  border-radius: 3px;
-  font-size: 0.7em;  <---- here
-}
-```
+* Tags:
 
-```_sass/minima/initialize.scss
-$base-font-size:   17px !default;
-$base-font-weight: 400 !default;
-```
+    ```assets/css/style.scss
+    .post-tag, .wiki-tag {
+    display: inline-block;
+    background-color: #444;
+    // color: #fff;
+    color: #d1d1d1;
+    padding: 2px 8px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 0.7em;  <---- here
+    }
+    ```
+
+* 
+
+    ```_sass/minima/initialize.scss
+    $base-font-size:   17px !default;
+    $base-font-weight: 400 !default;
+    ```
 
 ## Inspiration Credits
 

@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $border-color-03;
+  // border-top: 5px solid $border-color-03;
   border-bottom: 1px solid $border-color-01;
   min-height: $spacing-unit * 1.865;
   line-height: $base-line-height * $base-font-size * 2.25;
@@ -202,7 +202,8 @@
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  // padding: $spacing-unit 0;
+  padding: $spacing-unit/2 0;
   flex: 1 0 auto;
 }
 
