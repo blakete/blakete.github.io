@@ -6,6 +6,10 @@ permalink: /publications/
 
 <!-- View my [Google Scholar profile](https://scholar.google.com/citations?user=xiM0_6sAAAAJ&hl=en). -->
 
+## 2025
+
+Coming soon.
+
 ## 2024
 
 <ul class="bibliography">
