@@ -5,7 +5,7 @@ date: 2025-08-26
 last_updated: 2025-08-26
 author:
 - Blake Edwards
-tags: []
+tags: [philosophy]
 permalink: /wiki/meditations
 hidden_from_wiki: false
 hidden_from_secret_wiki: true
