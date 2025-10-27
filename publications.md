@@ -18,7 +18,7 @@ Coming soon.
         Bhattiprolu, A., Hamel, J., Nguyen, C., Edwards, B., Tapanainen, N., Isaacs, S., and de Weck, O. L.,
         "<b>Improving Autonomous Surface Vehicle adaptability by decreasing complexity using low-cost PANTHER environmenctal monitoring module</b>."
     </span>
-    [PDF coming soon!]
+    <a href="https://www.sciencedirect.com/science/article/pii/S1877050925025451">[PDF]</a>
     <a href="https://www.linkedin.com/posts/olivierdeweck_bathymetry-environmental-pearl-activity-7262510077461291008-AXmr?utm_source=share&utm_medium=member_desktop&rcm=ACoAABjTFVQB0rh8iF5AXjA63Oj3mXxBJ6mwPdE">[Pictures]</a>
     <a href="https://followpearl.mit.edu/">[Website]</a>
     <a href="javascript:toggleInfo('Bhattiprolu2023');" class="js-no-ajax">[BibTeX]</a>
