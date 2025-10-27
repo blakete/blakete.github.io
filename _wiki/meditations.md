@@ -28,6 +28,10 @@ hidden_from_secret_wiki: true
 
 > "We become what we think about."
 
+> "A human being with a settled purpose must accomplish it… Nothing can resist a will that will stake even existence for its fulfillment." - Benjamin Disraeli
+
+> "Jesus said unto him, If thou canst believe, all things are possible to him that believeth." - Mark 9:23
+
 ---
 
 ### Trust The Universe - On Finding Zen
