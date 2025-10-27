@@ -46,4 +46,13 @@ hidden_from_secret_wiki: true
   Your browser does not support the audio element.
 </audio>
 
+---
 
+### The Strangest Secret
+
+*Earl Nightingale*
+
+<audio controls style="width: 100%; max-width: 600px; margin: 20px 0;">
+  <source src="/assets/audio/The Strangest Secret by Earl Nightingale.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
