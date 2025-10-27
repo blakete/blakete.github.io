@@ -13,6 +13,8 @@ hidden_from_secret_wiki: true
 
 > You are what you repeat.
 
+---
+
 ### Trust The Universe - On Finding Zen
 
 *Alan Watts*
@@ -22,6 +24,7 @@ hidden_from_secret_wiki: true
   Your browser does not support the audio element.
 </audio>
 
+---
 
 ### The Danger of Seeing What Others Don't
 
@@ -31,6 +34,8 @@ hidden_from_secret_wiki: true
   <source src="/assets/audio/The Danger of Seeing What Others Dont - Alan Watts.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
+---
 
 ### Why Spiritually Awake People Are Quietly Disappearing from Society
 
