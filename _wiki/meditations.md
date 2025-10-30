@@ -26,6 +26,17 @@ At the end of every day, reflect on the following things:
 
 ---
 
+### Discipline
+
+*Khabib Nurmagomedov*
+
+<audio controls style="width: 100%; max-width: 600px; margin: 20px 0;">
+  <source src="/assets/audio/khabib-discipline.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+---
+
 ### The Strangest Secret
 
 *Earl Nightingale*
@@ -55,6 +66,7 @@ At the end of every day, reflect on the following things:
 </audio>
 
 ---
+
 
 
 
