@@ -13,16 +13,14 @@ hidden_from_secret_wiki: true
 
 > You are what you repeat.
 
+
 ---
 
-### Daily GLAD Exercise
+### Quotes
 
-At the end of every day, reflect on the following things:
+> "The future depends on what we do in the present."
 
-1. Grateful – One thing I am grateful for today.
-2. Learned – One thing I learned today.
-3. Accomplished – One thing I am proud that I accomplished today.
-4. Delight – One thing that brought me delight today.
+> "Be the change you want to see in the world."
 
 ---
 
@@ -67,6 +65,14 @@ At the end of every day, reflect on the following things:
 
 ---
 
+### Daily GLAD Exercise
 
+At the end of every day, reflect on the following things:
 
+1. Grateful – One thing I am grateful for today.
+2. Learned – One thing I learned today.
+3. Accomplished – One thing I am proud that I accomplished today.
+4. Delight – One thing that brought me delight today.
+
+---
 
