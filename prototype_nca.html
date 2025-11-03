@@ -448,7 +448,7 @@
   // =============================================================
   // 6. TEXTURES + FBOs + SEED
   // =============================================================
-  const stateTex = [], tempTex = [], deltaTex = [], perceiveTex = [];
+  const stateTex = [], tempTex = [], deltaTex = [], perceiveTex = [], nextTex = [];
   const fbo = {
     perceive: gl.createFramebuffer(),
     delta:    gl.createFramebuffer(),
@@ -458,9 +458,10 @@
 
   function setupStateAndPerception() {
     for (let i = 0; i < 4; i++) {
-      stateTex[i] = createFloatTex();
-      tempTex[i]  = createFloatTex();
-      deltaTex[i] = createFloatTex();
+        stateTex[i] = createFloatTex();
+        tempTex[i]  = createFloatTex();
+        deltaTex[i] = createFloatTex();
+        nextTex[i]  = createFloatTex();
     }
     for (let i = 0; i < 12; i++) perceiveTex[i] = createFloatTex();
 
@@ -607,9 +608,16 @@
     gl.activeTexture(gl.TEXTURE5); gl.bindTexture(gl.TEXTURE_2D, tempTex[1]);  gl.uniform1i(gl.getUniformLocation(prog.alive,'post1'),5);
     gl.activeTexture(gl.TEXTURE6); gl.bindTexture(gl.TEXTURE_2D, tempTex[2]);  gl.uniform1i(gl.getUniformLocation(prog.alive,'post2'),6);
     gl.activeTexture(gl.TEXTURE7); gl.bindTexture(gl.TEXTURE_2D, tempTex[3]);  gl.uniform1i(gl.getUniformLocation(prog.alive,'post3'),7);
-    for (let i=0;i<4;i++) gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0+i, gl.TEXTURE_2D, stateTex[i], 0);
+    for (let i=0;i<4;i++) gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0+i, gl.TEXTURE_2D, nextTex[i], 0);
     bindDrawBuffers(4);
     drawQuad();
+    
+    // swap state <-> next
+    for (let i = 0; i < 4; i++) {
+        const tmp = stateTex[i];
+        stateTex[i] = nextTex[i];
+        nextTex[i]  = tmp;
+    }
 
     // 5) RENDER
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
