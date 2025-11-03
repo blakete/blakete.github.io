@@ -1,0 +1,4 @@
+.nca-demo { margin: 1rem 0 2rem; display: grid; gap: .5rem; place-items: center; }
+.nca-demo canvas { border: 4px solid #333; image-rendering: pixelated;
+  width: min(350px, 90vw); height: min(350px, 90vw); }
+.nca-demo .row { display: flex; gap: .75rem; align-items: center; }
