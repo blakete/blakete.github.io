@@ -1,0 +1,692 @@
+(async function () {
+  // =============================================================
+  // 0. CONSTANTS
+  // =============================================================
+  const TEX_SIZE = 64;      // simulation grid side
+  const CHANNELS = 16;      // 16 state channels
+  const HIDDEN = 144;       // first layer width
+  const WEIGHTS_BASE = '/assets/images/nca_weights/'; // <-- point to your exported PNGs here
+  
+  const MAX_STEPS = 160;
+  let stepCount = 0;
+  let running = false;
+  let rafId = 0;
+
+  let damageEnabled = false;  // set to true later if you want damage again
+
+  // =============================================================
+  // 1. GL SETUP
+  // =============================================================
+  const canvas = document.getElementById('ca');
+  const gl = canvas.getContext('webgl2', { antialias: false, alpha: false });
+  if (!gl) { alert('WebGL2 not supported'); throw new Error('WebGL2 not supported'); }
+
+    const mdb = gl.getParameter(gl.MAX_DRAW_BUFFERS);
+    const mdbEl = document.getElementById('mdb');
+    if (mdbEl) mdbEl.textContent = String(mdb);
+
+  if (mdb < 4) { alert('Need at least 4 draw buffers'); throw new Error('Insufficient MAX_DRAW_BUFFERS'); }
+
+  // Render to RGBA32F
+  const ext = gl.getExtension('EXT_color_buffer_float');
+  if (!ext) { alert('EXT_color_buffer_float not supported'); throw new Error('EXT_color_buffer_float not supported'); }
+
+  gl.disable(gl.DITHER);
+
+  // Create and bind a VAO
+  const vao = gl.createVertexArray();
+
+  // =============================================================
+  // 2. HELPERS
+  // =============================================================
+  function createFloatTex() {
+    const tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA32F, TEX_SIZE, TEX_SIZE, 0, gl.RGBA, gl.FLOAT, null);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT); // circular pad (training)
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+    return tex;
+  }
+
+  function compile(src, type) {
+    const sh = gl.createShader(type);
+    gl.shaderSource(sh, src);
+    gl.compileShader(sh);
+    if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+      const log = gl.getShaderInfoLog(sh);
+      console.error(log, src);
+      throw new Error('Shader compile error');
+    }
+    return sh;
+  }
+
+  function linkProgram(vsSrc, fsSrc) {
+    const vs = compile(vsSrc, gl.VERTEX_SHADER);
+    const fs = compile(fsSrc, gl.FRAGMENT_SHADER);
+    const p = gl.createProgram();
+    gl.attachShader(p, vs);
+    gl.attachShader(p, fs);
+    gl.linkProgram(p);
+    if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
+      console.error(gl.getProgramInfoLog(p));
+      throw new Error('Program link error');
+    }
+    return p;
+  }
+
+  function drawQuad() {
+    gl.bindVertexArray(vao);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }
+
+  function bindDrawBuffers(n) {
+    gl.drawBuffers(new Array(n).fill(0).map((_, i) => gl.COLOR_ATTACHMENT0 + i));
+  }
+
+  // =============================================================
+  // 3. SHADERS (perception in 3 passes of 4 MRTs each)
+  // =============================================================
+  const vs = `#version 300 es
+  precision highp float;
+  in vec2 p;
+  out vec2 uv;
+  void main(){
+    gl_Position = vec4(p, 0.0, 1.0);
+    uv = (p + 1.0) * 0.5;
+  }`;
+
+  // Perception: identity
+  const perceiveSelfFS = `#version 300 es
+  precision highp float;
+  uniform sampler2D s0; uniform sampler2D s1; uniform sampler2D s2; uniform sampler2D s3;
+  in vec2 uv;
+  layout(location=0) out vec4 o0;
+  layout(location=1) out vec4 o1;
+  layout(location=2) out vec4 o2;
+  layout(location=3) out vec4 o3;
+
+  float fetchComp(int tid, int comp, vec2 c){
+    vec4 t = (tid==0)? texture(s0,c) : (tid==1)? texture(s1,c) : (tid==2)? texture(s2,c) : texture(s3,c);
+    return (comp==0)? t.x : (comp==1)? t.y : (comp==2)? t.z : t.w;
+  }
+
+  void main(){
+    vec2 p = vec2(1.0/${TEX_SIZE}.0);
+    // identity (center 1), but we implement via 3x3 to match CPU path
+    mat3 idn = mat3( 0.0, 0.0, 0.0,
+                     0.0, 1.0, 0.0,
+                     0.0, 0.0, 0.0); // column-major
+
+    vec4 self0=vec4(0), self1=vec4(0), self2=vec4(0), self3=vec4(0);
+
+    for(int c=0;c<16;c++){
+      int tid = c >> 2; int comp = c & 3;
+      float v = 0.0;
+      for(int i=-1;i<=1;i++) for(int j=-1;j<=1;j++){
+        vec2 off = vec2(float(i), float(j)) * p;
+        float n = fetchComp(tid, comp, uv + off);
+        v += n * idn[i+1][j+1];  // mat[col][row]
+      }
+      if(tid==0){ self0[comp]=v; }
+      else if(tid==1){ self1[comp]=v; }
+      else if(tid==2){ self2[comp]=v; }
+      else { self3[comp]=v; }
+    }
+    o0=self0; o1=self1; o2=self2; o3=self3;
+  }`;
+
+  // Perception: Sobel X (correct column-major literals)
+  const perceiveDxFS = `#version 300 es
+  precision highp float;
+  uniform sampler2D s0; uniform sampler2D s1; uniform sampler2D s2; uniform sampler2D s3;
+  in vec2 uv;
+  layout(location=0) out vec4 o0;
+  layout(location=1) out vec4 o1;
+  layout(location=2) out vec4 o2;
+  layout(location=3) out vec4 o3;
+
+  float fetchComp(int tid, int comp, vec2 c){
+    vec4 t = (tid==0)? texture(s0,c) : (tid==1)? texture(s1,c) : (tid==2)? texture(s2,c) : texture(s3,c);
+    return (comp==0)? t.x : (comp==1)? t.y : (comp==2)? t.z : t.w;
+  }
+
+  void main(){
+    vec2 p = vec2(1.0/${TEX_SIZE}.0);
+    // X: left column [-1,-2,-1], mid [0,0,0], right [1,2,1]
+    mat3 sx = mat3(
+      -1.0, -2.0, -1.0,
+       0.0,  0.0,  0.0,
+       1.0,  2.0,  1.0
+    ) / 8.0;
+
+    vec4 dx0=vec4(0), dx1=vec4(0), dx2=vec4(0), dx3=vec4(0);
+
+    for(int c=0;c<16;c++){
+      int tid = c >> 2; int comp = c & 3;
+      float gx = 0.0;
+      for(int i=-1;i<=1;i++) for(int j=-1;j<=1;j++){
+        vec2 off = vec2(float(i), float(j)) * p;
+        float n = fetchComp(tid, comp, uv + off);
+        gx += n * sx[i+1][j+1];  // mat[col][row]
+      }
+      if(tid==0){ dx0[comp]=gx; }
+      else if(tid==1){ dx1[comp]=gx; }
+      else if(tid==2){ dx2[comp]=gx; }
+      else { dx3[comp]=gx; }
+    }
+    o0=dx0; o1=dx1; o2=dx2; o3=dx3;
+  }`;
+
+  // Perception: Sobel Y (correct column-major literals)
+  const perceiveDyFS = `#version 300 es
+  precision highp float;
+  uniform sampler2D s0; uniform sampler2D s1; uniform sampler2D s2; uniform sampler2D s3;
+  in vec2 uv;
+  layout(location=0) out vec4 o0;
+  layout(location=1) out vec4 o1;
+  layout(location=2) out vec4 o2;
+  layout(location=3) out vec4 o3;
+
+  float fetchComp(int tid, int comp, vec2 c){
+    vec4 t = (tid==0)? texture(s0,c) : (tid==1)? texture(s1,c) : (tid==2)? texture(s2,c) : texture(s3,c);
+    return (comp==0)? t.x : (comp==1)? t.y : (comp==2)? t.z : t.w;
+  }
+
+  void main(){
+    vec2 p = vec2(1.0/${TEX_SIZE}.0);
+    // Y: top row [ 1, 2, 1], mid [0,0,0], bottom [-1,-2,-1]
+    mat3 sy = mat3(
+       1.0,  0.0, -1.0,
+       2.0,  0.0, -2.0,
+       1.0,  0.0, -1.0
+    ) / 8.0;
+
+    vec4 dy0=vec4(0), dy1=vec4(0), dy2=vec4(0), dy3=vec4(0);
+
+    for(int c=0;c<16;c++){
+      int tid = c >> 2; int comp = c & 3;
+      float gy = 0.0;
+      for(int i=-1;i<=1;i++) for(int j=-1;j<=1;j++){
+        vec2 off = vec2(float(i), float(j)) * p;
+        float n = fetchComp(tid, comp, uv + off);
+        gy += n * sy[i+1][j+1];
+      }
+      if(tid==0){ dy0[comp]=gy; }
+      else if(tid==1){ dy1[comp]=gy; }
+      else if(tid==2){ dy2[comp]=gy; }
+      else { dy3[comp]=gy; }
+    }
+    o0=dy0; o1=dy1; o2=dy2; o3=dy3;
+  }`;
+
+  // Update: 48 -> 144 -> 16 using RGBA8UI-packed float weights
+  const updateFS = `#version 300 es
+  precision highp float;
+  precision highp usampler2D;
+
+  uniform usampler2D w1; // (height=144, width=48)  : 144x48
+  uniform usampler2D b1; // (height=1  , width=144) : 1x144
+  uniform usampler2D w2; // (height=16 , width=144) : 16x144
+  uniform usampler2D b2; // (height=1  , width=16)  : 1x16
+
+  // 12 perception tiles: 0..3=self, 4..7=dx, 8..11=dy
+  uniform sampler2D p0; uniform sampler2D p1; uniform sampler2D p2; uniform sampler2D p3;
+  uniform sampler2D p4; uniform sampler2D p5; uniform sampler2D p6; uniform sampler2D p7;
+  uniform sampler2D p8; uniform sampler2D p9; uniform sampler2D p10; uniform sampler2D p11;
+
+  in vec2 uv;
+  layout(location=0) out vec4 d0;
+  layout(location=1) out vec4 d1;
+  layout(location=2) out vec4 d2;
+  layout(location=3) out vec4 d3;
+
+  float unpackFloat(uvec4 rgba){
+    // Bytes are stored little-endian: R=least sig, A=most sig
+    uint bits = (rgba.a<<24u) | (rgba.b<<16u) | (rgba.g<<8u) | rgba.r;
+    return uintBitsToFloat(bits);
+  }
+
+  void main(){
+    // Gather perception tiles
+    vec4 P[12];
+    P[0]=texture(p0,uv); P[1]=texture(p1,uv); P[2]=texture(p2,uv); P[3]=texture(p3,uv);
+    P[4]=texture(p4,uv); P[5]=texture(p5,uv); P[6]=texture(p6,uv); P[7]=texture(p7,uv);
+    P[8]=texture(p8,uv); P[9]=texture(p9,uv); P[10]=texture(p10,uv); P[11]=texture(p11,uv);
+
+    // ---- layer 1: 48 -> 144 ---- (interleaved per channel: id(c), dx(c), dy(c))
+    float H[${HIDDEN}];
+    for(int row=0; row<${HIDDEN}; row++){
+      float sum = 0.0;
+      for(int col=0; col<48; col++){
+        // w1 texcoords: width=48, height=144
+        vec2 tc = vec2((float(col)+0.5)/48.0, (float(row)+0.5)/${HIDDEN}.0);
+        float w = unpackFloat(texture(w1, tc));
+
+        // Map col -> [id|dx|dy](channel c)
+        int c = col / 3;              // channel 0..15
+        int f = col - c * 3;          // feature: 0=id, 1=dx, 2=dy
+        int tid = c >> 2;             // which tile (0..3)
+        int comp = c & 3;             // which component (x,y,z,w)
+        int base = (f == 0) ? 0 : (f == 1 ? 4 : 8);
+        float perc = P[base + tid][comp];
+
+        sum += w * perc;
+      }
+      // b1: width=144, height=1
+      vec2 bc = vec2((float(row)+0.5)/${HIDDEN}.0, 0.5);
+      float bias = unpackFloat(texture(b1, bc));
+      H[row] = max(0.0, sum + bias); // ReLU
+    }
+
+    // ---- layer 2: 144 -> 16 ---- (no ReLU; residual-like)
+    float D[16];
+    for(int row=0; row<16; row++){
+      float sum = 0.0;
+      for(int col=0; col<${HIDDEN}; col++){
+        vec2 tc = vec2((float(col)+0.5)/${HIDDEN}.0, (float(row)+0.5)/16.0);
+        float w = unpackFloat(texture(w2, tc));
+        sum += w * H[col];
+      }
+      vec2 bc = vec2((float(row)+0.5)/16.0, 0.5);
+      D[row] = sum + unpackFloat(texture(b2, bc));
+    }
+
+    d0 = vec4(D[0], D[1], D[2], D[3]);
+    d1 = vec4(D[4], D[5], D[6], D[7]);
+    d2 = vec4(D[8], D[9], D[10], D[11]);
+    d3 = vec4(D[12], D[13], D[14], D[15]);
+  }`;
+
+  // Stochastic update (per-pixel mask shared across channels)
+  const stochasticFS = `#version 300 es
+  precision highp float;
+  uniform sampler2D s0; uniform sampler2D s1; uniform sampler2D s2; uniform sampler2D s3;
+  uniform sampler2D d0; uniform sampler2D d1; uniform sampler2D d2; uniform sampler2D d3;
+  uniform float t;
+  in vec2 uv;
+  layout(location=0) out vec4 o0;
+  layout(location=1) out vec4 o1;
+  layout(location=2) out vec4 o2;
+  layout(location=3) out vec4 o3;
+  float rnd(vec2 v){ return fract(sin(dot(v,vec2(12.9898,78.233))) * 43758.5453); }
+  void main(){
+    float m = step(0.5, rnd(uv + t)); // update_probability=0.5
+    o0 = texture(s0,uv) + texture(d0,uv)*m;
+    o1 = texture(s1,uv) + texture(d1,uv)*m;
+    o2 = texture(s2,uv) + texture(d2,uv)*m;
+    o3 = texture(s3,uv) + texture(d3,uv)*m;
+  }`;
+
+  // Alive mask: AND of pre- and post- neighborhood masks (matches training)
+  const aliveFS = `#version 300 es
+  precision highp float;
+  uniform sampler2D prev0, prev1, prev2, prev3;  // before stochastic update
+  uniform sampler2D post0, post1, post2, post3;  // after stochastic update
+  in vec2 uv;
+  layout(location=0) out vec4 o0;
+  layout(location=1) out vec4 o1;
+  layout(location=2) out vec4 o2;
+  layout(location=3) out vec4 o3;
+  void main(){
+    vec2 p = vec2(1.0/${TEX_SIZE}.0);
+    float aPrev = 0.0;
+    float aPost = 0.0;
+    for(int i=-1;i<=1;i++){
+      for(int j=-1;j<=1;j++){
+        vec2 off = vec2(float(i), float(j)) * p;
+        aPrev = max(aPrev, texture(prev0, uv + off).a);
+        aPost = max(aPost, texture(post0, uv + off).a);
+      }
+    }
+    float mask = step(0.1, aPrev) * step(0.1, aPost);
+    o0 = texture(post0, uv) * mask;
+    o1 = texture(post1, uv) * mask;
+    o2 = texture(post2, uv) * mask;
+    o3 = texture(post3, uv) * mask;
+  }`;
+
+  // Render to screen: to_rgb = clamp(1 - alpha + rgb, 0, 1)
+  const renderFS = `#version 300 es
+    precision highp float;
+    uniform sampler2D s0;
+    in vec2 uv;
+    out vec4 color;
+    void main(){
+    // Flip Y so bottom row of the texture appears at the bottom of the canvas
+    vec2 tuv = vec2(uv.x, 1.0 - uv.y);
+    vec4 c = texture(s0, tuv);
+    float a = clamp(c.a, 0.0, 1.0);
+    vec3 rgb = clamp(1.0 - a + c.rgb, 0.0, 1.0);
+    color = vec4(rgb, 1.0);
+  }`;
+
+  // =============================================================
+  // 4. PROGRAMS
+  // =============================================================
+  const prog = {
+    perceiveSelf: linkProgram(vs, perceiveSelfFS),
+    perceiveDx:   linkProgram(vs, perceiveDxFS),
+    perceiveDy:   linkProgram(vs, perceiveDyFS),
+    update:       linkProgram(vs, updateFS),
+    stochastic:   linkProgram(vs, stochasticFS),
+    alive:        linkProgram(vs, aliveFS),
+    render:       linkProgram(vs, renderFS),
+  };
+
+  // =============================================================
+  // 5. LOAD PNG WEIGHTS (RGBA8UI) WITHOUT COLOR CONVERSION
+  // =============================================================
+  async function loadImageBytes(url) {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.decoding = 'async';
+    img.src = url;
+    await img.decode().catch(()=>{});
+    let bmp = null;
+    if ('createImageBitmap' in window) {
+      try {
+        bmp = await createImageBitmap(img, { colorSpaceConversion: 'none', premultiplyAlpha: 'none' });
+      } catch(e) {
+        // fallback to <img/>
+      }
+    }
+    const src = bmp || img;
+    const c = document.createElement('canvas');
+    c.width = src.width; c.height = src.height;
+    const ctx = c.getContext('2d', { willReadFrequently: true });
+    ctx.drawImage(src, 0, 0);
+    if (bmp) bmp.close();
+    const data = ctx.getImageData(0, 0, c.width, c.height).data; // Uint8ClampedArray
+    const bytes = new Uint8Array(data.buffer); // byte-accurate
+    return { bytes, width: c.width, height: c.height };
+  }
+
+  async function loadWeights() {
+    const names = ['w1','b1','w2','b2'];
+    const tex = [];
+    gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+
+    for (let n of names) {
+      const { bytes, width, height } = await loadImageBytes(WEIGHTS_BASE + n + '.png');
+      const t = gl.createTexture();
+      gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8UI, width, height, 0, gl.RGBA_INTEGER, gl.UNSIGNED_BYTE, bytes);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      console.log(`${n}.png -> ${width}x${height}`);
+      tex.push(t);
+    }
+    return tex; // [w1, b1, w2, b2]
+  }
+
+  // =============================================================
+  // 6. TEXTURES + FBOs + SEED
+  // =============================================================
+  const stateTex = [], tempTex = [], deltaTex = [], perceiveTex = [], nextTex = [];
+  const fbo = {
+    perceive: gl.createFramebuffer(),
+    delta:    gl.createFramebuffer(),
+    temp:     gl.createFramebuffer(),
+    final:    gl.createFramebuffer(),
+  };
+
+    function seedState() {
+        // Seed center like training: alpha=1, channels 4..15 = 1 at center; RGB=0
+        const layers = [0,1,2,3].map(() => new Float32Array(TEX_SIZE*TEX_SIZE*4));
+        const cx = TEX_SIZE >> 1, cy = TEX_SIZE >> 1;
+        const centerIdx = (cy * TEX_SIZE + cx) * 4;
+
+        // alpha (channel 3 of first RGBA tile)
+        layers[0][centerIdx + 3] = 1.0;
+
+        // channels 4..15 -> set to 1.0 at center
+        for (let ch = 4; ch < 16; ch++) {
+            const tid = ch >> 2;
+            const comp = ch & 3;
+            layers[tid][centerIdx + comp] = 1.0;
+        }
+
+        for (let i = 0; i < 4; i++) {
+            gl.bindTexture(gl.TEXTURE_2D, stateTex[i]);
+            gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, TEX_SIZE, TEX_SIZE, gl.RGBA, gl.FLOAT, layers[i]);
+        }
+    }
+
+  function setupStateAndPerception() {
+    for (let i = 0; i < 4; i++) {
+        stateTex[i] = createFloatTex();
+        tempTex[i]  = createFloatTex();
+        deltaTex[i] = createFloatTex();
+        nextTex[i]  = createFloatTex();
+    }
+    for (let i = 0; i < 12; i++) perceiveTex[i] = createFloatTex();
+
+    seedState();
+  }
+
+  // =============================================================
+  // 7. GEOMETRY (FULLSCREEN QUAD)
+  // =============================================================
+  const quad = gl.createBuffer();
+  const verts = new Float32Array([ -1,-1,  1,-1,  -1,1,  1,1 ]);
+
+  function initQuadAttribs() {
+    gl.bindVertexArray(vao);
+    gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+    gl.bufferData(gl.ARRAY_BUFFER, verts, gl.STATIC_DRAW);
+    for (const p of Object.values(prog)) {
+      const loc = gl.getAttribLocation(p, 'p');
+      if (loc >= 0) {
+        gl.enableVertexAttribArray(loc);
+        gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+      }
+    }
+    gl.bindVertexArray(null);
+  }
+
+  // =============================================================
+  // 8. MAIN LOOP
+  // =============================================================
+  let weights, time = 0, lastT = 0, frames = 0, fpsAcc = 0;
+  const fpsEl = document.getElementById('fps');
+
+  async function run() {
+    weights = await loadWeights();     // [w1, b1, w2, b2]
+    setupStateAndPerception();
+    initQuadAttribs();
+    stepCount = 0;
+    running = true;
+    rafId = requestAnimationFrame(frame);
+  }
+
+  function frame(t) {
+    // Simple FPS
+    const dt = (t - lastT) * 0.001;
+    lastT = t; time += 0.001;
+    fpsAcc += dt; frames++;
+    if (fpsAcc >= 0.5) {
+        if (fpsEl) fpsEl.textContent = (frames / fpsAcc).toFixed(1);
+        fpsAcc = 0; 
+        frames = 0;
+    }
+
+    // 1) PERCEIVE — self
+    gl.bindFramebuffer(gl.FRAMEBUFFER, fbo.perceive);
+    gl.viewport(0,0,TEX_SIZE,TEX_SIZE);
+    gl.useProgram(prog.perceiveSelf);
+    gl.bindVertexArray(vao);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, stateTex[0]); gl.uniform1i(gl.getUniformLocation(prog.perceiveSelf,'s0'),0);
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, stateTex[1]); gl.uniform1i(gl.getUniformLocation(prog.perceiveSelf,'s1'),1);
+    gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, stateTex[2]); gl.uniform1i(gl.getUniformLocation(prog.perceiveSelf,'s2'),2);
+    gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, stateTex[3]); gl.uniform1i(gl.getUniformLocation(prog.perceiveSelf,'s3'),3);
+    for (let i=0;i<4;i++) gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0+i, gl.TEXTURE_2D, perceiveTex[i], 0);
+    bindDrawBuffers(4);
+    drawQuad();
+
+    // 1B) PERCEIVE — dx
+    gl.useProgram(prog.perceiveDx);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, stateTex[0]); gl.uniform1i(gl.getUniformLocation(prog.perceiveDx,'s0'),0);
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, stateTex[1]); gl.uniform1i(gl.getUniformLocation(prog.perceiveDx,'s1'),1);
+    gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, stateTex[2]); gl.uniform1i(gl.getUniformLocation(prog.perceiveDx,'s2'),2);
+    gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, stateTex[3]); gl.uniform1i(gl.getUniformLocation(prog.perceiveDx,'s3'),3);
+    for (let i=0;i<4;i++) gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0+i, gl.TEXTURE_2D, perceiveTex[4+i], 0);
+    bindDrawBuffers(4);
+    drawQuad();
+
+    // 1C) PERCEIVE — dy
+    gl.useProgram(prog.perceiveDy);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, stateTex[0]); gl.uniform1i(gl.getUniformLocation(prog.perceiveDy,'s0'),0);
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, stateTex[1]); gl.uniform1i(gl.getUniformLocation(prog.perceiveDy,'s1'),1);
+    gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, stateTex[2]); gl.uniform1i(gl.getUniformLocation(prog.perceiveDy,'s2'),2);
+    gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, stateTex[3]); gl.uniform1i(gl.getUniformLocation(prog.perceiveDy,'s3'),3);
+    for (let i=0;i<4;i++) gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0+i, gl.TEXTURE_2D, perceiveTex[8+i], 0);
+    bindDrawBuffers(4);
+    drawQuad();
+
+    // 2) UPDATE (MLP)
+    gl.bindFramebuffer(gl.FRAMEBUFFER, fbo.delta);
+    gl.useProgram(prog.update);
+    gl.bindVertexArray(vao);
+    // perception inputs
+    for (let i=0;i<12;i++){
+      gl.activeTexture(gl.TEXTURE0+i);
+      gl.bindTexture(gl.TEXTURE_2D, perceiveTex[i]);
+      gl.uniform1i(gl.getUniformLocation(prog.update, 'p'+i), i);
+    }
+    // integer weight/bias textures
+    gl.activeTexture(gl.TEXTURE12); gl.bindTexture(gl.TEXTURE_2D, weights[0]); gl.uniform1i(gl.getUniformLocation(prog.update,'w1'),12);
+    gl.activeTexture(gl.TEXTURE13); gl.bindTexture(gl.TEXTURE_2D, weights[1]); gl.uniform1i(gl.getUniformLocation(prog.update,'b1'),13);
+    gl.activeTexture(gl.TEXTURE14); gl.bindTexture(gl.TEXTURE_2D, weights[2]); gl.uniform1i(gl.getUniformLocation(prog.update,'w2'),14);
+    gl.activeTexture(gl.TEXTURE15); gl.bindTexture(gl.TEXTURE_2D, weights[3]); gl.uniform1i(gl.getUniformLocation(prog.update,'b2'),15);
+    for (let i=0;i<4;i++) gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0+i, gl.TEXTURE_2D, deltaTex[i], 0);
+    bindDrawBuffers(4);
+    drawQuad();
+
+    // 3) STOCHASTIC UPDATE
+    gl.bindFramebuffer(gl.FRAMEBUFFER, fbo.temp);
+    gl.useProgram(prog.stochastic);
+    gl.bindVertexArray(vao);
+    gl.uniform1f(gl.getUniformLocation(prog.stochastic,'t'), time);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, stateTex[0]); gl.uniform1i(gl.getUniformLocation(prog.stochastic,'s0'),0);
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, stateTex[1]); gl.uniform1i(gl.getUniformLocation(prog.stochastic,'s1'),1);
+    gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, stateTex[2]); gl.uniform1i(gl.getUniformLocation(prog.stochastic,'s2'),2);
+    gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, stateTex[3]); gl.uniform1i(gl.getUniformLocation(prog.stochastic,'s3'),3);
+    gl.activeTexture(gl.TEXTURE4); gl.bindTexture(gl.TEXTURE_2D, deltaTex[0]); gl.uniform1i(gl.getUniformLocation(prog.stochastic,'d0'),4);
+    gl.activeTexture(gl.TEXTURE5); gl.bindTexture(gl.TEXTURE_2D, deltaTex[1]); gl.uniform1i(gl.getUniformLocation(prog.stochastic,'d1'),5);
+    gl.activeTexture(gl.TEXTURE6); gl.bindTexture(gl.TEXTURE_2D, deltaTex[2]); gl.uniform1i(gl.getUniformLocation(prog.stochastic,'d2'),6);
+    gl.activeTexture(gl.TEXTURE7); gl.bindTexture(gl.TEXTURE_2D, deltaTex[3]); gl.uniform1i(gl.getUniformLocation(prog.stochastic,'d3'),7);
+    for (let i=0;i<4;i++) gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0+i, gl.TEXTURE_2D, tempTex[i], 0);
+    bindDrawBuffers(4);
+    drawQuad();
+
+    // 4) ALIVE: apply (pre & post) mask; write back into stateTex
+    gl.bindFramebuffer(gl.FRAMEBUFFER, fbo.final);
+    gl.useProgram(prog.alive);
+    gl.bindVertexArray(vao);
+    // prev=*before* stochastic (stateTex), post=*after* stochastic (tempTex)
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, stateTex[0]); gl.uniform1i(gl.getUniformLocation(prog.alive,'prev0'),0);
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, stateTex[1]); gl.uniform1i(gl.getUniformLocation(prog.alive,'prev1'),1);
+    gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, stateTex[2]); gl.uniform1i(gl.getUniformLocation(prog.alive,'prev2'),2);
+    gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, stateTex[3]); gl.uniform1i(gl.getUniformLocation(prog.alive,'prev3'),3);
+    gl.activeTexture(gl.TEXTURE4); gl.bindTexture(gl.TEXTURE_2D, tempTex[0]);  gl.uniform1i(gl.getUniformLocation(prog.alive,'post0'),4);
+    gl.activeTexture(gl.TEXTURE5); gl.bindTexture(gl.TEXTURE_2D, tempTex[1]);  gl.uniform1i(gl.getUniformLocation(prog.alive,'post1'),5);
+    gl.activeTexture(gl.TEXTURE6); gl.bindTexture(gl.TEXTURE_2D, tempTex[2]);  gl.uniform1i(gl.getUniformLocation(prog.alive,'post2'),6);
+    gl.activeTexture(gl.TEXTURE7); gl.bindTexture(gl.TEXTURE_2D, tempTex[3]);  gl.uniform1i(gl.getUniformLocation(prog.alive,'post3'),7);
+    for (let i=0;i<4;i++) gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0+i, gl.TEXTURE_2D, nextTex[i], 0);
+    bindDrawBuffers(4);
+    drawQuad();
+    
+    // swap state <-> next
+    for (let i = 0; i < 4; i++) {
+        const tmp = stateTex[i];
+        stateTex[i] = nextTex[i];
+        nextTex[i]  = tmp;
+    }
+
+    // 5) RENDER
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.useProgram(prog.render);
+    gl.bindVertexArray(vao);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, stateTex[0]);
+    gl.uniform1i(gl.getUniformLocation(prog.render,'s0'), 0);
+    drawQuad();
+
+    stepCount++;
+    if (stepCount < MAX_STEPS && running) {
+        rafId = requestAnimationFrame(frame);
+    } else {
+        running = false;  // stop at MAX_STEPS
+        console.log('Stopped at MAX_STEPS =', MAX_STEPS);
+    }
+  }
+
+  // =============================================================
+  // 9. DAMAGE INTERACTION
+  // =============================================================
+  const zero = new Float32Array([0,0,0,0]);
+  let drawing = false;
+  function damageAt(clientX, clientY) {
+    const r = canvas.getBoundingClientRect();
+    const gx = Math.floor((clientX - r.left) / (r.width  / TEX_SIZE));
+    const gy = Math.floor((clientY - r.top ) / (r.height / TEX_SIZE));
+    const R = 5;
+    for (let i=0;i<4;i++) {
+      gl.bindTexture(gl.TEXTURE_2D, stateTex[i]);
+      for (let dx=-R; dx<=R; dx++) for (let dy=-R; dy<=R; dy++) {
+        if (dx*dx + dy*dy <= R*R) {
+          const x = gx + dx, y = gy + dy;
+          if (x>=0 && x<TEX_SIZE && y>=0 && y<TEX_SIZE) {
+            gl.texSubImage2D(gl.TEXTURE_2D, 0, x, y, 1, 1, gl.RGBA, gl.FLOAT, zero);
+          }
+        }
+      }
+    }
+  }
+  canvas.addEventListener('pointerdown', (e)=>{ 
+    if (!damageEnabled) return;
+    drawing = true; 
+    damageAt(e.clientX, e.clientY);
+  });
+  canvas.addEventListener('pointermove', (e)=>{ 
+    if (!damageEnabled || !drawing) return;
+    damageAt(e.clientX, e.clientY);
+  });
+  window.addEventListener('pointerup', ()=>{ drawing=false; });
+  
+    document.getElementById('reload').addEventListener('click', () => {
+        // Stop any pending frame (safe if rafId==0)
+        if (rafId) cancelAnimationFrame(rafId);
+
+        // Reseed to initial condition
+        seedState();
+
+        // Reset counters and restart
+        stepCount = 0;
+        lastT = 0; 
+        fpsAcc = 0; 
+        frames = 0;
+        running = true;
+        rafId = requestAnimationFrame(frame);
+    });
+
+  // =============================================================
+  // 10. QUAD ATTRIB SETUP & START
+  // =============================================================
+  gl.bindVertexArray(vao);
+  gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+  gl.bufferData(gl.ARRAY_BUFFER, verts, gl.STATIC_DRAW);
+  for (const p of Object.values(prog)) {
+    const loc = gl.getAttribLocation(p, 'p');
+    if (loc >= 0) { gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0); }
+  }
+  gl.bindVertexArray(null);
+
+  setupStateAndPerception();
+  await run();
+})();

@@ -4,6 +4,20 @@ title: About
 permalink: /about/
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/nca-demo.css' | relative_url }}">
+
+<div id="nca-wrap"
+     class="nca-demo"
+     data-weights-base="{{ '/assets/images/nca_weights/' | relative_url }}">
+  <canvas id="ca" width="100" height="100"></canvas>
+  <div class="row">
+    <button id="reload">Reload</button>
+    <!-- <span>FPS: <span id="fps">—</span></span> -->
+  </div>
+</div>
+
+<script src="{{ '/assets/js/nca-demo.js' | relative_url }}" defer></script>
+
 Hello, I'm Blake! :) I am currently a graduate student at MIT AeroAstro, where I research intelligent, autonomous, robotic systems and how we can make them worthy of our trust. This page serves as a central hub for my work, thoughts, and evolving ideas.
 
 This site is also a space for me to experiment, explore, and organize topics that spark my interest. As I gather insights and learn more, I'll continue to update and refine this archive. Along these lines, I live by this famous quote by George Box:
