@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "∿ Meditations ∿"
+title: "∿ Meditations ∿ – You Are What You Repeat"
 date: 2025-08-26
 last_updated: 2025-08-26
 author:
@@ -9,10 +9,6 @@ tags: [philosophy, spirituality]
 permalink: /wiki/meditations
 hidden_from_wiki: false
 hidden_from_secret_wiki: true
----
-
-> You are what you repeat.
-
 ---
 
 ### Quotes
@@ -70,7 +66,7 @@ hidden_from_secret_wiki: true
 
 ---
 
-### Daily GLAD Exercise
+### Daily GLAD
 
 At the end of every day, reflect on the following things:
 
