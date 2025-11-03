@@ -373,12 +373,14 @@
 
   // Render to screen: to_rgb = clamp(1 - alpha + rgb, 0, 1)
   const renderFS = `#version 300 es
-  precision highp float;
-  uniform sampler2D s0;
-  in vec2 uv;
-  out vec4 color;
-  void main(){
-    vec4 c = texture(s0, uv);
+    precision highp float;
+    uniform sampler2D s0;
+    in vec2 uv;
+    out vec4 color;
+    void main(){
+    // Flip Y so bottom row of the texture appears at the bottom of the canvas
+    vec2 tuv = vec2(uv.x, 1.0 - uv.y);
+    vec4 c = texture(s0, tuv);
     float a = clamp(c.a, 0.0, 1.0);
     vec3 rgb = clamp(1.0 - a + c.rgb, 0.0, 1.0);
     color = vec4(rgb, 1.0);
