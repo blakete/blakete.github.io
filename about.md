@@ -10,6 +10,13 @@ permalink: /about/
      class="nca-demo"
      data-weights-base="{{ '/assets/images/nca_weights/' | relative_url }}">
   <canvas id="ca" width="100" height="100"></canvas>
+
+  <p class="nca-caption">
+    This headshot is a trained <em>Neural Cellular Automaton</em> 
+    based on <a href="https://arxiv.org/abs/2205.01681" target="_blank" rel="noopener">
+    Mordvintsev <em>et al.</em>, 2022</a>
+  </p>
+
   <div class="row">
     <button id="reload">Reload</button>
     <!-- <span>FPS: <span id="fps">—</span></span> -->
