@@ -24,9 +24,8 @@
 <div id="wrap">
   <canvas id="ca" width="512" height="512"></canvas>
   <div class="row">
-    <span class="tag">Click/drag to damage</span>
-    <span>FPS: <span id="fps">—</span></span>
-    <span>MAX_DRAW_BUFFERS: <span id="mdb">—</span></span>
+    <button id="reload">Reload</button>
+    <!-- <span>FPS: <span id="fps">—</span></span> -->
   </div>
 </div>
 
@@ -39,6 +38,13 @@
   const CHANNELS = 16;      // 16 state channels
   const HIDDEN = 144;       // first layer width
   const WEIGHTS_BASE = 'assets/images/nca_weights/'; // <-- point to your exported PNGs here
+  
+  const MAX_STEPS = 160;
+  let stepCount = 0;
+  let running = false;
+  let rafId = 0;
+
+  let damageEnabled = false;  // set to true later if you want damage again
 
   // =============================================================
   // 1. GL SETUP
@@ -47,8 +53,10 @@
   const gl = canvas.getContext('webgl2', { antialias: false, alpha: false });
   if (!gl) { alert('WebGL2 not supported'); throw new Error('WebGL2 not supported'); }
 
-  const mdb = gl.getParameter(gl.MAX_DRAW_BUFFERS);
-  document.getElementById('mdb').textContent = mdb;
+    const mdb = gl.getParameter(gl.MAX_DRAW_BUFFERS);
+    const mdbEl = document.getElementById('mdb');
+    if (mdbEl) mdbEl.textContent = String(mdb);
+
   if (mdb < 4) { alert('Need at least 4 draw buffers'); throw new Error('Insufficient MAX_DRAW_BUFFERS'); }
 
   // Render to RGBA32F
@@ -458,6 +466,28 @@
     final:    gl.createFramebuffer(),
   };
 
+    function seedState() {
+        // Seed center like training: alpha=1, channels 4..15 = 1 at center; RGB=0
+        const layers = [0,1,2,3].map(() => new Float32Array(TEX_SIZE*TEX_SIZE*4));
+        const cx = TEX_SIZE >> 1, cy = TEX_SIZE >> 1;
+        const centerIdx = (cy * TEX_SIZE + cx) * 4;
+
+        // alpha (channel 3 of first RGBA tile)
+        layers[0][centerIdx + 3] = 1.0;
+
+        // channels 4..15 -> set to 1.0 at center
+        for (let ch = 4; ch < 16; ch++) {
+            const tid = ch >> 2;
+            const comp = ch & 3;
+            layers[tid][centerIdx + comp] = 1.0;
+        }
+
+        for (let i = 0; i < 4; i++) {
+            gl.bindTexture(gl.TEXTURE_2D, stateTex[i]);
+            gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, TEX_SIZE, TEX_SIZE, gl.RGBA, gl.FLOAT, layers[i]);
+        }
+    }
+
   function setupStateAndPerception() {
     for (let i = 0; i < 4; i++) {
         stateTex[i] = createFloatTex();
@@ -467,25 +497,7 @@
     }
     for (let i = 0; i < 12; i++) perceiveTex[i] = createFloatTex();
 
-    // Seed center like training: alpha=1, channels 4..15 = 1 at center; RGB=0
-    const layers = [0,1,2,3].map(() => new Float32Array(TEX_SIZE*TEX_SIZE*4));
-    const cx = TEX_SIZE >> 1, cy = TEX_SIZE >> 1;
-    const centerIdx = (cy * TEX_SIZE + cx) * 4;
-
-    // alpha (channel 3 of first RGBA tile)
-    layers[0][centerIdx + 3] = 1.0;
-
-    // channels 4..15 -> set to 1.0 at center
-    for (let ch = 4; ch < 16; ch++) {
-      const tid = ch >> 2;
-      const comp = ch & 3;
-      layers[tid][centerIdx + comp] = 1.0;
-    }
-
-    for (let i = 0; i < 4; i++) {
-      gl.bindTexture(gl.TEXTURE_2D, stateTex[i]);
-      gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, TEX_SIZE, TEX_SIZE, gl.RGBA, gl.FLOAT, layers[i]);
-    }
+    seedState();
   }
 
   // =============================================================
@@ -518,7 +530,9 @@
     weights = await loadWeights();     // [w1, b1, w2, b2]
     setupStateAndPerception();
     initQuadAttribs();
-    requestAnimationFrame(frame);
+    stepCount = 0;
+    running = true;
+    rafId = requestAnimationFrame(frame);
   }
 
   function frame(t) {
@@ -526,7 +540,11 @@
     const dt = (t - lastT) * 0.001;
     lastT = t; time += 0.001;
     fpsAcc += dt; frames++;
-    if (fpsAcc >= 0.5) { fpsEl.textContent = (frames / fpsAcc).toFixed(1); fpsAcc = 0; frames = 0; }
+    if (fpsAcc >= 0.5) {
+        if (fpsEl) fpsEl.textContent = (frames / fpsAcc).toFixed(1);
+        fpsAcc = 0; 
+        frames = 0;
+    }
 
     // 1) PERCEIVE — self
     gl.bindFramebuffer(gl.FRAMEBUFFER, fbo.perceive);
@@ -631,7 +649,13 @@
     gl.uniform1i(gl.getUniformLocation(prog.render,'s0'), 0);
     drawQuad();
 
-    requestAnimationFrame(frame);
+    stepCount++;
+    if (stepCount < MAX_STEPS && running) {
+        rafId = requestAnimationFrame(frame);
+    } else {
+        running = false;  // stop at MAX_STEPS
+        console.log('Stopped at MAX_STEPS =', MAX_STEPS);
+    }
   }
 
   // =============================================================
@@ -656,9 +680,32 @@
       }
     }
   }
-  canvas.addEventListener('pointerdown', (e)=>{ drawing=true; damageAt(e.clientX, e.clientY); });
-  canvas.addEventListener('pointermove', (e)=>{ if (drawing) damageAt(e.clientX, e.clientY); });
+  canvas.addEventListener('pointerdown', (e)=>{ 
+    if (!damageEnabled) return;
+    drawing = true; 
+    damageAt(e.clientX, e.clientY);
+  });
+  canvas.addEventListener('pointermove', (e)=>{ 
+    if (!damageEnabled || !drawing) return;
+    damageAt(e.clientX, e.clientY);
+  });
   window.addEventListener('pointerup', ()=>{ drawing=false; });
+  
+    document.getElementById('reload').addEventListener('click', () => {
+        // Stop any pending frame (safe if rafId==0)
+        if (rafId) cancelAnimationFrame(rafId);
+
+        // Reseed to initial condition
+        seedState();
+
+        // Reset counters and restart
+        stepCount = 0;
+        lastT = 0; 
+        fpsAcc = 0; 
+        frames = 0;
+        running = true;
+        rafId = requestAnimationFrame(frame);
+    });
 
   // =============================================================
   // 10. QUAD ATTRIB SETUP & START
