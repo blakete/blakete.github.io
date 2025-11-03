@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Quotes"
+title: "Some of My Favorite Quotes 🗣️"
 date: 2025-08-25
 last_updated: 2025-08-25
 author:
