@@ -55,12 +55,12 @@ hidden_from_secret_wiki: true
 
 ---
 
-### Trust The Universe - On Finding Zen
+### How to beat 99% of people
 
-*Alan Watts*
+*Alex Hormozzi*
 
 <audio controls style="width: 100%; max-width: 600px; margin: 20px 0;">
-  <source src="/assets/audio/Trust The Universe - Alan Watts On Finding Zen.mp3" type="audio/mpeg">
+  <source src="/assets/audio/how to beat 99% of people.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
