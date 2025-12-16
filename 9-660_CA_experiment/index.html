@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>CA Pattern Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+            <h1>Pattern Prediction</h1>
+            <h2>Experiment</h2>
+            
+            <div class="instructions">
+                <p>You will see patterns that evolve from <strong>top to bottom</strong>.</p>
+                <p>For each pattern, you'll rate how likely different options are to be the <strong>correct next row</strong>.</p>
+                
+                <div class="instruction-box">
+                    <p><strong>How it works:</strong></p>
+                    <ul>
+                        <li>See the current pattern state</li>
+                        <li>See a possible next row</li>
+                        <li>Rate: "How likely is this correct?"</li>
+                        <li>Tap a number (1-7) to rate and continue</li>
+                    </ul>
+                    <p class="time-estimate">~10-15 minutes • 192 ratings</p>
+                </div>
+            </div>
+            
+            <div class="participant-input">
+                <label for="participant-id">Participant ID (optional):</label>
+                <input type="text" id="participant-id" placeholder="e.g., p001" autocomplete="off">
+            </div>
+            
+            <button id="start-btn" class="primary-btn">Start Experiment</button>
+        </div>
+    </div>
+
+    <!-- Resume Dialog -->
+    <div id="resume-screen" class="screen">
+        <div class="resume-content">
+            <h1>Resume Experiment?</h1>
+            <p class="resume-message">You have saved progress from a previous session.</p>
+            
+            <div class="resume-info">
+                <p id="resume-progress-info">Trial 12 of 48 • Rating 3 of 4</p>
+                <p id="resume-participant-info"></p>
+            </div>
+            
+            <div class="resume-buttons">
+                <button id="resume-btn" class="primary-btn">Resume</button>
+                <button id="restart-btn" class="secondary-btn">Start Fresh</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Experiment Screen -->
+    <div id="experiment-screen" class="screen">
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <div class="progress-text">
+                <span id="trial-progress">Trial 1/48</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Images Section -->
+        <div class="images-section">
+            <!-- Question Image -->
+            <div class="image-container question-container">
+                <div class="image-label">Current State</div>
+                <div class="image-wrapper">
+                    <img id="question-image" src="" alt="Current CA state">
+                </div>
+            </div>
+
+            <!-- Arrow/Separator -->
+            <div class="arrow-separator">
+                <span>↓ Next row?</span>
+            </div>
+
+            <!-- Candidate Image -->
+            <div class="image-container candidate-container" id="candidate-container">
+                <div class="image-label" id="candidate-label">Option 1/4</div>
+                <div class="image-wrapper">
+                    <img id="candidate-image" src="" alt="Candidate next row">
+                </div>
+            </div>
+        </div>
+
+        <!-- Rating Section -->
+        <div class="rating-section">
+            <div class="rating-prompt">How likely is this the correct next row?</div>
+            
+            <div class="rating-scale">
+                <div class="scale-labels">
+                    <span>Very Unlikely</span>
+                    <span>Unsure</span>
+                    <span>Very Likely</span>
+                </div>
+                <div class="rating-buttons" id="rating-buttons">
+                    <button class="rating-btn" data-value="1">1</button>
+                    <button class="rating-btn" data-value="2">2</button>
+                    <button class="rating-btn" data-value="3">3</button>
+                    <button class="rating-btn" data-value="4">4</button>
+                    <button class="rating-btn" data-value="5">5</button>
+                    <button class="rating-btn" data-value="6">6</button>
+                    <button class="rating-btn" data-value="7">7</button>
+                </div>
+            </div>
+            
+            <div class="tap-hint">Tap a number to rate and continue</div>
+        </div>
+    </div>
+
+    <!-- Completion Screen -->
+    <div id="completion-screen" class="screen">
+        <div class="completion-content">
+            <h1>Complete!</h1>
+            <p class="thank-you">Thank you for participating.</p>
+            
+            <div class="summary-box" id="summary-box">
+                <!-- Summary populated by JS -->
+            </div>
+            
+            <div class="download-section">
+                <p>Please download and send your results:</p>
+                <button id="download-btn" class="primary-btn">Download Results</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transition overlay for smooth animations -->
+    <div id="transition-overlay" class="transition-overlay"></div>
+
+    <script src="experiment.js"></script>
+</body>
+</html>
