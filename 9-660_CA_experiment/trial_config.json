@@ -1,0 +1,1684 @@
+{
+  "rule_metadata": {
+    "32": {
+      "class": "I",
+      "description": "Fixed - pattern dependent"
+    },
+    "54": {
+      "class": "IV",
+      "description": "Complex localized structures"
+    },
+    "5": {
+      "class": "II",
+      "description": "Periodic structures"
+    },
+    "110": {
+      "class": "IV",
+      "description": "Complex - Turing complete"
+    },
+    "108": {
+      "class": "II",
+      "description": "Periodic nested triangles"
+    },
+    "30": {
+      "class": "III",
+      "description": "Chaotic - used for randomness"
+    },
+    "60": {
+      "class": "III",
+      "description": "Chaotic XOR-based"
+    }
+  },
+  "time_steps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "trials": [
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_108/answer_t1_opt_0_rule108.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 108
+        },
+        {
+          "image": "stimuli/rule_108/answer_t1_opt_1_rule107.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 107
+        },
+        {
+          "image": "stimuli/rule_108/answer_t1_opt_2_rule154.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 154
+        },
+        {
+          "image": "stimuli/rule_108/answer_t1_opt_3_rule170.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 170
+        }
+      ],
+      "option_order": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "trial_id": "rule_108_t1",
+      "rule_number": 108,
+      "time_step": 1,
+      "question_image": "stimuli/rule_108/question_t1.png",
+      "rule_class": "Class II - Periodic nested triangles"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_108/answer_t2_opt_0_rule108.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 108
+        },
+        {
+          "image": "stimuli/rule_108/answer_t2_opt_1_rule109.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 109
+        },
+        {
+          "image": "stimuli/rule_108/answer_t2_opt_2_rule58.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 58
+        },
+        {
+          "image": "stimuli/rule_108/answer_t2_opt_3_rule165.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 165
+        }
+      ],
+      "option_order": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "trial_id": "rule_108_t2",
+      "rule_number": 108,
+      "time_step": 2,
+      "question_image": "stimuli/rule_108/question_t2.png",
+      "rule_class": "Class II - Periodic nested triangles"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_108/answer_t3_opt_0_rule108.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 108
+        },
+        {
+          "image": "stimuli/rule_108/answer_t3_opt_1_rule107.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 107
+        },
+        {
+          "image": "stimuli/rule_108/answer_t3_opt_2_rule156.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 156
+        },
+        {
+          "image": "stimuli/rule_108/answer_t3_opt_3_rule77.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 77
+        }
+      ],
+      "option_order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "trial_id": "rule_108_t3",
+      "rule_number": 108,
+      "time_step": 3,
+      "question_image": "stimuli/rule_108/question_t3.png",
+      "rule_class": "Class II - Periodic nested triangles"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_108/answer_t4_opt_0_rule108.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 108
+        },
+        {
+          "image": "stimuli/rule_108/answer_t4_opt_1_rule109.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 109
+        },
+        {
+          "image": "stimuli/rule_108/answer_t4_opt_2_rule36.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 36
+        },
+        {
+          "image": "stimuli/rule_108/answer_t4_opt_3_rule24.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 24
+        }
+      ],
+      "option_order": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "trial_id": "rule_108_t4",
+      "rule_number": 108,
+      "time_step": 4,
+      "question_image": "stimuli/rule_108/question_t4.png",
+      "rule_class": "Class II - Periodic nested triangles"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_108/answer_t5_opt_0_rule108.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 108
+        },
+        {
+          "image": "stimuli/rule_108/answer_t5_opt_1_rule107.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 107
+        },
+        {
+          "image": "stimuli/rule_108/answer_t5_opt_2_rule27.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 27
+        },
+        {
+          "image": "stimuli/rule_108/answer_t5_opt_3_rule185.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 185
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "trial_id": "rule_108_t5",
+      "rule_number": 108,
+      "time_step": 5,
+      "question_image": "stimuli/rule_108/question_t5.png",
+      "rule_class": "Class II - Periodic nested triangles"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_108/answer_t6_opt_0_rule108.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 108
+        },
+        {
+          "image": "stimuli/rule_108/answer_t6_opt_1_rule109.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 109
+        },
+        {
+          "image": "stimuli/rule_108/answer_t6_opt_2_rule72.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 72
+        },
+        {
+          "image": "stimuli/rule_108/answer_t6_opt_3_rule16.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 16
+        }
+      ],
+      "option_order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "trial_id": "rule_108_t6",
+      "rule_number": 108,
+      "time_step": 6,
+      "question_image": "stimuli/rule_108/question_t6.png",
+      "rule_class": "Class II - Periodic nested triangles"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_005/answer_t1_opt_0_rule5.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 5
+        },
+        {
+          "image": "stimuli/rule_005/answer_t1_opt_1_rule6.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 6
+        },
+        {
+          "image": "stimuli/rule_005/answer_t1_opt_2_rule19.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 19
+        },
+        {
+          "image": "stimuli/rule_005/answer_t1_opt_3_rule239.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 239
+        }
+      ],
+      "option_order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "trial_id": "rule_005_t1",
+      "rule_number": 5,
+      "time_step": 1,
+      "question_image": "stimuli/rule_005/question_t1.png",
+      "rule_class": "Class II - Periodic structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_005/answer_t2_opt_0_rule5.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 5
+        },
+        {
+          "image": "stimuli/rule_005/answer_t2_opt_1_rule6.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 6
+        },
+        {
+          "image": "stimuli/rule_005/answer_t2_opt_2_rule33.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 33
+        },
+        {
+          "image": "stimuli/rule_005/answer_t2_opt_3_rule93.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 93
+        }
+      ],
+      "option_order": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "trial_id": "rule_005_t2",
+      "rule_number": 5,
+      "time_step": 2,
+      "question_image": "stimuli/rule_005/question_t2.png",
+      "rule_class": "Class II - Periodic structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_005/answer_t3_opt_0_rule5.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 5
+        },
+        {
+          "image": "stimuli/rule_005/answer_t3_opt_1_rule4.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 4
+        },
+        {
+          "image": "stimuli/rule_005/answer_t3_opt_2_rule43.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 43
+        },
+        {
+          "image": "stimuli/rule_005/answer_t3_opt_3_rule113.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 113
+        }
+      ],
+      "option_order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "trial_id": "rule_005_t3",
+      "rule_number": 5,
+      "time_step": 3,
+      "question_image": "stimuli/rule_005/question_t3.png",
+      "rule_class": "Class II - Periodic structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_005/answer_t4_opt_0_rule5.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 5
+        },
+        {
+          "image": "stimuli/rule_005/answer_t4_opt_1_rule4.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 4
+        },
+        {
+          "image": "stimuli/rule_005/answer_t4_opt_2_rule62.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 62
+        },
+        {
+          "image": "stimuli/rule_005/answer_t4_opt_3_rule123.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 123
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "trial_id": "rule_005_t4",
+      "rule_number": 5,
+      "time_step": 4,
+      "question_image": "stimuli/rule_005/question_t4.png",
+      "rule_class": "Class II - Periodic structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_005/answer_t5_opt_0_rule5.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 5
+        },
+        {
+          "image": "stimuli/rule_005/answer_t5_opt_1_rule6.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 6
+        },
+        {
+          "image": "stimuli/rule_005/answer_t5_opt_2_rule132.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 132
+        },
+        {
+          "image": "stimuli/rule_005/answer_t5_opt_3_rule2.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 2
+        }
+      ],
+      "option_order": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "trial_id": "rule_005_t5",
+      "rule_number": 5,
+      "time_step": 5,
+      "question_image": "stimuli/rule_005/question_t5.png",
+      "rule_class": "Class II - Periodic structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_005/answer_t6_opt_0_rule5.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 5
+        },
+        {
+          "image": "stimuli/rule_005/answer_t6_opt_1_rule6.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 6
+        },
+        {
+          "image": "stimuli/rule_005/answer_t6_opt_2_rule51.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 51
+        },
+        {
+          "image": "stimuli/rule_005/answer_t6_opt_3_rule78.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 78
+        }
+      ],
+      "option_order": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "trial_id": "rule_005_t6",
+      "rule_number": 5,
+      "time_step": 6,
+      "question_image": "stimuli/rule_005/question_t6.png",
+      "rule_class": "Class II - Periodic structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_054/answer_t1_opt_0_rule54.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 54
+        },
+        {
+          "image": "stimuli/rule_054/answer_t1_opt_1_rule53.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 53
+        },
+        {
+          "image": "stimuli/rule_054/answer_t1_opt_2_rule110.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_054/answer_t1_opt_3_rule56.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 56
+        }
+      ],
+      "option_order": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "trial_id": "rule_054_t1",
+      "rule_number": 54,
+      "time_step": 1,
+      "question_image": "stimuli/rule_054/question_t1.png",
+      "rule_class": "Class IV - Complex localized structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_054/answer_t2_opt_0_rule54.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 54
+        },
+        {
+          "image": "stimuli/rule_054/answer_t2_opt_1_rule55.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 55
+        },
+        {
+          "image": "stimuli/rule_054/answer_t2_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_054/answer_t2_opt_3_rule77.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 77
+        }
+      ],
+      "option_order": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "trial_id": "rule_054_t2",
+      "rule_number": 54,
+      "time_step": 2,
+      "question_image": "stimuli/rule_054/question_t2.png",
+      "rule_class": "Class IV - Complex localized structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_054/answer_t3_opt_0_rule54.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 54
+        },
+        {
+          "image": "stimuli/rule_054/answer_t3_opt_1_rule53.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 53
+        },
+        {
+          "image": "stimuli/rule_054/answer_t3_opt_2_rule110.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_054/answer_t3_opt_3_rule220.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 220
+        }
+      ],
+      "option_order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "trial_id": "rule_054_t3",
+      "rule_number": 54,
+      "time_step": 3,
+      "question_image": "stimuli/rule_054/question_t3.png",
+      "rule_class": "Class IV - Complex localized structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_054/answer_t4_opt_0_rule54.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 54
+        },
+        {
+          "image": "stimuli/rule_054/answer_t4_opt_1_rule55.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 55
+        },
+        {
+          "image": "stimuli/rule_054/answer_t4_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_054/answer_t4_opt_3_rule68.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 68
+        }
+      ],
+      "option_order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "trial_id": "rule_054_t4",
+      "rule_number": 54,
+      "time_step": 4,
+      "question_image": "stimuli/rule_054/question_t4.png",
+      "rule_class": "Class IV - Complex localized structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_054/answer_t5_opt_0_rule54.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 54
+        },
+        {
+          "image": "stimuli/rule_054/answer_t5_opt_1_rule55.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 55
+        },
+        {
+          "image": "stimuli/rule_054/answer_t5_opt_2_rule110.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_054/answer_t5_opt_3_rule206.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 206
+        }
+      ],
+      "option_order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "trial_id": "rule_054_t5",
+      "rule_number": 54,
+      "time_step": 5,
+      "question_image": "stimuli/rule_054/question_t5.png",
+      "rule_class": "Class IV - Complex localized structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_054/answer_t6_opt_0_rule54.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 54
+        },
+        {
+          "image": "stimuli/rule_054/answer_t6_opt_1_rule53.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 53
+        },
+        {
+          "image": "stimuli/rule_054/answer_t6_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_054/answer_t6_opt_3_rule197.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 197
+        }
+      ],
+      "option_order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "trial_id": "rule_054_t6",
+      "rule_number": 54,
+      "time_step": 6,
+      "question_image": "stimuli/rule_054/question_t6.png",
+      "rule_class": "Class IV - Complex localized structures"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_110/answer_t1_opt_0_rule110.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_110/answer_t1_opt_1_rule109.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 109
+        },
+        {
+          "image": "stimuli/rule_110/answer_t1_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_110/answer_t1_opt_3_rule215.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 215
+        }
+      ],
+      "option_order": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "trial_id": "rule_110_t1",
+      "rule_number": 110,
+      "time_step": 1,
+      "question_image": "stimuli/rule_110/question_t1.png",
+      "rule_class": "Class IV - Complex - Turing complete"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_110/answer_t2_opt_0_rule110.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_110/answer_t2_opt_1_rule109.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 109
+        },
+        {
+          "image": "stimuli/rule_110/answer_t2_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_110/answer_t2_opt_3_rule72.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 72
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "trial_id": "rule_110_t2",
+      "rule_number": 110,
+      "time_step": 2,
+      "question_image": "stimuli/rule_110/question_t2.png",
+      "rule_class": "Class IV - Complex - Turing complete"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_110/answer_t3_opt_0_rule110.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_110/answer_t3_opt_1_rule109.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 109
+        },
+        {
+          "image": "stimuli/rule_110/answer_t3_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_110/answer_t3_opt_3_rule0.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 0
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "trial_id": "rule_110_t3",
+      "rule_number": 110,
+      "time_step": 3,
+      "question_image": "stimuli/rule_110/question_t3.png",
+      "rule_class": "Class IV - Complex - Turing complete"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_110/answer_t4_opt_0_rule110.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_110/answer_t4_opt_1_rule109.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 109
+        },
+        {
+          "image": "stimuli/rule_110/answer_t4_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_110/answer_t4_opt_3_rule118.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 118
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "trial_id": "rule_110_t4",
+      "rule_number": 110,
+      "time_step": 4,
+      "question_image": "stimuli/rule_110/question_t4.png",
+      "rule_class": "Class IV - Complex - Turing complete"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_110/answer_t5_opt_0_rule110.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_110/answer_t5_opt_1_rule111.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 111
+        },
+        {
+          "image": "stimuli/rule_110/answer_t5_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_110/answer_t5_opt_3_rule254.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 254
+        }
+      ],
+      "option_order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "trial_id": "rule_110_t5",
+      "rule_number": 110,
+      "time_step": 5,
+      "question_image": "stimuli/rule_110/question_t5.png",
+      "rule_class": "Class IV - Complex - Turing complete"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_110/answer_t6_opt_0_rule110.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 110
+        },
+        {
+          "image": "stimuli/rule_110/answer_t6_opt_1_rule109.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 109
+        },
+        {
+          "image": "stimuli/rule_110/answer_t6_opt_2_rule106.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 106
+        },
+        {
+          "image": "stimuli/rule_110/answer_t6_opt_3_rule5.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 5
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "trial_id": "rule_110_t6",
+      "rule_number": 110,
+      "time_step": 6,
+      "question_image": "stimuli/rule_110/question_t6.png",
+      "rule_class": "Class IV - Complex - Turing complete"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_060/answer_t1_opt_0_rule60.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 60
+        },
+        {
+          "image": "stimuli/rule_060/answer_t1_opt_1_rule59.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 59
+        },
+        {
+          "image": "stimuli/rule_060/answer_t1_opt_2_rule154.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 154
+        },
+        {
+          "image": "stimuli/rule_060/answer_t1_opt_3_rule238.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 238
+        }
+      ],
+      "option_order": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "trial_id": "rule_060_t1",
+      "rule_number": 60,
+      "time_step": 1,
+      "question_image": "stimuli/rule_060/question_t1.png",
+      "rule_class": "Class III - Chaotic XOR-based"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_060/answer_t2_opt_0_rule60.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 60
+        },
+        {
+          "image": "stimuli/rule_060/answer_t2_opt_1_rule59.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 59
+        },
+        {
+          "image": "stimuli/rule_060/answer_t2_opt_2_rule26.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 26
+        },
+        {
+          "image": "stimuli/rule_060/answer_t2_opt_3_rule192.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 192
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "trial_id": "rule_060_t2",
+      "rule_number": 60,
+      "time_step": 2,
+      "question_image": "stimuli/rule_060/question_t2.png",
+      "rule_class": "Class III - Chaotic XOR-based"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_060/answer_t3_opt_0_rule60.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 60
+        },
+        {
+          "image": "stimuli/rule_060/answer_t3_opt_1_rule61.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 61
+        },
+        {
+          "image": "stimuli/rule_060/answer_t3_opt_2_rule126.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 126
+        },
+        {
+          "image": "stimuli/rule_060/answer_t3_opt_3_rule33.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 33
+        }
+      ],
+      "option_order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "trial_id": "rule_060_t3",
+      "rule_number": 60,
+      "time_step": 3,
+      "question_image": "stimuli/rule_060/question_t3.png",
+      "rule_class": "Class III - Chaotic XOR-based"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_060/answer_t4_opt_0_rule60.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 60
+        },
+        {
+          "image": "stimuli/rule_060/answer_t4_opt_1_rule61.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 61
+        },
+        {
+          "image": "stimuli/rule_060/answer_t4_opt_2_rule22.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 22
+        },
+        {
+          "image": "stimuli/rule_060/answer_t4_opt_3_rule50.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 50
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "trial_id": "rule_060_t4",
+      "rule_number": 60,
+      "time_step": 4,
+      "question_image": "stimuli/rule_060/question_t4.png",
+      "rule_class": "Class III - Chaotic XOR-based"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_060/answer_t5_opt_0_rule60.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 60
+        },
+        {
+          "image": "stimuli/rule_060/answer_t5_opt_1_rule59.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 59
+        },
+        {
+          "image": "stimuli/rule_060/answer_t5_opt_2_rule126.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 126
+        },
+        {
+          "image": "stimuli/rule_060/answer_t5_opt_3_rule70.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 70
+        }
+      ],
+      "option_order": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "trial_id": "rule_060_t5",
+      "rule_number": 60,
+      "time_step": 5,
+      "question_image": "stimuli/rule_060/question_t5.png",
+      "rule_class": "Class III - Chaotic XOR-based"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_060/answer_t6_opt_0_rule60.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 60
+        },
+        {
+          "image": "stimuli/rule_060/answer_t6_opt_1_rule61.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 61
+        },
+        {
+          "image": "stimuli/rule_060/answer_t6_opt_2_rule18.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 18
+        },
+        {
+          "image": "stimuli/rule_060/answer_t6_opt_3_rule120.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 120
+        }
+      ],
+      "option_order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "trial_id": "rule_060_t6",
+      "rule_number": 60,
+      "time_step": 6,
+      "question_image": "stimuli/rule_060/question_t6.png",
+      "rule_class": "Class III - Chaotic XOR-based"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_030/answer_t1_opt_0_rule30.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 30
+        },
+        {
+          "image": "stimuli/rule_030/answer_t1_opt_1_rule31.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 31
+        },
+        {
+          "image": "stimuli/rule_030/answer_t1_opt_2_rule90.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 90
+        },
+        {
+          "image": "stimuli/rule_030/answer_t1_opt_3_rule232.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 232
+        }
+      ],
+      "option_order": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "trial_id": "rule_030_t1",
+      "rule_number": 30,
+      "time_step": 1,
+      "question_image": "stimuli/rule_030/question_t1.png",
+      "rule_class": "Class III - Chaotic - used for randomness"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_030/answer_t2_opt_0_rule30.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 30
+        },
+        {
+          "image": "stimuli/rule_030/answer_t2_opt_1_rule31.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 31
+        },
+        {
+          "image": "stimuli/rule_030/answer_t2_opt_2_rule122.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 122
+        },
+        {
+          "image": "stimuli/rule_030/answer_t2_opt_3_rule8.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 8
+        }
+      ],
+      "option_order": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "trial_id": "rule_030_t2",
+      "rule_number": 30,
+      "time_step": 2,
+      "question_image": "stimuli/rule_030/question_t2.png",
+      "rule_class": "Class III - Chaotic - used for randomness"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_030/answer_t3_opt_0_rule30.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 30
+        },
+        {
+          "image": "stimuli/rule_030/answer_t3_opt_1_rule29.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 29
+        },
+        {
+          "image": "stimuli/rule_030/answer_t3_opt_2_rule90.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 90
+        },
+        {
+          "image": "stimuli/rule_030/answer_t3_opt_3_rule44.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 44
+        }
+      ],
+      "option_order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "trial_id": "rule_030_t3",
+      "rule_number": 30,
+      "time_step": 3,
+      "question_image": "stimuli/rule_030/question_t3.png",
+      "rule_class": "Class III - Chaotic - used for randomness"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_030/answer_t4_opt_0_rule30.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 30
+        },
+        {
+          "image": "stimuli/rule_030/answer_t4_opt_1_rule31.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 31
+        },
+        {
+          "image": "stimuli/rule_030/answer_t4_opt_2_rule150.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 150
+        },
+        {
+          "image": "stimuli/rule_030/answer_t4_opt_3_rule137.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 137
+        }
+      ],
+      "option_order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "trial_id": "rule_030_t4",
+      "rule_number": 30,
+      "time_step": 4,
+      "question_image": "stimuli/rule_030/question_t4.png",
+      "rule_class": "Class III - Chaotic - used for randomness"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_030/answer_t5_opt_0_rule30.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 30
+        },
+        {
+          "image": "stimuli/rule_030/answer_t5_opt_1_rule31.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 31
+        },
+        {
+          "image": "stimuli/rule_030/answer_t5_opt_2_rule90.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 90
+        },
+        {
+          "image": "stimuli/rule_030/answer_t5_opt_3_rule136.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 136
+        }
+      ],
+      "option_order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "trial_id": "rule_030_t5",
+      "rule_number": 30,
+      "time_step": 5,
+      "question_image": "stimuli/rule_030/question_t5.png",
+      "rule_class": "Class III - Chaotic - used for randomness"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_030/answer_t6_opt_0_rule30.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 30
+        },
+        {
+          "image": "stimuli/rule_030/answer_t6_opt_1_rule31.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 31
+        },
+        {
+          "image": "stimuli/rule_030/answer_t6_opt_2_rule26.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 26
+        },
+        {
+          "image": "stimuli/rule_030/answer_t6_opt_3_rule57.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 57
+        }
+      ],
+      "option_order": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "trial_id": "rule_030_t6",
+      "rule_number": 30,
+      "time_step": 6,
+      "question_image": "stimuli/rule_030/question_t6.png",
+      "rule_class": "Class III - Chaotic - used for randomness"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_032/answer_t1_opt_0_rule32.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 32
+        },
+        {
+          "image": "stimuli/rule_032/answer_t1_opt_1_rule33.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 33
+        },
+        {
+          "image": "stimuli/rule_032/answer_t1_opt_2_rule0.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 0
+        },
+        {
+          "image": "stimuli/rule_032/answer_t1_opt_3_rule212.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 212
+        }
+      ],
+      "option_order": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "trial_id": "rule_032_t1",
+      "rule_number": 32,
+      "time_step": 1,
+      "question_image": "stimuli/rule_032/question_t1.png",
+      "rule_class": "Class I - Fixed - pattern dependent"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_032/answer_t2_opt_0_rule32.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 32
+        },
+        {
+          "image": "stimuli/rule_032/answer_t2_opt_1_rule33.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 33
+        },
+        {
+          "image": "stimuli/rule_032/answer_t2_opt_2_rule136.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 136
+        },
+        {
+          "image": "stimuli/rule_032/answer_t2_opt_3_rule65.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 65
+        }
+      ],
+      "option_order": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "trial_id": "rule_032_t2",
+      "rule_number": 32,
+      "time_step": 2,
+      "question_image": "stimuli/rule_032/question_t2.png",
+      "rule_class": "Class I - Fixed - pattern dependent"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_032/answer_t3_opt_0_rule32.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 32
+        },
+        {
+          "image": "stimuli/rule_032/answer_t3_opt_1_rule31.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 31
+        },
+        {
+          "image": "stimuli/rule_032/answer_t3_opt_2_rule248.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 248
+        },
+        {
+          "image": "stimuli/rule_032/answer_t3_opt_3_rule158.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 158
+        }
+      ],
+      "option_order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "trial_id": "rule_032_t3",
+      "rule_number": 32,
+      "time_step": 3,
+      "question_image": "stimuli/rule_032/question_t3.png",
+      "rule_class": "Class I - Fixed - pattern dependent"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_032/answer_t4_opt_0_rule32.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 32
+        },
+        {
+          "image": "stimuli/rule_032/answer_t4_opt_1_rule33.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 33
+        },
+        {
+          "image": "stimuli/rule_032/answer_t4_opt_2_rule254.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 254
+        },
+        {
+          "image": "stimuli/rule_032/answer_t4_opt_3_rule62.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 62
+        }
+      ],
+      "option_order": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "trial_id": "rule_032_t4",
+      "rule_number": 32,
+      "time_step": 4,
+      "question_image": "stimuli/rule_032/question_t4.png",
+      "rule_class": "Class I - Fixed - pattern dependent"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_032/answer_t5_opt_0_rule32.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 32
+        },
+        {
+          "image": "stimuli/rule_032/answer_t5_opt_1_rule31.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 31
+        },
+        {
+          "image": "stimuli/rule_032/answer_t5_opt_2_rule160.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 160
+        },
+        {
+          "image": "stimuli/rule_032/answer_t5_opt_3_rule88.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 88
+        }
+      ],
+      "option_order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "trial_id": "rule_032_t5",
+      "rule_number": 32,
+      "time_step": 5,
+      "question_image": "stimuli/rule_032/question_t5.png",
+      "rule_class": "Class I - Fixed - pattern dependent"
+    },
+    {
+      "options": [
+        {
+          "image": "stimuli/rule_032/answer_t6_opt_0_rule32.png",
+          "id": "opt_0",
+          "is_correct": true,
+          "rule_applied": 32
+        },
+        {
+          "image": "stimuli/rule_032/answer_t6_opt_1_rule31.png",
+          "id": "opt_1",
+          "is_correct": false,
+          "rule_applied": 31
+        },
+        {
+          "image": "stimuli/rule_032/answer_t6_opt_2_rule251.png",
+          "id": "opt_2",
+          "is_correct": false,
+          "rule_applied": 251
+        },
+        {
+          "image": "stimuli/rule_032/answer_t6_opt_3_rule90.png",
+          "id": "opt_3",
+          "is_correct": false,
+          "rule_applied": 90
+        }
+      ],
+      "option_order": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "trial_id": "rule_032_t6",
+      "rule_number": 32,
+      "time_step": 6,
+      "question_image": "stimuli/rule_032/question_t6.png",
+      "rule_class": "Class I - Fixed - pattern dependent"
+    }
+  ],
+  "experiment_id": "ca_rule_inference_v1",
+  "num_rules": 7,
+  "generated_at": "2025-12-16T01:13:01",
+  "num_trials": 42
+}
