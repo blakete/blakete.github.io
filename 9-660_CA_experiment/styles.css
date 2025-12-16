@@ -1,0 +1,745 @@
+/**
+ * CA Rule Inference Experiment - Mobile-First Sequential Design
+ * 
+ * Optimized for touch interaction with large targets and smooth transitions.
+ */
+
+/* ============================================
+   CSS Variables
+   ============================================ */
+
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #21262d;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --accent: #58a6ff;
+    --accent-glow: rgba(88, 166, 255, 0.3);
+    --success: #3fb950;
+    --warning: #d29922;
+    --border: #30363d;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --transition: 200ms ease;
+    --transition-slow: 300ms ease;
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    min-height: 100dvh;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   Screen Management
+   ============================================ */
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 16px;
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   Welcome Screen
+   ============================================ */
+
+#welcome-screen {
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-content {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.welcome-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.welcome-content h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.instructions {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.instructions > p {
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.instruction-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+}
+
+.instruction-box p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.instruction-box ul {
+    margin: 0 0 12px 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.instruction-box li {
+    margin-bottom: 4px;
+}
+
+.time-estimate {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem !important;
+    margin-bottom: 0 !important;
+}
+
+.participant-input {
+    margin-bottom: 24px;
+}
+
+.participant-input label {
+    display: block;
+    text-align: left;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.participant-input input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color var(--transition);
+}
+
+.participant-input input:focus {
+    border-color: var(--accent);
+}
+
+.participant-input input::placeholder {
+    color: var(--text-muted);
+}
+
+/* ============================================
+   Resume Screen
+   ============================================ */
+
+#resume-screen {
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-content {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.resume-content h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--warning);
+    margin-bottom: 12px;
+}
+
+.resume-message {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.resume-info {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.resume-info p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+#resume-progress-info {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+#resume-participant-info {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.resume-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.secondary-btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color var(--transition), background var(--transition);
+    -webkit-appearance: none;
+}
+
+.secondary-btn:hover {
+    border-color: var(--text-muted);
+    background: var(--bg-secondary);
+}
+
+.secondary-btn:active {
+    background: var(--bg-card);
+}
+
+/* ============================================
+   Primary Button
+   ============================================ */
+
+.primary-btn {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bg-primary);
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+    -webkit-appearance: none;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+.primary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================
+   Experiment Screen
+   ============================================ */
+
+#experiment-screen {
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Progress Section */
+.progress-section {
+    flex-shrink: 0;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+#trial-progress {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.progress-bar {
+    height: 6px;
+    background: var(--bg-card);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--success));
+    border-radius: 3px;
+    transition: width var(--transition-slow);
+}
+
+/* Images Section */
+.images-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    min-height: 0;
+}
+
+.image-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px;
+    transition: opacity var(--transition);
+}
+
+.image-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.image-wrapper {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 12px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    max-height: 44vh;
+    display: block;
+}
+
+.arrow-separator {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 4px 0;
+}
+
+/* Candidate transition */
+.candidate-container.transitioning {
+    opacity: 0.3;
+}
+
+/* ============================================
+   Rating Section
+   ============================================ */
+
+.rating-section {
+    flex-shrink: 0;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+}
+
+.rating-prompt {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.rating-scale {
+    margin-bottom: 12px;
+}
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    padding: 0 4px;
+}
+
+.rating-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.rating-btn {
+    flex: 1;
+    aspect-ratio: 1;
+    max-width: 52px;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition);
+    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-btn:focus {
+    outline: none;
+}
+
+/* Only apply hover styles on devices that support hover */
+@media (hover: hover) {
+    .rating-btn:hover {
+        border-color: var(--accent);
+        color: var(--text-primary);
+    }
+}
+
+.rating-btn:active {
+    transform: scale(0.95);
+}
+
+.rating-btn.selected {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-primary);
+    transform: scale(1.1);
+}
+
+.rating-btn.pulse {
+    animation: pulse 300ms ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.2); box-shadow: 0 0 20px var(--accent-glow); }
+    100% { transform: scale(1.1); }
+}
+
+.tap-hint {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   Completion Screen
+   ============================================ */
+
+#completion-screen {
+    justify-content: center;
+    align-items: center;
+}
+
+.completion-content {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.completion-content h1 {
+    font-size: 2rem;
+    color: var(--success);
+    margin-bottom: 8px;
+}
+
+.thank-you {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.summary-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.summary-box h3 {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+}
+
+.summary-box h4 {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.stat {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.time-step-accuracy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.time-stat {
+    background: var(--bg-secondary);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.summary-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+.download-section {
+    margin-bottom: 16px;
+}
+
+.download-section p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+/* ============================================
+   Transition Overlay (for future use)
+   ============================================ */
+
+.transition-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+    z-index: 100;
+}
+
+.transition-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+/* Larger phones / small tablets */
+@media (min-width: 400px) {
+    .rating-btn {
+        max-width: 56px;
+        font-size: 1.3rem;
+    }
+    
+    .image-wrapper img {
+        max-height: 44vh;
+    }
+}
+
+/* Tablets and desktop */
+@media (min-width: 768px) {
+    .screen {
+        padding: 24px;
+    }
+    
+    .welcome-content,
+    .completion-content {
+        max-width: 500px;
+    }
+    
+    #experiment-screen {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .image-wrapper img {
+        max-height: 44vh;
+    }
+    
+    .rating-btn {
+        max-width: 64px;
+        min-width: 56px;
+        min-height: 56px;
+        font-size: 1.4rem;
+    }
+    
+    .rating-buttons {
+        gap: 10px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .images-section {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 16px;
+    }
+    
+    .image-container {
+        flex: 1;
+    }
+    
+    .arrow-separator {
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+    }
+    
+    .arrow-separator span {
+        transform: rotate(-90deg);
+        white-space: nowrap;
+    }
+    
+    .image-wrapper img {
+        max-height: 50vh;
+    }
+}
+
+/* Landscape mode on phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .images-section {
+        flex-direction: row;
+        gap: 12px;
+    }
+    
+    .image-container {
+        flex: 1;
+    }
+    
+    .arrow-separator {
+        display: flex;
+        align-items: center;
+        padding: 0 4px;
+    }
+    
+    .image-wrapper img {
+        max-height: 28vh;
+    }
+    
+    .rating-section {
+        padding: 12px;
+    }
+    
+    .rating-prompt {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .rating-btn {
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 44px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 340px) {
+    .rating-btn {
+        min-width: 38px;
+        min-height: 38px;
+        font-size: 1rem;
+    }
+    
+    .scale-labels {
+        font-size: 0.6rem;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
