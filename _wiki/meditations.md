@@ -60,7 +60,7 @@ hidden_from_secret_wiki: true
 *Alex Hormozzi*
 
 <audio controls style="width: 100%; max-width: 600px; margin: 20px 0;">
-  <source src="/assets/audio/how to beat 99% of people.mp3" type="audio/mpeg">
+  <source src="/assets/audio/how_to_beat_99_percent_of_people.mp3.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
