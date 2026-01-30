@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [quantum mechanics, probability, uncertainty]
 permalink: /notes/irreducible-uncertainty
-hidden_from_wiki: true
-hidden_from_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
 ---
 
 Time-dependent Schrödinger equation:

@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [artificial intelligence, neural networks, computational complexity, epistemology]
 permalink: /wiki/neural-networks-discovering-new-computational-reducibility
-hidden_from_wiki: false
-hidden_from_secret_wiki: true
+show_on_wiki: true
+show_on_secret_wiki: false
 ---
 
 When a neural network (NN) achieves drastic runtime improvements (sometimes 1000x!) or more, while maintaining or exceeding traditional algorithmic performance across a representative domain (e.g., 5000x speedup with 100% accuracy across all test cases), it raises a compelling set of questions:

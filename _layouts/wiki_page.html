@@ -4,12 +4,12 @@ layout: page
 
 {% comment %}
 This layout determines the correct permalink prefix based on the boolean values
-hidden_from_wiki and hidden_from_secret_wiki and then redirects to the right URL.
+show_on_wiki and show_on_secret_wiki and then redirects to the right URL.
 Only applies to pages in the wiki collection.
 {% endcomment %}
 
 {% if page.collection == 'wiki' %}
-  {% if page.hidden_from_wiki == true and page.hidden_from_secret_wiki == false %}
+  {% if page.show_on_wiki == false and page.show_on_secret_wiki == true %}
     {% assign permalink_prefix = "/secret-wiki" %}
   {% else %}
     {% assign permalink_prefix = "/wiki" %}

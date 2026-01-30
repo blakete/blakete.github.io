@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [philosophy, personal, experimental]
 permalink: /wiki/quotes
-hidden_from_wiki: false
-hidden_from_secret_wiki: true
+show_on_wiki: true
+show_on_secret_wiki: false
 ---
 
 > You are what you repeat.

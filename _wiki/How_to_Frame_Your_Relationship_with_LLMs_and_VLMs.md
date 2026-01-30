@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [LLMs, VLMs, mental models, AI best practices]
 permalink: /secret-wiki/how-to-frame-your-relationship-with-llms-and-vlms
-hidden_from_wiki: true
-hidden_from_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
 ---
 
 It is really important to frame your relationship with AI in a way that allows you to get the most utility from it while avoiding as much downside as possible. Below is a synthesis of frameworks and mental models drawn from my day-to-day work at MIT and conversations with industry experts, as of 06/25/2025.

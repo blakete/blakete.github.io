@@ -387,17 +387,17 @@ last_updated: YYYY-MM-DD
 author: [Author Name]
 tags: [tag1, tag2]
 permalink: /wiki/title-slug
-hidden_from_wiki: false
-hidden_from_secret_wiki: false
+show_on_wiki: true
+show_on_secret_wiki: true
 ---
 ```
 
 ### Special Features
 
-1. **Hidden Content:**
+1. **Visibility Control:**
    - `hidden_from_posts: true` - Hides blog post from listings
-   - `hidden_from_wiki: true` - Hides wiki page from main wiki
-   - `hidden_from_secret_wiki: false/true` - Controls secret wiki visibility
+   - `show_on_wiki: true/false` - Controls main wiki visibility
+   - `show_on_secret_wiki: true/false` - Controls secret wiki visibility
    - Content still accessible via direct URL
 
 2. **Last Updated Tracking:**
@@ -407,7 +407,7 @@ hidden_from_secret_wiki: false
 
 3. **URL Redirection:**
    - Wiki page layout includes JS redirect logic
-   - Automatically redirects based on `hidden_from_wiki` and `hidden_from_secret_wiki` status
+   - Automatically redirects based on `show_on_wiki` and `show_on_secret_wiki` status
    - Maintains consistent URL structure
 
 4. **Tags & Categorization:**

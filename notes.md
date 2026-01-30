@@ -12,7 +12,7 @@ Welcome to my evolving digital garden of hypermedia artifacts: notes, ideas, and
   {% assign visible_count = 0 %}
 
   {% for wiki_page in sorted_wiki %}
-    {% unless wiki_page.hidden_from_wiki %}
+    {% if wiki_page.show_on_wiki %}
       {% assign visible_count = visible_count | plus: 1 %}
       <div class="wiki-entry">
         <h3 style="margin-bottom: 0px;">
@@ -42,7 +42,7 @@ Welcome to my evolving digital garden of hypermedia artifacts: notes, ideas, and
         
       </div>
       <hr>
-    {% endunless %}
+    {% endif %}
   {% endfor %}
 
   {% if visible_count == 0 %}

@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [thermodynamics, computational irreducibility, entropy, cellular automata]
 permalink: /notes/second-law-thermodynamics
-hidden_from_wiki: true
-hidden_from_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
 ---
 
 ## Key Ideas
