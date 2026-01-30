@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [formal verification, model checking, statistical model checking]
 permalink: /wiki/frequentist-vs-bayesian-smc
-hidden_from_wiki: false
-hidden_from_secret_wiki: true
+show_on_wiki: true
+show_on_secret_wiki: false
 ---
 
 ## Introduction

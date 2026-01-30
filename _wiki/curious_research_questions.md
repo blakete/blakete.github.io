@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [quantum mechanics, probability, uncertainty]
 permalink: /notes/curious-research-questions
-hidden_from_wiki: true
-hidden_from_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
 ---
 
 * "How much stochasticity can be tolerated at the substrate before the higher-level emergent properties collapse to look random?"

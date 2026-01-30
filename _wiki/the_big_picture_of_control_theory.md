@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [draft, experimental, control theory]
 permalink: /wiki/the-big-picture-of-control-theory
-hidden_from_wiki: true
-hidden_from_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
 ---
 
 

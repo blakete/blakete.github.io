@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [opinion piece, mathematics, education, pedagogy]
 permalink: /wiki/mathematical-priests-and-peasants
-hidden_from_wiki: false
-hidden_from_secret_wiki: true
+show_on_wiki: true
+show_on_secret_wiki: false
 ---
 
 I've been diving deep into category theory lately and had a realization that's honestly kind of infuriating: mathematics education has suffered a profound pedagogical inversion that has taken me significant, deliberate effort to recover from.

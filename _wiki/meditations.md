@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [philosophy, spirituality]
 permalink: /wiki/meditations
-hidden_from_wiki: false
-hidden_from_secret_wiki: true
+show_on_wiki: true
+show_on_secret_wiki: false
 ---
 
 ### Quotes

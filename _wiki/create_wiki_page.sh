@@ -21,11 +21,11 @@ filename="${slug}.md"
 # Ask if this should be a secret note
 read -p "Should this be a secret note? (y/n): " is_secret_note
 if [ "$is_secret_note" = "y" ]; then
-  hidden_from_wiki="true"
-  hidden_from_secret_wiki="false"
+  show_on_wiki="false"
+  show_on_secret_wiki="true"
 else
-  hidden_from_wiki="false"
-  hidden_from_secret_wiki="true"
+  show_on_wiki="true"
+  show_on_secret_wiki="false"
 fi
 
 # Create (or overwrite) the file with the wiki page header.
@@ -36,8 +36,8 @@ title: "$title"
 date: $current_date
 last_updated: $current_date
 tags: [wiki]
-hidden_from_wiki: ${hidden_from_wiki}
-hidden_from_secret_wiki: ${hidden_from_secret_wiki}
+show_on_wiki: ${show_on_wiki}
+show_on_secret_wiki: ${show_on_secret_wiki}
 ---
 
 A brief introduction to $title.

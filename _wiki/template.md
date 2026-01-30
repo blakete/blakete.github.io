@@ -1,11 +1,15 @@
 ---
-layout: wiki_page
-title: "Boilerplate Wiki Page"
-date: 2025-01-01
-last_updated: 2025-01-01
-tags: [wiki, tag1, tag2]
-hidden_from_wiki: true
-hidden_from_secret_wiki: true
+layout: post
+title: "Mathematical Priests and Peasants: 80 Years of Backwards Math Education"
+date: 2025-06-20
+last_updated: 2025-06-20
+author:
+- Blake Edwards
+tags: [opinion piece, mathematics, education, pedagogy]
+permalink: /wiki/<CHANGEME>
+# Change this to True to show!
+show_on_wiki: false
+show_on_secret_wiki: false
 ---
 
 Brief introduction to the topic.

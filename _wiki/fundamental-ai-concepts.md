@@ -5,7 +5,7 @@ date: 2025-01-30
 last_updated: 2025-01-30
 tags: [Artificial Intelligence, Machine Learning]
 permalink: /wiki/ai-concepts/
-hidden_from_wiki: true
+show_on_wiki: false
 ---
 
 # AI Concepts Wiki

@@ -77,12 +77,12 @@ https://blakesnotes.io or https://blakete.github.io
 
 ## Content Management
 
-### Hiding Wiki Pages
+### Showing Wiki Pages
 
-To hide a wiki page from the main wiki listing, add the following to the frontmatter:
+To show a wiki page on the main wiki listing, add the following to the frontmatter:
 
 ```yaml
-hidden_from_wiki: true
+show_on_wiki: true
 ```
 
 ### Hiding Blog Posts

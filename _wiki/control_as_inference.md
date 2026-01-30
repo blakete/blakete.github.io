@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [control theory, artificial intelligence, robotics, computer science]
 permalink: /wiki/control_as_inference
-hidden_from_wiki: true
-hidden_from_secret_wiki: true
+show_on_wiki: false
+show_on_secret_wiki: false
 ---
 
 ---

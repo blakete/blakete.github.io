@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [opinion piece, artificial intelligence]
 permalink: /wiki/will-data-solve-robotics-and-automation
-hidden_from_wiki: true
-hidden_from_secret_wiki: true
+show_on_wiki: false
+show_on_secret_wiki: false
 ---
 
 This is my takeaway and opinion after watching the video linked below.

@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [philosophy]
 permalink: /wiki/my-philosophy
-hidden_from_wiki: true
-hidden_from_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
 ---
 
 A work in progress...
