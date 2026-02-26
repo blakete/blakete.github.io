@@ -31,11 +31,11 @@ Read that formula carefully. It tells you everything.
 
 ## The Hierarchy
 
-**Phase alignment ($\phi$) is a gate.** $\cos^2(\phi)$ ranges from 1 to 0. Push in sync and you get full transfer. Push at 90° to the motion and you transfer *nothing* — no matter how strong the force. Push opposite and you actively drain the system. Timing isn't just important. It's a prerequisite.
+**Phase alignment ($\phi$) is a gate.** $\cos^2(\phi)$ ranges from 1 to 0. Push in sync and you get full transfer. Push at 90° to the motion and you transfer *nothing* — no matter how strong the force. Push opposite and you actively drain the system.
 
 **Damping ($\gamma$) is an amplifier.** Energy scales as $\frac{1}{\gamma^2}$. Halve the friction and you store *four times* the energy. As damping approaches zero, stored energy diverges toward infinity. This is why resonance disasters happen — bridges collapse, wine glasses shatter. Tiny forces, negligible friction, perfect timing.
 
-**Driving amplitude ($F_0$) is linear leverage.** Energy scales as $F_0^2$. It matters, but it can't rescue bad timing. A whisper at the right moment beats a shout at the wrong one.
+**Driving amplitude ($F_0$) is linear leverage.** Energy scales as $F_0^2$. It matters, but it can't rescue bad timing. A small force applied at the right phase transfers more energy than a large force applied at the wrong one.
 
 ## The Punchline
 
