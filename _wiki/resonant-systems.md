@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What Actually Matters When You Drive a Resonant System?"
+title: "Phase Before Force"
 date: 2026-02-26
 last_updated: 2026-02-26
 author:
