@@ -40,7 +40,7 @@ If you analyze that formula carefully, it tells you everything!
 
 **Driving amplitude ($F_0$) is quadratic leverage.** Energy scales as $F_0^2$. It matters, but it can't compensate for poor phase alignment. At $\phi = \frac{\pi}{2}$, no amount of force transfers energy.
 
-## The Punchline
+## The Takeaway
 
 The formula confirms what's counterintuitive: effort ($F_0$) is quadratic, but phase ($\phi$) is the only parameter that can zero out transfer completely, and low damping ($\gamma$) compounds small inputs into large stored energy.
 
