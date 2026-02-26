@@ -11,6 +11,11 @@ show_on_wiki: true
 show_on_secret_wiki: false
 ---
 
+<audio controls style="width: 100%; max-width: 600px; margin: 20px 0;">
+  <source src="/assets/audio/phase-before-force.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 Most people try to optimize by working harder. More effort, more results. But the physics of driven systems suggests a different priority: timing and efficiency dominate raw effort. To see why, consider the simplest case.
 
 ## The Setup
