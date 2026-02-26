@@ -11,9 +11,7 @@ show_on_wiki: true
 show_on_secret_wiki: false
 ---
 
-You have a system that vibrates. You're pushing it from outside. How do you get the most energy in?
-
-Your instinct says *push harder*. Your instinct isn't wrong, but it's missing the bigger levers.
+Most people try to optimize by working harder. More effort, more results. But the physics of driven systems suggests a different priority: timing and efficiency dominate raw effort. To see why, consider the simplest case.
 
 ## The Setup
 
@@ -39,10 +37,6 @@ Read that formula carefully. It tells you everything.
 
 ## The Punchline
 
-All three parameters multiply together in the energy expression. But they aren't equal:
+The formula confirms what's counterintuitive: effort ($F_0$) is quadratic, but phase ($\phi$) is the only parameter that can zero out transfer completely, and low damping ($\gamma$) compounds small inputs into large stored energy.
 
-- **Phase** is the only parameter that can zero out transfer completely ($\cos^2(\frac{\pi}{2}) = 0$)
-- **Damping** has the steepest returns in low-loss systems ($\frac{1}{\gamma^2}$)
-- **Amplitude** is the most intuitive lever but offers no advantage if phase alignment is poor
-
-Most people fixate on amplitude. The formula says phase is the only parameter that can shut the door completely.
+The analogy extends beyond oscillators. Most people try to optimize by working harder: more amplitude. The highest-leverage moves are finding systems where your effort is naturally in phase with how the system wants to move, and reducing the friction that bleeds your invested energy away. Then you turn up the effort.
