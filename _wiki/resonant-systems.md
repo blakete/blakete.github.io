@@ -16,15 +16,15 @@ show_on_secret_wiki: false
   Your browser does not support the audio element.
 </audio>
 
-Most people try to optimize by working harder. More effort, more results. But the physics of driven systems suggests a different priority: timing and efficiency dominate raw effort. To see why, consider the simplest case.
+Most people try to optimize by working harder. More effort, more results. But the physics of driven systems suggests a different priority: phase alignment and low dissipation dominate raw effort. To see why, consider the simplest case.
 
 ## The Setup
 
 A driven damped oscillator has three knobs:
 
 - $F_0$ – how hard you push (N)
-- $\phi$ – when you push relative to the system's motion (rad)
-- $\gamma$ – how much energy the system bleeds to friction (s⁻¹)
+- $\phi$ – the phase offset between your force and the system's motion (rad)
+- $\gamma$ – how much energy the system dissipates (s⁻¹)
 
 The steady-state energy stored in the system is:
 
@@ -36,7 +36,7 @@ Read that formula carefully. It tells you everything.
 
 **Phase alignment ($\phi$) is a gate.** $\cos^2(\phi)$ ranges from 1 to 0. Push in sync and you get full transfer. Push at $\phi = \frac{\pi}{2}$ and you transfer *nothing*, regardless of force magnitude.
 
-**Damping ($\gamma$) is an amplifier.** Energy scales as $\frac{1}{\gamma^2}$. Halve the friction and you store *four times* the energy. As damping approaches zero, stored energy diverges toward infinity. This is why resonance disasters happen: bridges collapse, wine glasses shatter. Tiny forces, negligible friction, perfect timing.
+**Damping ($\gamma$) is an amplifier.** Energy scales as $\frac{1}{\gamma^2}$. Halve the dissipation and you store *four times* the energy. As damping approaches zero, stored energy diverges toward infinity. This is why resonance disasters happen: bridges collapse, wine glasses shatter. Tiny forces, negligible dissipation, perfect phase alignment.
 
 **Driving amplitude ($F_0$) is quadratic leverage.** Energy scales as $F_0^2$. It matters, but it can't compensate for poor phase alignment. At $\phi = \frac{\pi}{2}$, no amount of force transfers energy.
 
@@ -44,4 +44,4 @@ Read that formula carefully. It tells you everything.
 
 The formula confirms what's counterintuitive: effort ($F_0$) is quadratic, but phase ($\phi$) is the only parameter that can zero out transfer completely, and low damping ($\gamma$) compounds small inputs into large stored energy.
 
-The analogy extends beyond oscillators. Most people try to optimize by working harder: more amplitude. However, the highest-leverage moves are finding systems where your effort is naturally in phase with how the system wants to move, and reducing the friction that bleeds your invested energy away. Then you turn up the effort.
+The analogy extends beyond oscillators. Most people try to optimize by working harder: more amplitude. However, the highest-leverage moves are finding systems where your effort is naturally in phase with how the system wants to move, and reducing the dissipation that bleeds your invested energy away. Then you turn up the effort.
