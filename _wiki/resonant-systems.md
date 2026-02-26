@@ -17,7 +17,11 @@ Your instinct says *push harder*. Your instinct is wrong.
 
 ## The Setup
 
-A driven damped oscillator has three knobs: how hard you push ($F_0$), when you push relative to the system's motion ($\phi$), and how much energy the system bleeds to friction ($\gamma$).
+A driven damped oscillator has three knobs:
+
+- $F_0$ – how hard you push (N)
+- $\phi$ – when you push relative to the system's motion (rad)
+- $\gamma$ – how much energy the system bleeds to friction (s⁻¹)
 
 The steady-state energy stored in the system is:
 
