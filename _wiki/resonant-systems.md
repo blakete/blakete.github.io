@@ -13,7 +13,7 @@ show_on_secret_wiki: false
 
 You have a system that vibrates. You're pushing it from outside. How do you get the most energy in?
 
-Your instinct says *push harder*. Your instinct is wrong.
+Your instinct says *push harder*. Your instinct isn't wrong — but it's missing the bigger levers.
 
 ## The Setup
 
@@ -31,18 +31,18 @@ Read that formula carefully. It tells you everything.
 
 ## The Hierarchy
 
-**Phase alignment ($\phi$) is a gate.** $\cos^2(\phi)$ ranges from 1 to 0. Push in sync and you get full transfer. Push at 90° to the motion and you transfer *nothing* — no matter how strong the force. Push opposite and you actively drain the system.
+**Phase alignment ($\phi$) is a gate.** $\cos^2(\phi)$ ranges from 1 to 0. Push in sync and you get full transfer. Push at $\phi = \frac{\pi}{2}$ and you transfer *nothing* — no matter how strong the force.
 
 **Damping ($\gamma$) is an amplifier.** Energy scales as $\frac{1}{\gamma^2}$. Halve the friction and you store *four times* the energy. As damping approaches zero, stored energy diverges toward infinity. This is why resonance disasters happen — bridges collapse, wine glasses shatter. Tiny forces, negligible friction, perfect timing.
 
-**Driving amplitude ($F_0$) is linear leverage.** Energy scales as $F_0^2$. It matters, but it can't rescue bad timing. A small force applied at the right phase transfers more energy than a large force applied at the wrong one.
+**Driving amplitude ($F_0$) is quadratic leverage.** Energy scales as $F_0^2$. It matters, but it can't compensate for poor phase alignment — at $\phi = \frac{\pi}{2}$, no amount of force transfers energy.
 
 ## The Punchline
 
-If you want to move energy into a resonant system, your priority list is:
+All three parameters multiply together in the energy expression. But they aren't equal:
 
-1. **Match the timing** — get phase-aligned with the natural rhythm
-2. **Minimize losses** — reduce damping so energy accumulates
-3. **Then** turn up the amplitude
+- **Phase** is the only parameter that can zero out transfer completely ($\cos^2(\frac{\pi}{2}) = 0$)
+- **Damping** has the steepest returns in low-loss systems ($\frac{1}{\gamma^2}$)
+- **Amplitude** is the most intuitive lever but offers no advantage if phase alignment is poor
 
-Most people fixate on #3. Nature rewards #1.
+Most people fixate on amplitude. The formula says phase is the only parameter that can shut the door completely.
