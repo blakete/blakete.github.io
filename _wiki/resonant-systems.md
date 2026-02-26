@@ -17,21 +17,21 @@ Your instinct says *push harder*. Your instinct is wrong.
 
 ## The Setup
 
-A driven damped oscillator has three knobs: how hard you push (F₀), when you push relative to the system's motion (φ), and how much energy the system bleeds to friction (γ).
+A driven damped oscillator has three knobs: how hard you push ($F_0$), when you push relative to the system's motion ($\phi$), and how much energy the system bleeds to friction ($\gamma$).
 
 The steady-state energy stored in the system is:
 
-**E = F₀² cos²(φ) / (8γ²mω₀²)**
+$$E = \frac{F_0^2 \cos^2(\phi)}{8\gamma^2 m \omega_0^2}$$
 
 Read that formula carefully. It tells you everything.
 
 ## The Hierarchy
 
-**Phase alignment (φ) is a gate.** cos²(φ) ranges from 1 to 0. Push in sync and you get full transfer. Push at 90° to the motion and you transfer *nothing* — no matter how strong the force. Push opposite and you actively drain the system. Timing isn't just important. It's a prerequisite.
+**Phase alignment ($\phi$) is a gate.** $\cos^2(\phi)$ ranges from 1 to 0. Push in sync and you get full transfer. Push at 90° to the motion and you transfer *nothing* — no matter how strong the force. Push opposite and you actively drain the system. Timing isn't just important. It's a prerequisite.
 
-**Damping (γ) is an amplifier.** Energy scales as 1/γ². Halve the friction and you store *four times* the energy. As damping approaches zero, stored energy diverges toward infinity. This is why resonance disasters happen — bridges collapse, wine glasses shatter. Tiny forces, negligible friction, perfect timing.
+**Damping ($\gamma$) is an amplifier.** Energy scales as $\frac{1}{\gamma^2}$. Halve the friction and you store *four times* the energy. As damping approaches zero, stored energy diverges toward infinity. This is why resonance disasters happen — bridges collapse, wine glasses shatter. Tiny forces, negligible friction, perfect timing.
 
-**Driving amplitude (F₀) is linear leverage.** Energy scales as F₀². It matters, but it can't rescue bad timing. A whisper at the right moment beats a shout at the wrong one.
+**Driving amplitude ($F_0$) is linear leverage.** Energy scales as $F_0^2$. It matters, but it can't rescue bad timing. A whisper at the right moment beats a shout at the wrong one.
 
 ## The Punchline
 
