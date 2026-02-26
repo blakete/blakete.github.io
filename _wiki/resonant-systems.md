@@ -44,4 +44,4 @@ Read that formula carefully. It tells you everything.
 
 The formula confirms what's counterintuitive: effort ($F_0$) is quadratic, but phase ($\phi$) is the only parameter that can zero out transfer completely, and low damping ($\gamma$) compounds small inputs into large stored energy.
 
-The analogy extends beyond oscillators. Most people try to optimize by working harder: more amplitude. The highest-leverage moves are finding systems where your effort is naturally in phase with how the system wants to move, and reducing the friction that bleeds your invested energy away. Then you turn up the effort.
+The analogy extends beyond oscillators. Most people try to optimize by working harder: more amplitude. However, the highest-leverage moves are finding systems where your effort is naturally in phase with how the system wants to move, and reducing the friction that bleeds your invested energy away. Then you turn up the effort.
