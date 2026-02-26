@@ -22,21 +22,21 @@ Most people try to optimize by working harder. More effort, more results. But th
 
 A driven damped oscillator has three knobs:
 
-- $F_0$ – how hard you push (N)
-- $\phi$ – the phase offset between your force and the system's motion (rad)
-- $\gamma$ – how much energy the system dissipates (s⁻¹)
+- $F_0$ – the driving force amplitude, i.e., how hard you push (N)
+- $\phi$ – the phase angle between the driving force and the system's motion (rad)
+- $\gamma$ – the damping co-efficient, i.e., how much energy the system dissipates (s⁻¹)
 
-The steady-state energy stored in the system is:
+The steady-state energy stored in the system is given by:
 
 $$E = \frac{F_0^2 \cos^2(\phi)}{8\gamma^2 m \omega_0^2}$$
 
-Read that formula carefully. It tells you everything.
+If you analyze that formula carefully, it tells you everything!
 
 ## The Hierarchy
 
-**Phase alignment ($\phi$) is a gate.** $\cos^2(\phi)$ ranges from 1 to 0. Push in sync and you get full transfer. Push at $\phi = \frac{\pi}{2}$ and you transfer *nothing*, regardless of force magnitude.
+**Phase alignment ($\phi$) is a gate.** $\cos^2(\phi)$ ranges from 1 to 0. Push in sync and you get full energy transfer. Push at $\phi = \frac{\pi}{2}$ and you transfer *nothing*, regardless of force magnitude.
 
-**Damping ($\gamma$) is an amplifier.** Energy scales as $\frac{1}{\gamma^2}$. Halve the dissipation and you store *four times* the energy. As damping approaches zero, stored energy diverges toward infinity. This is why resonance disasters happen: bridges collapse, wine glasses shatter. Tiny forces, negligible dissipation, perfect phase alignment.
+**Damping ($\gamma$) is an amplifier.** Energy scales as $\frac{1}{\gamma^2}$. Halve the dissipation and you store *four times* the energy. As damping approaches zero, stored energy diverges toward infinity. This is why resonance disasters happen: bridges collapse, wine glasses shatter. Tiny forces, negligible dissipation, and pushes that remain closely in phase.
 
 **Driving amplitude ($F_0$) is quadratic leverage.** Energy scales as $F_0^2$. It matters, but it can't compensate for poor phase alignment. At $\phi = \frac{\pi}{2}$, no amount of force transfers energy.
 
