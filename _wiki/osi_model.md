@@ -63,6 +63,19 @@ When data is sent, it travels **down** the stack — each layer wraps the data w
 
 Or top-down: **All People Seem To Need Data Processing**
 
+## Upper and Lower Layers
+
+**Upper Layers:**
+- 7: Application
+- 6: Presentation
+- 5: Session
+
+**Lower Layers:**
+- 4: Transport
+- 3: Network
+- 2: Data Link
+- 1: Physical
+
 ## Host Layers vs Media Layers
 
 Based on the [OSI model](https://www.lifewire.com/osi-model-reference-guide-816289) diagram, the seven layers are divided into two distinct groups based on their function in the communication process:
