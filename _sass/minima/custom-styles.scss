@@ -19,3 +19,56 @@
     vertical-align: middle;
   }
 }
+
+/* ============================================
+   Notes page — mariozechner.at-inspired list
+   ============================================ */
+
+:root {
+  --blake-font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --blake-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --blake-text-muted: #777;
+  --blake-link-color: #0066cc;
+}
+
+body {
+  font-family: var(--blake-font-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.5rem 0 0;
+}
+
+.post-entry {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-date {
+  font-size: 0.875rem;
+  color: var(--blake-text-muted);
+  font-style: italic;
+  white-space: nowrap;
+  font-family: var(--blake-font-sans);
+  min-width: 90px;
+}
+
+.post-title {
+  color: var(--blake-link-color);
+  font-family: var(--blake-font-sans);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.post-entry:hover .post-title {
+  text-decoration: underline;
+}
