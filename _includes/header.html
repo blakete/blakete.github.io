@@ -7,6 +7,13 @@
     <!-- <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a> -->
     <!-- <a class="site-title" rel="author" style="text-decoration: none;">{{ site.title | escape }}</a> -->
 
+    <a class="source-code-link" href="https://github.com/{{ site.github_username }}/{{ site.github_username }}.github.io" target="_blank" rel="noopener" title="View source on GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+    </a>
+
     {%- if titles_size > 0 -%}
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
