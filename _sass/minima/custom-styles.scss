@@ -1,11 +1,11 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
-// Source code icon button — top-right of site header
+// Source code icon button — top-left on desktop, top-right on mobile
 .source-code-link {
   position: absolute;
   top: 50%;
-  right: 0;
+  left: 0;
   transform: translateY(-50%);
   color: $brand-color;
   opacity: 0.6;
@@ -22,8 +22,9 @@
     display: block;
   }
 
-  // On mobile, shift left to avoid collision with hamburger menu
+  // On mobile, move to top-right and avoid hamburger menu collision
   @include media-query($on-palm) {
+    left: auto;
     right: 50px;
   }
 }
