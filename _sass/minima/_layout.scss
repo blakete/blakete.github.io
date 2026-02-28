@@ -268,7 +268,8 @@
 }
 
 .custom-page-title {
-  font-size: calc(var(--base-font-size) * var(--h1-scale)) !important
+  font-size: calc(var(--base-font-size) * var(--h1-scale)) !important;
+  display: none !important;
 }
 
 .post-content {
