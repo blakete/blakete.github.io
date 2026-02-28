@@ -65,8 +65,10 @@ body {
 .post-title {
   color: var(--blake-link-color);
   font-family: var(--blake-font-sans);
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
+  letter-spacing: normal;
 }
 
 .post-entry:hover .post-title {
