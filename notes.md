@@ -4,7 +4,7 @@ title: Notes
 permalink: /
 ---
 
-Welcome to my evolving digital garden of hypermedia artifacts 🌱 <a href="/not-so-secret-notes" style="text-decoration: none;">✨</a>
+Welcome to my digital garden of evolving hypermedia artifacts 🌱 <a href="/not-so-secret-notes" style="text-decoration: none;">✨</a>
 
 <div class="wiki-list">
   <hr>
