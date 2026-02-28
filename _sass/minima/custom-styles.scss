@@ -59,7 +59,8 @@ body {
   font-style: italic;
   white-space: nowrap;
   font-family: var(--blake-font-sans);
-  min-width: 90px;
+  width: 90px;
+  flex-shrink: 0;
 }
 
 .post-title {
