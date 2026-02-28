@@ -49,6 +49,6 @@ I am committed to:
 - Promoting critical thinking and constructive dialogue across disciplines and ideologies.
 
 <blockquote class="otro-blockquote">
-  "I aspire to see and preserve the truth."
+  "I aspire to see, preserve, and stand by the truth."
   <span>Blake T. Edwards</span>
 </blockquote>
