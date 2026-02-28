@@ -7,7 +7,7 @@ author:
 - Blake Edwards
 tags: [people, mit, aeroastro]
 permalink: /wiki/kyle-woody
-show_on_wiki: true
+show_on_wiki: false
 show_on_secret_wiki: false
 ---
 
