@@ -6,46 +6,14 @@ permalink: /
 
 Welcome to my digital garden of evolving hypermedia artifacts 🌱 <a href="/not-so-secret-notes" style="text-decoration: none;">✨</a>
 
-<div class="wiki-list">
-  <hr>
+<div class="post-list">
   {% assign sorted_wiki = site.wiki | sort: 'date' | reverse %}
-  {% assign visible_count = 0 %}
-
   {% for wiki_page in sorted_wiki %}
     {% if wiki_page.show_on_wiki %}
-      {% assign visible_count = visible_count | plus: 1 %}
-      <div class="wiki-entry">
-        <h3 style="margin-bottom: 0px;">
-          <a class="post-link" href="{{ wiki_page.url | relative_url }}">{{ wiki_page.title }}</a>
-        </h3>
-
-        <p class="wiki-entry-meta" style="margin-bottom: 10px;">
-          {{ wiki_page.date | default: site.time | date: "%B %-d, %Y" }}
-          
-          {% assign date_str = wiki_page.date | date: "%Y-%m-%d" %}
-          {% assign updated_str = wiki_page.last_updated | date: "%Y-%m-%d" %}
-          
-          {% if wiki_page.last_updated and date_str != updated_str %}
-            • Last Update: {{ wiki_page.last_updated | date: "%B %-d, %Y" }}
-          {% endif %}
-        </p>
-      
-        <p class="wiki-entry-meta">Tags: 
-          {% if wiki_page.tags %}
-            {% for tag in wiki_page.tags %}
-              <span class="wiki-tag">{{ tag }}</span>
-            {% endfor %}
-          {% else %}
-            <span>None</span>
-          {% endif %}
-        </p>
-        
-      </div>
-      <hr>
+      <a href="{{ wiki_page.url | relative_url }}" class="post-entry">
+        <span class="post-date">{{ wiki_page.date | date: "%Y-%m-%d" }}</span>
+        <span class="post-title">{{ wiki_page.title }}</span>
+      </a>
     {% endif %}
   {% endfor %}
-
-  {% if visible_count == 0 %}
-    <p><em>Coming soon ✍️</em></p>
-  {% endif %}
 </div>
