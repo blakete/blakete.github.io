@@ -12,7 +12,7 @@ permalink: /about/
   <canvas id="ca" width="100" height="100"></canvas>
 
   <p class="nca-caption">
-    This headshot is a trained <em>Neural Cellular Automaton</em> 
+    This headshot is a trained <a href="https://distill.pub/2020/growing-ca/" target="_blank" rel="noopener"><em>Neural Cellular Automaton</em></a> 
     based on <a href="https://arxiv.org/abs/2205.01681" target="_blank" rel="noopener">
     Mordvintsev <em>et al.</em>, 2022</a>
   </p>
