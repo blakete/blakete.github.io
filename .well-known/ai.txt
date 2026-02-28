@@ -1,0 +1,4 @@
+User-agent: *
+Crawl-delay: 10
+Contact: blakeedwards823@gmail.com
+Policy: This site's content is for personal, non-commercial use. For commercial use, contact the site owner for explicit permission. Automated scraping for training large language models or similar AI systems for commercial purposes is not permitted without prior written consent.

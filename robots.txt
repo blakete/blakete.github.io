@@ -1,0 +1,27 @@
+Sitemap: https://blakesnotes.io/sitemap.xml
+
+User-agent: *
+Disallow: /tags/
+Disallow: /category/
+# Point to AI policy file
+Allow: /.well-known/ai.txt
+
+# Allow Borot to crawl for maintenance and updates
+User-agent: Borot
+Allow: /
+
+# Disallow known problematic AI crawlers
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
