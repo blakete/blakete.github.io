@@ -11,6 +11,4 @@ show_on_wiki: true
 show_on_secret_wiki: false
 ---
 
-## Kyle Woody
-
 Kyle is a PhD student in MIT's Department of Aeronautics and Astronautics. Before coming to MIT, he worked at SpaceX doing welding.
