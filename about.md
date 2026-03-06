@@ -26,7 +26,7 @@ permalink: /about/
 
 Hello, I'm Blake! 😊 
 
-I am currently a graduate student at MIT AeroAstro, where I develop, build, and research intelligent, autonomous, robotic systems and how we can make them worthy of our trust. 
+I am currently a graduate student at [MIT AeroAstro](https://aeroastro.mit.edu) where I develop, build, and research intelligent, autonomous, robotic systems and how we can make them worthy of our trust. 
 🧠🤝🤖
 
 <!-- <blockquote class="otro-blockquote">
