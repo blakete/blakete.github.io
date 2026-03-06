@@ -9,6 +9,7 @@ tags: [cognitive science, Bayesian inference, cellular automata, MIT]
 permalink: /wiki/cellular-automata-inference
 show_on_wiki: true
 show_on_secret_wiki: false
+pinned: true
 ---
 
 <div style="text-align: center;">

@@ -11,7 +11,11 @@ permalink: /secret-notes
   
   <div class="private-list">
     <hr>
+    {% if site.private_local %}
     {% assign sorted_private = site.private_local | where_exp: "item", "item.is_symlink != true" | sort: 'date' | reverse %}
+    {% else %}
+    {% assign sorted_private = "" | split: "" %}
+    {% endif %}
     {% assign visible_count = 0 %}
   
     {% for private_page in sorted_private %}

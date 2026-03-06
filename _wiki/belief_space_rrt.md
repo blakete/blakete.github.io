@@ -9,6 +9,7 @@ tags: [robotics, manipulation, motion planning, MIT]
 permalink: /wiki/belief-space-rrt
 show_on_wiki: true
 show_on_secret_wiki: false
+pinned: true
 ---
 
 <div style="text-align: center;">

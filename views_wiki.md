@@ -12,7 +12,7 @@ permalink: /secret-notes/views/wiki
     
     <div class="private-list">
       <hr>
-      {% assign wiki_pages = site.private_local | where_exp: "item", "item.view_category == 'wiki'" | sort: 'title' %}
+      {% if site.private_local %}{% assign wiki_pages = site.private_local | where_exp: "item", "item.view_category == 'wiki'" | sort: 'title' %}{% else %}{% assign wiki_pages = "" | split: "" %}{% endif %}
       {% assign visible_count = 0 %}
     
       {% for page in wiki_pages %}

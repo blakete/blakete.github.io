@@ -75,3 +75,17 @@ body {
 .post-entry:hover .post-title {
   text-decoration: underline;
 }
+
+.post-entry-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.pinned-label {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--blake-text-muted);
+  font-family: var(--blake-font-sans);
+  letter-spacing: 0.02em;
+}

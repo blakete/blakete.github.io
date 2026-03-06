@@ -13,7 +13,7 @@ permalink: /secret-notes/views/reading_notes
     
     <div class="private-list">
       <hr>
-      {% assign reading_pages = site.private_local | where_exp: "item", "item.view_category == 'reading_notes'" | sort: 'date' | reverse %}
+      {% if site.private_local %}{% assign reading_pages = site.private_local | where_exp: "item", "item.view_category == 'reading_notes'" | sort: 'date' | reverse %}{% else %}{% assign reading_pages = "" | split: "" %}{% endif %}
       {% assign visible_count = 0 %}
     
       {% for page in reading_pages %}

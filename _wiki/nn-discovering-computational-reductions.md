@@ -8,6 +8,7 @@ author:
 tags: [artificial intelligence, neural networks, computational complexity, epistemology]
 permalink: /wiki/neural-networks-discovering-new-computational-reducibility
 show_on_wiki: true
+pinned: true
 show_on_secret_wiki: false
 ---
 

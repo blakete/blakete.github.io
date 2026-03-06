@@ -11,7 +11,7 @@ permalink: /secret-notes/views/ideas
     <p>Creative ideas and inspirations:</p>
     <div class="private-list">
       <hr>
-      {% assign idea_pages = site.private_local | where_exp: "item", "item.view_category == 'ideas'" | sort: 'last_updated' | reverse %}
+      {% if site.private_local %}{% assign idea_pages = site.private_local | where_exp: "item", "item.view_category == 'ideas'" | sort: 'last_updated' | reverse %}{% else %}{% assign idea_pages = "" | split: "" %}{% endif %}
       {% assign visible_count = 0 %}
       {% for page in idea_pages %}
         {% assign visible_count = visible_count | plus: 1 %}

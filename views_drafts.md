@@ -12,7 +12,7 @@ permalink: /secret-notes/views/drafts
     
     <div class="private-list">
       <hr>
-      {% assign draft_pages = site.private_local | where_exp: "item", "item.view_category == 'drafts'" | sort: 'last_updated' | reverse %}
+      {% if site.private_local %}{% assign draft_pages = site.private_local | where_exp: "item", "item.view_category == 'drafts'" | sort: 'last_updated' | reverse %}{% else %}{% assign draft_pages = "" | split: "" %}{% endif %}
       {% assign visible_count = 0 %}
     
       {% for page in draft_pages %}
