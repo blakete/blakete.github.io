@@ -97,6 +97,10 @@ body {
   gap: 0.15rem;
 }
 
+.post-entry-wrapper:last-of-type {
+  margin-bottom: 0.75rem;
+}
+
 .pinned-label {
   font-size: 0.7rem;
   font-weight: 300;
