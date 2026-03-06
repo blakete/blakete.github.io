@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Teaching a Robot to Look Before It Grabs"
-date: 2026-03-05
-last_updated: 2026-03-05
+title: "Belief Space Planning for Robotic Manipulation Under Uncertainty"
+date: 2025-12-08
+last_updated: 2025-12-08
 author:
 - Blake Edwards
 tags: [robotics, manipulation, motion planning, MIT]
@@ -15,9 +15,9 @@ show_on_secret_wiki: false
   <img src="/assets/images/belief_space_rrt/RRBT_demo_of_success.gif" alt="Robot arm successfully picking and placing an object after resolving uncertainty" style="width: 100%; max-width: 800px;">
 </div>
 
-Here's a [Kuka iiwa](https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa) robot arm that figures out *where* an object is before trying to grab it. Sounds obvious, right? But most motion planners skip that step entirely -- they assume they already know the exact location of everything. In the real world, sensors are noisy, cameras lie, and depth data is messy. This project builds a planner that actually deals with that uncertainty head-on.
+Most robotic manipulation planners assume they already know the exact state of the world -- where every object is, which bin it's in, its precise pose. In practice, sensors are noisy, depth cameras lie, and state estimation is rarely exact. When a planner ignores that uncertainty, you get missed grasps, wrong bins, and failed picks. This project builds a motion planner that operates in *belief space* -- it doesn't just plan paths through physical space, it plans motions that actively reduce the robot's uncertainty before committing to a grasp.
 
-This was a final project for [MIT 6.4212 (Robotic Manipulation)](https://manipulation.csail.mit.edu/Fall2024/) that I built with [Thiago Veloso](https://github.com/thiago-jvds). We called it "Search-Then-Commit" because that's exactly what the robot does: search for information first, then commit to the grasp only when it's confident enough.
+I built this as a final project for [MIT 6.4212 (Robotic Manipulation)](https://manipulation.csail.mit.edu/Fall2024/) with [Thiago Veloso](https://github.com/thiago-jvds). We called the approach "Search-Then-Commit": the [Kuka iiwa](https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa) arm first searches for information to resolve its uncertainty, then commits to the grasp only once it's confident enough. The planner is built on the Rapidly-exploring Random Belief Tree (RRBT) framework, implemented in [Drake](https://drake.mit.edu/).
 
 ---
 
