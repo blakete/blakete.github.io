@@ -1,3 +1,7 @@
+.vscode/
+.claude/
+.cursor/
+
 # IMPORTANT: Local files that are private until later publication
 private_local/
 _private_local/
