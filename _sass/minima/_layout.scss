@@ -5,7 +5,7 @@
   // border-top: 5px solid $border-color-03;
   // border-top: 5px solid $border-color-01;
   border-bottom: 1px solid $border-color-01;
-  min-height: $spacing-unit * 1.865;
+  min-height: 68px;
   line-height: $base-line-height * $base-font-size * 2.25;
 
   // Positioning context for the mobile navigation icon
@@ -31,7 +31,7 @@
 
 .site-nav {
   position: absolute;
-  top: 9px;
+  top: 16px;
   right: $spacing-unit * .5;
   background-color: $background-color;
   border: 1px solid $border-color-01;
