@@ -8,6 +8,7 @@ author:
 tags: [probability, graphical models, Bayesian networks]
 permalink: /wiki/why-things-are-modelable
 show_on_wiki: true
+pinned: true
 show_on_secret_wiki: false
 ---
 

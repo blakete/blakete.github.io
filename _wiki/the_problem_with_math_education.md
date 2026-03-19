@@ -8,7 +8,7 @@ author:
 tags: [opinion piece, mathematics, education, pedagogy]
 permalink: /wiki/mathematical-priests-and-peasants
 show_on_wiki: true
-pinned: true
+pinned: false
 show_on_secret_wiki: false
 ---
 
