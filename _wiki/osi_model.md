@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [networking, fundamentals, systems]
 permalink: /wiki/osi-model
-show_on_wiki: true
-show_on_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
 ---
 
 The Open Systems Interconnection (OSI) model is a conceptual framework that describes how data moves through a network in seven layers. Each layer has a specific job and communicates with the layers directly above and below it.

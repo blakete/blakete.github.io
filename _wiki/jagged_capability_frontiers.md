@@ -8,7 +8,7 @@ author:
 tags: [AI, capability frontiers, control theory, system identification, automation]
 permalink: /wiki/jagged-capability-frontiers
 show_on_wiki: true
-pinned: false
+pinned: true
 show_on_secret_wiki: false
 ---
 
