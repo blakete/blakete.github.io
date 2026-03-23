@@ -31,11 +31,14 @@ fi
 # Create (or overwrite) the file with the wiki page header.
 cat > "$filename" <<EOF
 ---
-layout: wiki_page
+layout: post
 title: "$title"
 date: $current_date
 last_updated: $current_date
+author:
+- Blake Edwards
 tags: [wiki]
+permalink: /wiki/${slug}
 show_on_wiki: ${show_on_wiki}
 show_on_secret_wiki: ${show_on_secret_wiki}
 ---
