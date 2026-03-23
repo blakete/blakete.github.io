@@ -1,7 +1,7 @@
 /* Custom heading styles with CSS variables for easier adjustment */
 :root {
   /* Base font size - change this one value to scale everything */
-  --base-font-size: 16px; 
+  --base-font-size: 17px; 
   
   /* Multipliers for headings - modify these to change relative sizes */
   --h1-scale: 2.25;
