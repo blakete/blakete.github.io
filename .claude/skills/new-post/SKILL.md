@@ -39,6 +39,7 @@ show_on_secret_wiki: false
 - Write in first person from Blake's perspective
 - Keep it concise — say what needs to be said, no filler
 - Use `##` for sections
+- Only use h2 (`##`) and below for content headers — never use h1 (`#`), since the post title is already rendered as h1
 - End with a `## References` section linking to sources when applicable
 
 ## Visibility
