@@ -11,6 +11,10 @@ show_on_wiki: true
 show_on_secret_wiki: false
 ---
 
+![Waze community reporting interface — report accidents, construction, and more for other drivers](/assets/images/open-co-pilot/1.jpeg)
+
+![Open Co-Pilot concept — real-time object detection alongside Waze navigation, without taking your eyes off the road](/assets/images/open-co-pilot/2.jpeg)
+
 Open Co-Pilot is an open source, AI-driven system designed to enhance driving safety through real-time computer vision — all running on a smartphone mounted to your windshield.
 
 ## What It Does
