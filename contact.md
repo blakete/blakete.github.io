@@ -4,4 +4,4 @@ title: Contact
 permalink: /contact/
 ---
 
-I welcome collaboration opportunities, research inquiries, and discussions related to AI, robotics, and the other topics covered on this site.
+The best way to reach me is through [LinkedIn](https://linkedin.com/in/blakete). Feel free to send a connection request or message — I'm always open to conversations about AI, robotics, autonomy, aerospace, or really anything if it's a good conversation.
