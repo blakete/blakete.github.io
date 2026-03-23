@@ -1,5 +1,6 @@
 .vscode/
-.claude/
+.claude/*
+!.claude/skills/
 .cursor/
 
 # IMPORTANT: Local files that are private until later publication
