@@ -11,7 +11,9 @@ show_on_wiki: true
 show_on_secret_wiki: false
 ---
 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/mBYH2uKsEzM?autoplay=1&mute=1&loop=1&playlist=mBYH2uKsEzM" title="Open Co-Pilot real-time object detection demo — iPhone XR windshield-mounted in a Honda Pilot" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/mBYH2uKsEzM?autoplay=1&mute=1&loop=1&playlist=mBYH2uKsEzM" title="Open Co-Pilot real-time object detection demo — iPhone XR windshield-mounted in a Honda Pilot" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ![Waze community reporting interface — report accidents, construction, and more for other drivers](/assets/images/open-co-pilot/1.jpeg)
 
