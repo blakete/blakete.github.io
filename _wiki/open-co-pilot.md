@@ -17,7 +17,9 @@ show_on_secret_wiki: false
 
 ![Open Co-Pilot concept — real-time object detection alongside Waze navigation, without taking your eyes off the road](/assets/images/open-co-pilot/2.jpeg)
 
-Open Co-Pilot is a hands-free driving assistant that uses real-time computer vision to automatically detect and identify road hazards — no screen taps, no looking away from the road. Just mount your phone on the windshield and drive. It's also fully open source, built as a free alternative to the manual reporting workflows in apps like Waze.
+Open Co-Pilot is an idea I started experimenting with around 6 years ago — a hands-free driving assistant that uses real-time computer vision to automatically detect and identify road hazards. No screen taps, no looking away from the road. Just mount your phone on the windshield and drive. It's also fully open source, built as a free alternative to the manual reporting workflows in apps like Waze.
+
+To date, no one has really fully executed and capitalized on this idea. Some day in the near future I may pick it back up, finish it, and publish it on the App Store for fun.
 
 ## What It Does
 
