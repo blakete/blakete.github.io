@@ -15,11 +15,11 @@ show_on_secret_wiki: false
 
 ![Open Co-Pilot concept — real-time object detection alongside Waze navigation, without taking your eyes off the road](/assets/images/open-co-pilot/2.jpeg)
 
-Open Co-Pilot is an open source, AI-driven system designed to enhance driving safety through real-time computer vision — all running on a smartphone mounted to your windshield.
+Open Co-Pilot is a hands-free driving assistant that uses real-time computer vision to automatically detect and identify road hazards — no screen taps, no looking away from the road. Just mount your phone on the windshield and drive. It's also fully open source, built as a free alternative to the manual reporting workflows in apps like Waze.
 
 ## What It Does
 
-The system combines two core capabilities:
+The idea is to combine Waze-style navigation with automated visual awareness. The system runs two core capabilities simultaneously:
 
 **Object Detection & Localization** — Using YOLOv4, the system identifies and localizes objects on the roadway in real time during actual driving scenarios.
 
@@ -31,7 +31,7 @@ The project is designed to run on consumer Apple devices with an A12 chip or new
 
 ## Why It Matters
 
-Most advanced driver-assistance features are locked behind expensive vehicle packages. Open Co-Pilot explores what's possible when you bring modern deep learning — real-time object detection and learned depth estimation — to hardware people already carry in their pockets.
+Apps like Waze showed that crowdsourced road data is incredibly valuable, but reporting still requires manual interaction — tapping buttons while driving. Open Co-Pilot automates the detection entirely so drivers never have to take their hands off the wheel or their eyes off the road. And because it's open source, anyone can run it, improve it, or adapt it — no expensive ADAS package required, just the phone in your pocket.
 
 ## References
 
