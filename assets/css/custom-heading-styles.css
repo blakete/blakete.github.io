@@ -5,9 +5,9 @@
   
   /* Multipliers for headings - modify these to change relative sizes */
   --h1-scale: 2.25;
-  --h2-scale: 1.75;
-  --h3-scale: 1.375;
-  --h4-scale: 1.125;
+  --h2-scale: 1.4;
+  --h3-scale: 1.2;
+  --h4-scale: 1.1;
   --h5-scale: 1.05;
   --h6-scale: 1;
 }
