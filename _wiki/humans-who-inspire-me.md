@@ -37,6 +37,10 @@ Decades of work on neural networks before they were fashionable — Boltzmann ma
 
 Defined a universal prior over computable hypotheses by weighting them by their description length — *Solomonoff induction*, the Bayes-optimal predictor and one half of AIXI. The original answer to "how should one learn from data?", and the answer everything else still approximates.
 
+## Edwin Thompson Jaynes (1922–1998)
+
+Made Bayesian probability and the maximum-entropy principle into a working methodology. *Probability Theory: The Logic of Science* is one of those books I want to have read three times. Argued, persuasively, that statistical mechanics and inference are the same activity seen from different angles.
+
 ## Richard Feynman (1918–1988)
 
 QED, path integrals, the diagrams that bear his name. But what inspires me is the *style* — the insistence on understanding things from scratch, the joy in figuring things out, the conviction that if you cannot explain it simply you do not understand it.
@@ -44,6 +48,10 @@ QED, path integrals, the diagrams that bear his name. But what inspires me is th
 ## Ilya Prigogine (1917–2003)
 
 Showed that systems far from equilibrium can spontaneously organize into ordered structures by dissipating energy — *dissipative structures*. Made it possible to talk about life, weather, and cities as physics, not exceptions to it. Nobel in chemistry, 1977.
+
+## Claude Shannon (1916–2001)
+
+Invented information theory in one 1948 paper. Defined entropy as the expected log-improbability of a message, and from that single quantity reconstructed bandwidth, channel capacity, error correction, and how every form of communication has worked since.
 
 ## Alan Turing (1912–1954)
 
@@ -56,6 +64,18 @@ The polymath ideal. Foundations of quantum mechanics, the computer architecture 
 ## Andrey Kolmogorov (1903–1987)
 
 Soviet polymath. Axiomatized probability theory in 1933, then half a century later co-founded algorithmic information theory — *Kolmogorov complexity*, the length of the shortest program that produces a string, the substrate Solomonoff induction sits on. Few people have written down so much of what we now take as given.
+
+## R.T. Cox (1898–1991)
+
+Showed that any system of plausible reasoning consistent with a few mild desiderata must obey the rules of probability — *Cox's theorem* (1946). The clearest derivation of why probability *is* the calculus of belief, not just one option among many.
+
+## Harold Jeffreys (1891–1989)
+
+Geophysicist who, in *Theory of Probability* (1939), built modern Bayesian statistics — priors, posterior odds, model comparison — decades before any of it was respectable. The *Jeffreys prior* still bears his name.
+
+## George Pólya (1887–1985)
+
+Wrote *How to Solve It*, the field manual for mathematical thinking. *Patterns of Plausible Inference* set up the plausibility-as-extended-logic frame that Cox and Jaynes later formalized. Heuristics, plausible reasoning, and combinatorics in equal measure.
 
 ## Erwin Schrödinger (1887–1961)
 
@@ -72,3 +92,11 @@ Built statistical mechanics. *S = k log W* carved entropy into the bridge betwee
 ## Thomas Bayes (1701–1761)
 
 British minister and mathematician. *An Essay towards solving a Problem in the Doctrine of Chances*, published posthumously in 1763, gave us Bayes' theorem — the rule for updating beliefs in light of evidence. Probabilistic inference, machine learning, and the platonic optimal agent all trace back to one short paper.
+
+## Marcus Aurelius (121–180)
+
+Roman emperor and Stoic. The *Meditations* — written to himself, never meant for publication — are the clearest reminder I know that the work of being a person is mostly internal, and that most of the obstacles in the way are you. Two millennia later, still useful at 6 AM.
+
+## Plato (c. 428–348 BCE)
+
+*The Republic*, the Theory of Forms, the dialogue as a method of inquiry. Most of Western philosophy is still working in his vocabulary, and the *platonic* in "platonic ideal" is not metaphorical — it is the conviction that perfect forms exist beyond the noisy instances we encounter, and that thinking is partly the work of remembering them.
