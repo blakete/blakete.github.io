@@ -21,6 +21,10 @@ Berkeley professor whose work casts reinforcement learning, control, and plannin
 
 Leads machine-learning research at Google's Paradigms of Intelligence team and writes across AI, biology, philosophy, and art with equal seriousness — *Who Are We Now?* and a steady stream of essays on what intelligence is and how it emerges. The kind of breadth I want to be capable of.
 
+## Michael Levin
+
+Tufts biologist studying bioelectricity, regeneration, and the agency of non-neural tissue — xenobots, anthrobots, and a body of work arguing that cells navigate a platonic space of possible forms. The clearest current case I know that intelligence and goal-directedness predate brains by a long way.
+
 ## Stephen Wolfram (1959– )
 
 Built Mathematica, then spent decades arguing that simple computational rules — most famously cellular automata like *rule 30* — can generate the complexity we see in nature. *A New Kind of Science* and the Wolfram Physics Project are the most ambitious recent attempts to take "the universe is computation" literally as a research program.
