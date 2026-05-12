@@ -74,23 +74,6 @@
     font-weight: 500;
     letter-spacing: 0.05em;
   }
-  .rotate-row {
-    display: flex;
-    justify-content: center;
-  }
-  .rotate-btn {
-    background: none;
-    border: 1px solid rgba(168,159,138,0.12);
-    color: #3a3530;
-    border-radius: 20px;
-    padding: 3px 12px;
-    font-size: 9px;
-    cursor: pointer;
-    font-family: inherit;
-    letter-spacing: 0.08em;
-    transition: all 0.3s;
-  }
-  .rotate-btn.on { color: #a89f8a; }
 </style>
 </head>
 <body>
@@ -102,9 +85,6 @@
 
   <div class="controls">
     <div class="level-buttons" id="levelButtons"></div>
-    <div class="rotate-row">
-      <button class="rotate-btn on" id="rotateBtn">&#9679; rotating</button>
-    </div>
   </div>
 </div>
 
@@ -243,9 +223,10 @@ const levels = [
 
 // State
 let grain = 0;
-let autoRotate = true;
-const angle = { theta: 0.6, phi: 0.4 };
-const target = { theta: 0.6, phi: 0.4 };
+const INIT_THETA = 0.6 + Math.PI / 4;
+const INIT_PHI = 0.22;
+const angle = { theta: INIT_THETA, phi: INIT_PHI };
+const target = { theta: INIT_THETA, phi: INIT_PHI };
 const drag = { active: false, x: 0, y: 0 };
 
 // Scene setup
@@ -308,7 +289,6 @@ window.addEventListener("resize", resize);
 
 function animate() {
   requestAnimationFrame(animate);
-  if (autoRotate) target.theta += 0.004;
 
   angle.theta += (target.theta - angle.theta) * 0.06;
   angle.phi += (target.phi - angle.phi) * 0.06;
@@ -359,7 +339,6 @@ window.addEventListener("touchend", () => { drag.active = false; });
 
 // UI binding
 const levelButtonsEl = document.getElementById("levelButtons");
-const rotateBtn = document.getElementById("rotateBtn");
 
 function renderLevelInfo() {
   [...levelButtonsEl.children].forEach((btn, i) => {
@@ -377,12 +356,6 @@ levels.forEach((lv, i) => {
     renderLevelInfo();
   });
   levelButtonsEl.appendChild(b);
-});
-
-rotateBtn.addEventListener("click", () => {
-  autoRotate = !autoRotate;
-  rotateBtn.classList.toggle("on", autoRotate);
-  rotateBtn.innerHTML = autoRotate ? "&#9679; rotating" : "&#9675; paused";
 });
 
 resize();
