@@ -74,6 +74,37 @@
     font-weight: 500;
     letter-spacing: 0.05em;
   }
+  .cam-readout {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(10,10,18,0.75);
+    border: 1px solid rgba(168,159,138,0.18);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 10px;
+    color: #c8c4b8;
+    line-height: 1.4;
+    z-index: 5;
+    user-select: text;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .cam-readout .row { white-space: nowrap; }
+  .cam-readout button {
+    margin-top: 4px;
+    background: rgba(168,159,138,0.12);
+    border: 1px solid rgba(168,159,138,0.25);
+    color: #d4cfc0;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+  }
+  .cam-readout button:hover { background: rgba(168,159,138,0.22); }
 </style>
 </head>
 <body>
@@ -81,6 +112,11 @@
   <div class="canvas-wrap" id="canvasWrap">
     <canvas id="scene"></canvas>
     <div class="drag-hint">drag to orbit</div>
+    <div class="cam-readout" id="camReadout">
+      <div class="row">theta: <span id="camTheta">0.000</span></div>
+      <div class="row">phi:&nbsp;&nbsp; <span id="camPhi">0.000</span></div>
+      <button id="camCopy">copy</button>
+    </div>
   </div>
 
   <div class="controls">
@@ -287,6 +323,9 @@ function resize() {
 }
 window.addEventListener("resize", resize);
 
+const camThetaEl = document.getElementById("camTheta");
+const camPhiEl = document.getElementById("camPhi");
+
 function animate() {
   requestAnimationFrame(animate);
 
@@ -301,7 +340,22 @@ function animate() {
   );
   camera.lookAt(0, -0.5, 0);
   renderer.render(scene, camera);
+
+  camThetaEl.textContent = angle.theta.toFixed(3);
+  camPhiEl.textContent = angle.phi.toFixed(3);
 }
+
+document.getElementById("camCopy").addEventListener("click", async () => {
+  const text = `theta: ${angle.theta.toFixed(3)}, phi: ${angle.phi.toFixed(3)}`;
+  const btn = document.getElementById("camCopy");
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.textContent = "copied";
+  } catch (_) {
+    btn.textContent = text;
+  }
+  setTimeout(() => { btn.textContent = "copy"; }, 1500);
+});
 
 // Drag handlers
 function pointerFrom(e) {
