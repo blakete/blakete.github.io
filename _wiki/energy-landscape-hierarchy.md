@@ -13,7 +13,7 @@ show_on_secret_wiki: false
 
 Optimization problems rarely have a single relevant scale. The landscape an agent navigates decomposes into nested basins: a few enormous strategic basins, finer tactical valleys conditioned on the strategic choice, and a thin operational roughness on top. Each level has its own barrier heights, its own equilibration timescale, and its own answer to the question "is gradient descent enough here?" The interactive below lets you toggle between the three levels of the same landscape and see what becomes visible at each grain.
 
-<div style="position: relative; width: 100%; max-width: 900px; margin: 1.5em auto; aspect-ratio: 4 / 3; border: 1px solid rgba(168,159,138,0.15); border-radius: 8px; overflow: hidden;">
+<div style="position: relative; width: 100%; max-width: 900px; margin: 1.5em auto; height: clamp(440px, 70vh, 640px); border: 1px solid rgba(168,159,138,0.15); border-radius: 8px; overflow: hidden;">
   <iframe
     src="/assets/energy_landscape_hierarchy/index.html"
     title="Interactive 3D visualization of a hierarchical energy landscape with strategic, tactical, and operational grain levels"
@@ -21,6 +21,10 @@ Optimization problems rarely have a single relevant scale. The landscape an agen
     loading="lazy"
     allowfullscreen></iframe>
 </div>
+
+- **◈ Strategic** — Broad modal contours: choosing which fundamental basin to descend into. Barriers between these basins are enormous. Getting this wrong means no local refinement helps.
+- **◇ Tactical** — Nested valleys within a strategic basin. The landscape's shape here depends on which strategic choice was made. Moderate barriers, faster equilibration.
+- **· Operational** — Micro-structure and roughness of the local terrain. Small barriers, rapid convergence. Gradient descent works well here — the topology is already determined.
 
 The decomposition is
 

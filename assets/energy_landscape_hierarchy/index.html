@@ -22,83 +22,39 @@
     flex-direction: column;
     position: relative;
   }
-  .title-bar {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    z-index: 10;
-    padding: 20px 24px 12px;
-    background: linear-gradient(to bottom, rgba(10,10,18,0.95) 0%, rgba(10,10,18,0.6) 70%, transparent 100%);
-  }
-  .title-bar h1 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #a89f8a;
-  }
-  .title-bar p {
-    margin: 4px 0 0;
-    font-size: 11px;
-    color: #6a6555;
-    letter-spacing: 0.08em;
-    font-style: italic;
-  }
   .canvas-wrap {
     flex: 1;
     position: relative;
     cursor: grab;
+    min-height: 0;
   }
   .canvas-wrap:active { cursor: grabbing; }
   canvas { width: 100%; height: 100%; display: block; }
 
-  .level-card {
-    position: absolute;
-    top: 70px;
-    right: 16px;
-    background: rgba(10,10,18,0.75);
-    border-radius: 8px;
-    padding: 10px 14px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(168,159,138,0.15);
-    max-width: 220px;
-  }
-  .level-card .head {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #a89f8a;
-    margin-bottom: 4px;
-  }
-  .level-card .body {
-    font-size: 10px;
-    color: #7a7568;
-    line-height: 1.5;
-  }
   .drag-hint {
     position: absolute;
-    bottom: 16px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 10px;
+    font-size: 9px;
     color: #4a4540;
     letter-spacing: 0.1em;
     pointer-events: none;
   }
   .controls {
-    padding: 14px 16px 18px;
+    padding: 8px 10px 10px;
     background: linear-gradient(to top, rgba(10,10,18,1) 0%, rgba(10,10,18,0.9) 100%);
     border-top: 1px solid rgba(168,159,138,0.08);
+    flex-shrink: 0;
   }
   .level-buttons {
     display: flex;
-    gap: 6px;
-    margin-bottom: 10px;
+    gap: 5px;
+    margin-bottom: 6px;
   }
   .lvl-btn {
     flex: 1;
-    padding: 10px 6px;
+    padding: 7px 4px;
     border: none;
     border-radius: 6px;
     background: rgba(255,255,255,0.03);
@@ -114,15 +70,9 @@
     outline: 1px solid rgba(168,159,138,0.25);
   }
   .lvl-btn .lvl-title {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.05em;
-  }
-  .lvl-btn .lvl-sub {
-    font-size: 8px;
-    margin-top: 3px;
-    opacity: 0.6;
-    letter-spacing: 0.04em;
   }
   .rotate-row {
     display: flex;
@@ -133,38 +83,20 @@
     border: 1px solid rgba(168,159,138,0.12);
     color: #3a3530;
     border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 10px;
+    padding: 3px 12px;
+    font-size: 9px;
     cursor: pointer;
     font-family: inherit;
     letter-spacing: 0.08em;
     transition: all 0.3s;
   }
   .rotate-btn.on { color: #a89f8a; }
-  .legend {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 10px;
-    font-size: 9px;
-    color: #4a4540;
-    letter-spacing: 0.06em;
-  }
 </style>
 </head>
 <body>
 <div id="root">
-  <div class="title-bar">
-    <h1>Energy Landscape Hierarchy</h1>
-    <p>E(s, t, o) = E_strategic(s) + E_tactical(t | s) + E_operational(o | s, t)</p>
-  </div>
-
   <div class="canvas-wrap" id="canvasWrap">
     <canvas id="scene"></canvas>
-    <div class="level-card">
-      <div class="head" id="levelHead">&#9670; Strategic Level</div>
-      <div class="body" id="levelBody"></div>
-    </div>
     <div class="drag-hint">drag to orbit</div>
   </div>
 
@@ -172,11 +104,6 @@
     <div class="level-buttons" id="levelButtons"></div>
     <div class="rotate-row">
       <button class="rotate-btn on" id="rotateBtn">&#9679; rotating</button>
-    </div>
-    <div class="legend">
-      <span>&#9650; peaks = barriers</span>
-      <span>&#9660; valleys = stable states</span>
-      <span>depth &#8733; barrier height</span>
     </div>
   </div>
 </div>
@@ -432,14 +359,9 @@ window.addEventListener("touchend", () => { drag.active = false; });
 
 // UI binding
 const levelButtonsEl = document.getElementById("levelButtons");
-const levelHeadEl = document.getElementById("levelHead");
-const levelBodyEl = document.getElementById("levelBody");
 const rotateBtn = document.getElementById("rotateBtn");
 
 function renderLevelInfo() {
-  const lv = levels[grain];
-  levelHeadEl.innerHTML = `${lv.icon} ${lv.label} Level`;
-  levelBodyEl.textContent = lv.desc;
   [...levelButtonsEl.children].forEach((btn, i) => {
     btn.classList.toggle("active", i === grain);
   });
@@ -448,7 +370,7 @@ function renderLevelInfo() {
 levels.forEach((lv, i) => {
   const b = document.createElement("button");
   b.className = "lvl-btn";
-  b.innerHTML = `<div class="lvl-title">${lv.icon} ${lv.label}</div><div class="lvl-sub">${lv.sub}</div>`;
+  b.innerHTML = `<div class="lvl-title">${lv.icon} ${lv.label}</div>`;
   b.addEventListener("click", () => {
     grain = i;
     rebuildMesh();
