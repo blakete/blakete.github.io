@@ -50,5 +50,5 @@ A Bayes-optimal agent in principle treats the whole hypothesis space as one undi
 
 ## Further reading
 
-- [Wales, D. J. (2003). *Energy Landscapes*. Cambridge University Press.](https://www.cambridge.org/core/books/energy-landscapes/A4E1F6F1B4664F8C2F0B0B0E5E9B5B5C)
+- [Wales, D. J. (2003). *Energy Landscapes*. Cambridge University Press.](https://www.researchgate.net/profile/David-Wales-3/publication/231984346_Energy_Landscapes_An_Overview/links/02e7e52c18deab0f23000000/Energy-Landscapes-An-Overview.pdf)
 - [Frauenfelder, H., Sligar, S. G., &amp; Wolynes, P. G. (1991). The energy landscapes and motions of proteins. *Science* 254(5038), 1598&#8211;1603.](https://www.science.org/doi/10.1126/science.1749933)
