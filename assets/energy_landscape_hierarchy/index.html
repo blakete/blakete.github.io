@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Energy Landscape Hierarchy</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: #0a0a12;
+    color: #c8c4b8;
+    font-family: "Palatino", "Georgia", serif;
+    overflow: hidden;
+  }
+  #root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .title-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    padding: 20px 24px 12px;
+    background: linear-gradient(to bottom, rgba(10,10,18,0.95) 0%, rgba(10,10,18,0.6) 70%, transparent 100%);
+  }
+  .title-bar h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #a89f8a;
+  }
+  .title-bar p {
+    margin: 4px 0 0;
+    font-size: 11px;
+    color: #6a6555;
+    letter-spacing: 0.08em;
+    font-style: italic;
+  }
+  .canvas-wrap {
+    flex: 1;
+    position: relative;
+    cursor: grab;
+  }
+  .canvas-wrap:active { cursor: grabbing; }
+  canvas { width: 100%; height: 100%; display: block; }
+
+  .level-card {
+    position: absolute;
+    top: 70px;
+    right: 16px;
+    background: rgba(10,10,18,0.75);
+    border-radius: 8px;
+    padding: 10px 14px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(168,159,138,0.15);
+    max-width: 220px;
+  }
+  .level-card .head {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #a89f8a;
+    margin-bottom: 4px;
+  }
+  .level-card .body {
+    font-size: 10px;
+    color: #7a7568;
+    line-height: 1.5;
+  }
+  .drag-hint {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #4a4540;
+    letter-spacing: 0.1em;
+    pointer-events: none;
+  }
+  .controls {
+    padding: 14px 16px 18px;
+    background: linear-gradient(to top, rgba(10,10,18,1) 0%, rgba(10,10,18,0.9) 100%);
+    border-top: 1px solid rgba(168,159,138,0.08);
+  }
+  .level-buttons {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .lvl-btn {
+    flex: 1;
+    padding: 10px 6px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.03);
+    color: #5a5548;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    outline: 1px solid transparent;
+    font-family: inherit;
+  }
+  .lvl-btn.active {
+    background: linear-gradient(135deg, rgba(168,159,138,0.2), rgba(168,159,138,0.08));
+    color: #d4cfc0;
+    outline: 1px solid rgba(168,159,138,0.25);
+  }
+  .lvl-btn .lvl-title {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .lvl-btn .lvl-sub {
+    font-size: 8px;
+    margin-top: 3px;
+    opacity: 0.6;
+    letter-spacing: 0.04em;
+  }
+  .rotate-row {
+    display: flex;
+    justify-content: center;
+  }
+  .rotate-btn {
+    background: none;
+    border: 1px solid rgba(168,159,138,0.12);
+    color: #3a3530;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 0.08em;
+    transition: all 0.3s;
+  }
+  .rotate-btn.on { color: #a89f8a; }
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 10px;
+    font-size: 9px;
+    color: #4a4540;
+    letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="title-bar">
+    <h1>Energy Landscape Hierarchy</h1>
+    <p>E(s, t, o) = E_strategic(s) + E_tactical(t | s) + E_operational(o | s, t)</p>
+  </div>
+
+  <div class="canvas-wrap" id="canvasWrap">
+    <canvas id="scene"></canvas>
+    <div class="level-card">
+      <div class="head" id="levelHead">&#9670; Strategic Level</div>
+      <div class="body" id="levelBody"></div>
+    </div>
+    <div class="drag-hint">drag to orbit</div>
+  </div>
+
+  <div class="controls">
+    <div class="level-buttons" id="levelButtons"></div>
+    <div class="rotate-row">
+      <button class="rotate-btn on" id="rotateBtn">&#9679; rotating</button>
+    </div>
+    <div class="legend">
+      <span>&#9650; peaks = barriers</span>
+      <span>&#9660; valleys = stable states</span>
+      <span>depth &#8733; barrier height</span>
+    </div>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from "three";
+
+const lerp = (a, b, t) => a + (b - a) * t;
+
+function energy(x, z, grainLevel) {
+  const strategic =
+    0.35 * Math.cos(x * 0.7 + 0.3) * Math.cos(z * 0.6 - 0.2) +
+    0.25 * Math.cos(x * 0.5 - z * 0.4) +
+    0.15 * Math.sin(x * 0.3 + z * 0.5) +
+    0.04 * (x * x + z * z) * 0.01;
+
+  if (grainLevel === 0) return -strategic;
+
+  const tactical =
+    0.09 * Math.cos(x * 2.5 + 0.7) * Math.cos(z * 2.2 - 0.5) +
+    0.07 * Math.sin(x * 3.1 - z * 1.8 + 1.0) +
+    0.05 * Math.cos(x * 1.9 + z * 2.7);
+
+  if (grainLevel === 1) return -(strategic + tactical);
+
+  const operational =
+    0.025 * Math.cos(x * 7.5 + z * 6.0) +
+    0.018 * Math.sin(x * 9.0 - z * 8.5 + 2.0) +
+    0.015 * Math.cos(x * 11.0 + z * 5.5) +
+    0.012 * Math.sin(x * 6.0 + z * 10.0 - 1.0);
+
+  return -(strategic + tactical + operational);
+}
+
+function buildTerrain(res, range, grainLevel) {
+  const positions = [];
+  const colors = [];
+  const indices = [];
+  const step = (range * 2) / (res - 1);
+
+  let minY = Infinity, maxY = -Infinity;
+  const heights = [];
+
+  for (let i = 0; i < res; i++) {
+    for (let j = 0; j < res; j++) {
+      const x = -range + i * step;
+      const z = -range + j * step;
+      const y = energy(x, z, grainLevel) * 3.5;
+      heights.push(y);
+      if (y < minY) minY = y;
+      if (y > maxY) maxY = y;
+      positions.push(x, y, z);
+    }
+  }
+
+  const palettes = [
+    [
+      [0.05, 0.08, 0.18],
+      [0.08, 0.22, 0.42],
+      [0.12, 0.45, 0.55],
+      [0.85, 0.65, 0.30],
+      [0.95, 0.85, 0.55],
+    ],
+    [
+      [0.04, 0.12, 0.16],
+      [0.06, 0.30, 0.38],
+      [0.15, 0.52, 0.48],
+      [0.80, 0.55, 0.25],
+      [0.92, 0.42, 0.35],
+    ],
+    [
+      [0.06, 0.04, 0.20],
+      [0.10, 0.20, 0.40],
+      [0.12, 0.48, 0.38],
+      [0.55, 0.72, 0.30],
+      [0.95, 0.82, 0.35],
+    ],
+  ];
+
+  const pal = palettes[grainLevel];
+  for (let k = 0; k < heights.length; k++) {
+    const t = (heights[k] - minY) / (maxY - minY || 1);
+    const seg = t * (pal.length - 1);
+    const idx = Math.min(Math.floor(seg), pal.length - 2);
+    const frac = seg - idx;
+    colors.push(
+      lerp(pal[idx][0], pal[idx + 1][0], frac),
+      lerp(pal[idx][1], pal[idx + 1][1], frac),
+      lerp(pal[idx][2], pal[idx + 1][2], frac)
+    );
+  }
+
+  for (let i = 0; i < res - 1; i++) {
+    for (let j = 0; j < res - 1; j++) {
+      const a = i * res + j;
+      const b = a + 1;
+      const c = a + res;
+      const d = c + 1;
+      indices.push(a, c, b, b, c, d);
+    }
+  }
+
+  return {
+    positions: new Float32Array(positions),
+    colors: new Float32Array(colors),
+    indices: new Uint32Array(indices),
+  };
+}
+
+const levels = [
+  {
+    label: "Strategic",
+    sub: "Coarse-grained",
+    icon: "◈",
+    desc: "Broad modal contours — choosing which fundamental basin to descend into. Barriers between these basins are enormous. Getting this wrong means no local refinement helps.",
+  },
+  {
+    label: "Tactical",
+    sub: "Mid-grained",
+    icon: "◇",
+    desc: "Nested valleys within a strategic basin. The landscape's shape here depends on which strategic choice was made. Moderate barriers, faster equilibration.",
+  },
+  {
+    label: "Operational",
+    sub: "Fine-grained",
+    icon: "·",
+    desc: "Micro-structure and roughness of the local terrain. Small barriers, rapid convergence. Gradient descent works well here — the topology is already determined.",
+  },
+];
+
+// State
+let grain = 0;
+let autoRotate = true;
+const angle = { theta: 0.6, phi: 0.4 };
+const target = { theta: 0.6, phi: 0.4 };
+const drag = { active: false, x: 0, y: 0 };
+
+// Scene setup
+const canvas = document.getElementById("scene");
+const wrap = document.getElementById("canvasWrap");
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor(0x0a0a12, 1);
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x0a0a12, 0.012);
+
+const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 200);
+
+scene.add(new THREE.AmbientLight(0x334466, 0.6));
+const dir1 = new THREE.DirectionalLight(0xffeedd, 1.0);
+dir1.position.set(5, 10, 7);
+scene.add(dir1);
+const dir2 = new THREE.DirectionalLight(0x8899bb, 0.4);
+dir2.position.set(-6, 5, -4);
+scene.add(dir2);
+const pt = new THREE.PointLight(0xffaa55, 0.5, 30);
+pt.position.set(0, 6, 0);
+scene.add(pt);
+
+let currentMesh = null;
+function rebuildMesh() {
+  if (currentMesh) {
+    scene.remove(currentMesh);
+    currentMesh.geometry.dispose();
+    currentMesh.material.dispose();
+  }
+  const data = buildTerrain(180, 8, grain);
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.BufferAttribute(data.positions, 3));
+  geo.setAttribute("color", new THREE.BufferAttribute(data.colors, 3));
+  geo.setIndex(new THREE.BufferAttribute(data.indices, 1));
+  geo.computeVertexNormals();
+
+  const mat = new THREE.MeshPhongMaterial({
+    vertexColors: true,
+    shininess: 40,
+    specular: new THREE.Color(0.15, 0.15, 0.2),
+    side: THREE.DoubleSide,
+    flatShading: false,
+  });
+  currentMesh = new THREE.Mesh(geo, mat);
+  scene.add(currentMesh);
+}
+
+function resize() {
+  const w = wrap.clientWidth;
+  const h = wrap.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / Math.max(1, h);
+  camera.updateProjectionMatrix();
+}
+window.addEventListener("resize", resize);
+
+function animate() {
+  requestAnimationFrame(animate);
+  if (autoRotate) target.theta += 0.004;
+
+  angle.theta += (target.theta - angle.theta) * 0.06;
+  angle.phi += (target.phi - angle.phi) * 0.06;
+
+  const r = 16;
+  camera.position.set(
+    r * Math.sin(angle.theta) * Math.cos(angle.phi),
+    r * Math.sin(angle.phi) + 3,
+    r * Math.cos(angle.theta) * Math.cos(angle.phi)
+  );
+  camera.lookAt(0, -0.5, 0);
+  renderer.render(scene, camera);
+}
+
+// Drag handlers
+function pointerFrom(e) {
+  if (e.touches && e.touches.length) return e.touches[0];
+  return e;
+}
+canvas.addEventListener("mousedown", (e) => {
+  const p = pointerFrom(e);
+  drag.active = true; drag.x = p.clientX; drag.y = p.clientY;
+});
+canvas.addEventListener("touchstart", (e) => {
+  const p = pointerFrom(e);
+  drag.active = true; drag.x = p.clientX; drag.y = p.clientY;
+}, { passive: true });
+window.addEventListener("mousemove", (e) => {
+  if (!drag.active) return;
+  const p = pointerFrom(e);
+  const dx = p.clientX - drag.x;
+  const dy = p.clientY - drag.y;
+  target.theta += dx * 0.005;
+  target.phi = Math.max(-0.2, Math.min(1.2, target.phi + dy * 0.005));
+  drag.x = p.clientX; drag.y = p.clientY;
+});
+window.addEventListener("touchmove", (e) => {
+  if (!drag.active) return;
+  const p = pointerFrom(e);
+  const dx = p.clientX - drag.x;
+  const dy = p.clientY - drag.y;
+  target.theta += dx * 0.005;
+  target.phi = Math.max(-0.2, Math.min(1.2, target.phi + dy * 0.005));
+  drag.x = p.clientX; drag.y = p.clientY;
+}, { passive: true });
+window.addEventListener("mouseup", () => { drag.active = false; });
+window.addEventListener("touchend", () => { drag.active = false; });
+
+// UI binding
+const levelButtonsEl = document.getElementById("levelButtons");
+const levelHeadEl = document.getElementById("levelHead");
+const levelBodyEl = document.getElementById("levelBody");
+const rotateBtn = document.getElementById("rotateBtn");
+
+function renderLevelInfo() {
+  const lv = levels[grain];
+  levelHeadEl.innerHTML = `${lv.icon} ${lv.label} Level`;
+  levelBodyEl.textContent = lv.desc;
+  [...levelButtonsEl.children].forEach((btn, i) => {
+    btn.classList.toggle("active", i === grain);
+  });
+}
+
+levels.forEach((lv, i) => {
+  const b = document.createElement("button");
+  b.className = "lvl-btn";
+  b.innerHTML = `<div class="lvl-title">${lv.icon} ${lv.label}</div><div class="lvl-sub">${lv.sub}</div>`;
+  b.addEventListener("click", () => {
+    grain = i;
+    rebuildMesh();
+    renderLevelInfo();
+  });
+  levelButtonsEl.appendChild(b);
+});
+
+rotateBtn.addEventListener("click", () => {
+  autoRotate = !autoRotate;
+  rotateBtn.classList.toggle("on", autoRotate);
+  rotateBtn.innerHTML = autoRotate ? "&#9679; rotating" : "&#9675; paused";
+});
+
+resize();
+rebuildMesh();
+renderLevelInfo();
+animate();
+</script>
+</body>
+</html>
