@@ -241,7 +241,7 @@ const levels = [
     label: "Strategic",
     sub: "Coarse-grained",
     icon: "◈",
-    desc: "Broad modal contours — choosing which fundamental basin to descend into. Barriers between these basins are enormous. Getting this wrong means no local refinement helps.",
+    desc: "Broad modal contours: choosing which fundamental basin to descend into. Barriers between these basins are enormous. Getting this wrong means no local refinement helps.",
   },
   {
     label: "Tactical",
@@ -253,14 +253,14 @@ const levels = [
     label: "Operational",
     sub: "Fine-grained",
     icon: "·",
-    desc: "Micro-structure and roughness of the local terrain. Small barriers, rapid convergence. Gradient descent works well here — the topology is already determined.",
+    desc: "Micro-structure and roughness of the local terrain. Small barriers, rapid convergence. Gradient descent works well here, because the topology is already determined.",
   },
 ];
 
 // State
 let grain = 0;
-const INIT_THETA = 0.6 + Math.PI / 4;
-const INIT_PHI = 0.22;
+const INIT_THETA = 4.660;
+const INIT_PHI = 0.550;
 const angle = { theta: INIT_THETA, phi: INIT_PHI };
 const target = { theta: INIT_THETA, phi: INIT_PHI };
 const drag = { active: false, x: 0, y: 0 };
