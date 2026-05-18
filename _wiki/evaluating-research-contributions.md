@@ -7,8 +7,8 @@ author:
 - Blake Edwards
 tags: [research, epistemics, evaluation, science]
 permalink: /wiki/evaluating-research-contributions
-show_on_wiki: true
-show_on_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
 ---
 
 Two complementary frameworks for asking "how good is this paper?" The first is the ladder most communities tacitly use. The second is a cube that recovers the contributions the ladder undervalues.
