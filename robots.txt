@@ -3,6 +3,8 @@ Sitemap: https://blakesnotes.io/sitemap.xml
 User-agent: *
 Disallow: /tags/
 Disallow: /category/
+Disallow: /privacy-policy/
+Disallow: /terms-and-conditions/
 # Point to AI policy file
 Allow: /.well-known/ai.txt
 
