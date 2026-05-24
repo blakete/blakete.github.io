@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Necessity, Creation, Consciousness, and Love"
+title: "Musings on Necessity, Creation, Consciousness, and Love"
 date: 2026-05-23
 last_updated: 2026-05-23
 author:
 - Blake Edwards
 tags: [thermodynamics, free energy, self-organization, agents, consciousness, love]
-permalink: /wiki/necessity-creation-consciousness-and-love
-show_on_wiki: false
-show_on_secret_wiki: true
+permalink: /wiki/musings-on-necessity-creation-consciousness-and-love
+show_on_wiki: true
+show_on_secret_wiki: false
 ---
 
 Gradients demand dissipation: a system held far from equilibrium must export entropy to persist, and the most efficient way to do that is to spontaneously organize into structures (Prigogine) or internal models (Friston's free energy) that minimize the mismatch between what is and what the system's existence requires — so "necessity" is just the thermodynamic imperative to discharge a gradient, and "creation" is the form that imperative takes.
