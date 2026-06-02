@@ -9,6 +9,7 @@ tags: [inspirations, history of science]
 permalink: /wiki/humans-who-inspire-me
 show_on_wiki: true
 show_on_secret_wiki: false
+pinned: true
 ---
 
 People whose work I keep returning to. Most sit at the seams between fields — physics and biology, math and computation, energy and information. Reverse chronological, newest first.
