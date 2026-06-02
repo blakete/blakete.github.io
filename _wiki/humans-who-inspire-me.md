@@ -73,6 +73,7 @@ People whose work I keep returning to. Most sit at the seams between fields — 
   var NODES=[
     {n:'Plato',s:'Plato',y:-428,ap:1,t:['philosophy'],d:'Theory of Forms — perfect forms beyond the noisy instances we encounter.'},
     {n:'Marcus Aurelius',s:'Aurelius',y:121,t:['philosophy'],d:'Stoic emperor; the Meditations on the internal work of being a person.'},
+    {n:'Isaac Newton',s:'Newton',y:1643,t:['physics','mathematics'],d:'Calculus, the laws of motion, universal gravitation, and optics — the Principia.'},
     {n:'Gottfried Wilhelm Leibniz',s:'Leibniz',y:1646,t:['computation','mathematics'],d:'Dreamed of a calculus ratiocinator — reducing reasoning to calculation — and gave us binary arithmetic.'},
     {n:'Thomas Bayes',s:'Bayes',y:1701,t:['bayesian'],d:"Bayes' theorem — the rule for updating beliefs in light of evidence."},
     {n:'Charles Babbage',s:'Babbage',y:1791,t:['computation'],d:'The Analytical Engine — a general-purpose, programmable mechanical computer, a century before electronics.'},
@@ -107,17 +108,17 @@ People whose work I keep returning to. Most sit at the seams between fields — 
     {n:'Edwin T. Jaynes',s:'Jaynes',y:1922,t:['bayesian','information','statmech'],d:'Maximum entropy — statistical mechanics and inference as one activity.'},
     {n:'Ray Solomonoff',s:'Solomonoff',y:1926,t:['computation','bayesian','information'],d:'Universal induction — Bayes-optimal prediction weighted by description length.'},
     {n:'Geoffrey Hinton',s:'Hinton',y:1947,t:['learning','statmech'],d:'Boltzmann machines and backprop — statistical physics into learning.'},
+    {n:'Avi Wigderson',s:'Wigderson',y:1956,t:['computation','complexity','information'],d:'Computational complexity and the deep role of randomness — when it helps, and when it can be removed.'},
     {n:'Stephen Wolfram',s:'Wolfram',y:1959,t:['computation','complexity'],d:'Simple computational rules generating natural complexity — rule 30.'},
     {n:'Karl Friston',s:'Friston',y:1959,t:['bayesian','statmech','learning'],d:'The free energy principle — perception, action, and learning as inference.'},
     {n:'Yann LeCun',s:'LeCun',y:1960,t:['learning','computation'],d:'Convolutional networks, and a push toward world models and self-supervised learning.'},
     {n:'Michael Levin',s:'M. Levin',y:1969,ap:1,t:['life','complexity','philosophy'],d:'Bioelectricity and regeneration — cells navigating a platonic space of forms.'},
-    {n:'Blaise Agüera y Arcas',s:'Agüera y Arcas',y:1975,t:['learning','complexity','life'],d:'ML, biology, and philosophy on how intelligence emerges.'},
     {n:'Richard Sutton',s:'Sutton',y:1978,t:['learning','computation'],d:'Reinforcement learning and The Bitter Lesson — general methods that scale.'},
     {n:'Sergey Levine',s:'S. Levine',y:1984,ap:1,t:['learning','bayesian'],d:'RL, control, and planning as variational inference under one Bayesian frame.'}
   ];
 
   var PRESENT=2026;
-  var DEATH={'Plato':-348,'Marcus Aurelius':180,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
+  var DEATH={'Plato':-348,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
 
   // Build idea-lineage edges: within each theme, link consecutive thinkers in time.
   var byTheme={};
@@ -312,10 +313,6 @@ Berkeley professor whose work casts reinforcement learning, control, and plannin
 
 Co-author, with Andrew Barto, of *Reinforcement Learning: An Introduction* and the temporal-difference methods at the core of the field — work that earned them the 2024 Turing Award. *The Bitter Lesson* is the essay I keep coming back to: the long-run winners are general methods that scale with computation, not the cleverness we hand-build into them.
 
-## Blaise Agüera y Arcas (1975– )
-
-Leads machine-learning research at Google's Paradigms of Intelligence team and writes across AI, biology, philosophy, and art with equal seriousness — *Who Are We Now?* and a steady stream of essays on what intelligence is and how it emerges. The kind of breadth I want to be capable of.
-
 ## Michael Levin
 
 Tufts biologist studying bioelectricity, regeneration, and the agency of non-neural tissue — xenobots, anthrobots, and a body of work arguing that cells navigate a platonic space of possible forms. The clearest current case I know that intelligence and goal-directedness predate brains by a long way.
@@ -331,6 +328,10 @@ Built Mathematica, then spent decades arguing that simple computational rules �
 ## Karl Friston (1959– )
 
 The free energy principle and active inference — a single variational quantity unifying perception, action, and learning under Bayesian inference. Living evidence that big foundational frames are still being written.
+
+## Avi Wigderson (1956– )
+
+Computational complexity theorist who, more than anyone, mapped the role of randomness in computation — when a random algorithm genuinely buys you power, and when that randomness can be derandomized away. Turing Award 2023 (and an Abel Prize too). His work is the rigorous backbone under my hunch that randomness is in the eye of the beholder.
 
 ## Geoffrey Hinton (1947– )
 
@@ -467,6 +468,10 @@ British minister and mathematician. *An Essay towards solving a Problem in the D
 ## Gottfried Wilhelm Leibniz (1646–1716)
 
 In the 1670s he built a machine that could multiply and divide, and — more importantly — dreamed of a *calculus ratiocinator*, a mechanical method for reasoning, alongside the binary arithmetic that every computer now runs on. He is the key conceptual ancestor: the first to imagine reducing reasoning itself to calculation.
+
+## Isaac Newton (1643–1727)
+
+Invented calculus (alongside Leibniz), wrote down the laws of motion and universal gravitation, and unified the heavens and the earth under a single mathematics — the *Principia*. The prototype of the whole enterprise: that the world is law-governed and the laws are writable down. Almost everyone else here is working in the space he opened.
 
 ## Marcus Aurelius (121–180)
 
