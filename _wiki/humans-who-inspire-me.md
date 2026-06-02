@@ -19,31 +19,98 @@ People whose work I keep returning to. Most sit at the seams between fields — 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-.minds-constellation{position:relative;margin:1.9rem 0 2.4rem;padding:1.4rem 1.2rem 1.1rem;border:1px solid #26262e;border-radius:12px;background:radial-gradient(125% 80% at 18% 0%,#15151c 0%,#0b0b10 55%,#08080c 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 10px 40px -20px rgba(0,0,0,.85);overflow:hidden;}
+/* Light theme is the default; dark values are applied below to mirror the
+   site-wide toggle (html[data-theme] + prefers-color-scheme fallback). */
+.minds-constellation{
+  --mc-border:#dcdcce;
+  --mc-bg:radial-gradient(125% 80% at 18% 0%,#ffffff 0%,#f5f5ea 55%,#efefe1 100%);
+  --mc-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 40px -22px rgba(60,60,40,.35);
+  --mc-kicker:#8f9482;
+  --mc-title:#2a2a24;
+  --mc-sub:#6b6f63;
+  --mc-label:#5a5f54;
+  --mc-halo:#f6f6ec;
+  --mc-axis-text:#9a9f90;
+  --mc-axis-line:#dcdccd;
+  --mc-legend-border:#deded0;
+  --mc-chip:#6b6f63;
+  --mc-bar-fill-op:0.18;
+  --mc-tip-bg:rgba(255,255,250,.97);
+  --mc-tip-border:#d6d6c8;
+  --mc-tip-shadow:0 8px 30px -10px rgba(60,60,40,.35);
+  --mc-tip-name:#2a2a24;
+  --mc-tip-year:#8a8f80;
+  --mc-tip-desc:#5a5f54;
+  position:relative;margin:1.9rem 0 2.4rem;padding:1.4rem 1.2rem 1.1rem;border:1px solid var(--mc-border);border-radius:12px;background:var(--mc-bg);box-shadow:var(--mc-shadow);overflow:hidden;}
 .minds-constellation *{box-sizing:border-box;}
-.mc-kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.32em;color:#6f7686;text-transform:uppercase;}
-.mc-title{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(22px,4.4vw,32px);line-height:1.05;color:#e9e7e0;margin:.35rem 0 .45rem;}
-.mc-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:#878d9b;max-width:64ch;}
+.mc-kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.32em;color:var(--mc-kicker);text-transform:uppercase;}
+.mc-title{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(22px,4.4vw,32px);line-height:1.05;color:var(--mc-title);margin:.35rem 0 .45rem;}
+.mc-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:var(--mc-sub);max-width:64ch;}
 .mc-stage{position:relative;margin-top:.7rem;}
 .mc-svg{display:block;width:100%;height:auto;}
 .mc-node{cursor:pointer;}
-.mc-bar{cursor:pointer;transition:opacity .15s;}
-.mc-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;fill:#aab0bd;pointer-events:none;user-select:none;}
-.mc-axis text{font-family:'IBM Plex Mono',monospace;font-size:10px;fill:#565c6b;letter-spacing:.04em;}
-.mc-axis line{stroke:#22222b;stroke-dasharray:2 5;}
+.mc-bar{cursor:pointer;transition:opacity .15s;fill-opacity:var(--mc-bar-fill-op);}
+.mc-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;fill:var(--mc-label);paint-order:stroke;stroke:var(--mc-halo);stroke-width:3px;pointer-events:none;user-select:none;}
+.mc-axis text{font-family:'IBM Plex Mono',monospace;font-size:10px;fill:var(--mc-axis-text);letter-spacing:.04em;}
+.mc-axis line{stroke:var(--mc-axis-line);stroke-dasharray:2 5;}
 .mc-link{fill:none;stroke-linecap:round;}
-.mc-legend{display:flex;flex-wrap:wrap;gap:.5rem .8rem;margin-top:1rem;padding-top:.9rem;border-top:1px solid #1f1f27;}
-.mc-chip{display:inline-flex;align-items:center;gap:.42rem;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#9aa0ad;cursor:pointer;opacity:.9;transition:opacity .15s;user-select:none;}
+.mc-legend{display:flex;flex-wrap:wrap;gap:.5rem .8rem;margin-top:1rem;padding-top:.9rem;border-top:1px solid var(--mc-legend-border);}
+.mc-chip{display:inline-flex;align-items:center;gap:.42rem;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--mc-chip);cursor:pointer;opacity:.9;transition:opacity .15s;user-select:none;}
 .mc-chip:hover{opacity:1;}
 .mc-chip.dim{opacity:.32;}
 .mc-sw{width:9px;height:9px;border-radius:2px;flex:0 0 auto;box-shadow:0 0 7px currentColor;}
-.mc-tip{position:absolute;pointer-events:none;z-index:5;opacity:0;transition:opacity .12s;max-width:248px;background:rgba(9,9,13,.96);border:1px solid #34343f;border-radius:8px;padding:.55rem .68rem;box-shadow:0 8px 30px -10px rgba(0,0,0,.9);}
-.mc-tip-name{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:14.5px;color:#f0eee8;line-height:1.15;}
-.mc-tip-year{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7e8492;margin:2px 0 7px;letter-spacing:.06em;}
-.mc-tip-desc{font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.55;color:#aeb3c0;}
+.mc-tip{position:absolute;pointer-events:none;z-index:5;opacity:0;transition:opacity .12s;max-width:248px;background:var(--mc-tip-bg);border:1px solid var(--mc-tip-border);border-radius:8px;padding:.55rem .68rem;box-shadow:var(--mc-tip-shadow);}
+.mc-tip-name{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:14.5px;color:var(--mc-tip-name);line-height:1.15;}
+.mc-tip-year{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--mc-tip-year);margin:2px 0 7px;letter-spacing:.06em;}
+.mc-tip-desc{font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.55;color:var(--mc-tip-desc);}
 .mc-tip-themes{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
 .mc-tip-theme{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 6px;border-radius:4px;}
 @media(max-width:540px){.mc-sub{font-size:10.5px;}.mc-label{font-size:9px;}}
+
+/* Dark values. Applied when the user explicitly picks dark, or — matching the
+   site toggle's logic — when the OS prefers dark and no explicit light override
+   is set. The default above (light) otherwise wins. */
+html[data-theme="dark"] .minds-constellation{
+  --mc-border:#26262e;
+  --mc-bg:radial-gradient(125% 80% at 18% 0%,#15151c 0%,#0b0b10 55%,#08080c 100%);
+  --mc-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 10px 40px -20px rgba(0,0,0,.85);
+  --mc-kicker:#6f7686;
+  --mc-title:#e9e7e0;
+  --mc-sub:#878d9b;
+  --mc-label:#aab0bd;
+  --mc-halo:#0a0a0e;
+  --mc-axis-text:#565c6b;
+  --mc-axis-line:#22222b;
+  --mc-legend-border:#1f1f27;
+  --mc-chip:#9aa0ad;
+  --mc-bar-fill-op:0.15;
+  --mc-tip-bg:rgba(9,9,13,.96);
+  --mc-tip-border:#34343f;
+  --mc-tip-shadow:0 8px 30px -10px rgba(0,0,0,.9);
+  --mc-tip-name:#f0eee8;
+  --mc-tip-year:#7e8492;
+  --mc-tip-desc:#aeb3c0;}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]) .minds-constellation{
+    --mc-border:#26262e;
+    --mc-bg:radial-gradient(125% 80% at 18% 0%,#15151c 0%,#0b0b10 55%,#08080c 100%);
+    --mc-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 10px 40px -20px rgba(0,0,0,.85);
+    --mc-kicker:#6f7686;
+    --mc-title:#e9e7e0;
+    --mc-sub:#878d9b;
+    --mc-label:#aab0bd;
+    --mc-halo:#0a0a0e;
+    --mc-axis-text:#565c6b;
+    --mc-axis-line:#22222b;
+    --mc-legend-border:#1f1f27;
+    --mc-chip:#9aa0ad;
+    --mc-bar-fill-op:0.15;
+    --mc-tip-bg:rgba(9,9,13,.96);
+    --mc-tip-border:#34343f;
+    --mc-tip-shadow:0 8px 30px -10px rgba(0,0,0,.9);
+    --mc-tip-name:#f0eee8;
+    --mc-tip-year:#7e8492;
+    --mc-tip-desc:#aeb3c0;}}
 </style>
 <div class="mc-head">
   <div class="mc-kicker">A constellation of minds</div>
@@ -216,7 +283,6 @@ People whose work I keep returning to. Most sit at the seams between fields — 
       .attr('class','mc-label')
       .attr('transform',function(d){var ly=Math.max(padT+48,Math.min(height-padB-48,d.y));return 'translate('+d.x+','+ly+') rotate(-90)';})
       .attr('text-anchor','middle').attr('dominant-baseline','central')
-      .style('paint-order','stroke').style('stroke','#0a0a0e').style('stroke-width','3px')
       .text(function(d){return d.s;});
 
     function over(e,d){focusNode(d);showTip(d);moveTip(e);}
@@ -238,8 +304,7 @@ People whose work I keep returning to. Most sit at the seams between fields — 
       linkSel.attr('stroke-opacity',function(l){return (l.source===d||l.target===d)?0.95:0.05;})
         .attr('stroke-width',function(l){return (l.source===d||l.target===d)?2.3:1;});
       barSel.attr('opacity',function(o){return nb[o.index]?1:0.1;});
-      labelSel.attr('opacity',function(o){return nb[o.index]?1:0.1;})
-        .attr('fill',function(o){return nb[o.index]?'#f0f1f5':'#aab0bd';});
+      labelSel.attr('opacity',function(o){return nb[o.index]?1:0.1;});
     }
     function clearFocus(){applyState();}
   }
@@ -250,12 +315,11 @@ People whose work I keep returning to. Most sit at the seams between fields — 
       s.link.attr('stroke-opacity',function(l){return l.theme===activeTheme?0.92:0.05;})
         .attr('stroke-width',function(l){return l.theme===activeTheme?2.1:1;});
       s.bar.attr('opacity',function(o){return o.themes.indexOf(activeTheme)>=0?1:0.12;});
-      s.label.attr('opacity',function(o){return o.themes.indexOf(activeTheme)>=0?1:0.16;})
-        .attr('fill',function(o){return o.themes.indexOf(activeTheme)>=0?'#eceef3':'#aab0bd';});
+      s.label.attr('opacity',function(o){return o.themes.indexOf(activeTheme)>=0?1:0.16;});
     }else{
       s.link.attr('stroke-opacity',0.28).attr('stroke-width',1.4);
       s.bar.attr('opacity',1);
-      s.label.attr('opacity',0.85).attr('fill','#aab0bd');
+      s.label.attr('opacity',0.85);
     }
   }
 
