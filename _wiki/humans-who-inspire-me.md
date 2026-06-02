@@ -109,6 +109,7 @@ People whose work I keep returning to. Most sit at the seams between fields — 
     {n:'Geoffrey Hinton',s:'Hinton',y:1947,t:['learning','statmech'],d:'Boltzmann machines and backprop — statistical physics into learning.'},
     {n:'Stephen Wolfram',s:'Wolfram',y:1959,t:['computation','complexity'],d:'Simple computational rules generating natural complexity — rule 30.'},
     {n:'Karl Friston',s:'Friston',y:1959,t:['bayesian','statmech','learning'],d:'The free energy principle — perception, action, and learning as inference.'},
+    {n:'Yann LeCun',s:'LeCun',y:1960,t:['learning','computation'],d:'Convolutional networks, and a push toward world models and self-supervised learning.'},
     {n:'Michael Levin',s:'M. Levin',y:1969,ap:1,t:['life','complexity','philosophy'],d:'Bioelectricity and regeneration — cells navigating a platonic space of forms.'},
     {n:'Blaise Agüera y Arcas',s:'Agüera y Arcas',y:1975,t:['learning','complexity','life'],d:'ML, biology, and philosophy on how intelligence emerges.'},
     {n:'Richard Sutton',s:'Sutton',y:1978,t:['learning','computation'],d:'Reinforcement learning and The Bitter Lesson — general methods that scale.'},
@@ -318,6 +319,10 @@ Leads machine-learning research at Google's Paradigms of Intelligence team and w
 ## Michael Levin
 
 Tufts biologist studying bioelectricity, regeneration, and the agency of non-neural tissue — xenobots, anthrobots, and a body of work arguing that cells navigate a platonic space of possible forms. The clearest current case I know that intelligence and goal-directedness predate brains by a long way.
+
+## Yann LeCun (1960– )
+
+Made convolutional networks work for real, decades before the field caught up, and shared the 2018 Turing Award for it. What I follow now is his insistence that prediction and self-supervised world models — not ever-bigger language models — are the road to machines that actually understand.
 
 ## Stephen Wolfram (1959– )
 
