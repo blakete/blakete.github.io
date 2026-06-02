@@ -7,9 +7,12 @@ author:
 - Blake Edwards
 tags: [statistics, hypothesis testing, inference]
 permalink: /wiki/hypothesis-testing
-show_on_wiki: true
-show_on_secret_wiki: false
+show_on_wiki: false
+show_on_secret_wiki: true
+draft: true
 ---
+
+> 🚧 **Work in progress** — this is an unfinished draft and may change.
 
 Brief introduction to hypothesis testing.
 

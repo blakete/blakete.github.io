@@ -9,6 +9,7 @@ tags: [engineering, design, process, first principles]
 permalink: /wiki/elons-algorithm
 show_on_wiki: true
 show_on_secret_wiki: false
+pinned: true
 ---
 
 Elon Musk's 5-step "algorithm," from the Starbase tour with Tim Dodd. The order matters.

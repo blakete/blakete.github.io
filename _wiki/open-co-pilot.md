@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Open Co-Pilot Project"
-date: 2026-03-23
-last_updated: 2026-03-23
+date: 2020-03-23
+last_updated: 2020-03-23
 author:
 - Blake Edwards
 tags: [computer vision, artificial intelligence, robotics]
