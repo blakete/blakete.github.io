@@ -17,6 +17,10 @@ People whose work I keep returning to. Most sit at the seams between fields — 
 
 Berkeley professor whose work casts reinforcement learning, control, and planning as variational inference under one Bayesian frame. The 2018 *RL and Control as Probabilistic Inference* tutorial pulled together threads I keep returning to whenever I think about decision-making under uncertainty.
 
+## Richard Sutton (1978– )
+
+Co-author, with Andrew Barto, of *Reinforcement Learning: An Introduction* and the temporal-difference methods at the core of the field — work that earned them the 2024 Turing Award. *The Bitter Lesson* is the essay I keep coming back to: the long-run winners are general methods that scale with computation, not the cleverness we hand-build into them.
+
 ## Blaise Agüera y Arcas (1975– )
 
 Leads machine-learning research at Google's Paradigms of Intelligence team and writes across AI, biology, philosophy, and art with equal seriousness — *Who Are We Now?* and a steady stream of essays on what intelligence is and how it emerges. The kind of breadth I want to be capable of.
@@ -92,6 +96,10 @@ Engineer-visionary with an almost preternatural feel for electromagnetic phenome
 ## Ludwig Boltzmann (1844–1906)
 
 Built statistical mechanics. *S = k log W* carved entropy into the bridge between microscopic chaos and macroscopic order — the equation that makes thermodynamics, information theory, and most of what comes after possible.
+
+## Josiah Willard Gibbs (1839–1903)
+
+American physicist who founded statistical mechanics and chemical thermodynamics almost single-handedly — ensembles, free energy, the *Gibbs distribution* that still shows up everywhere from physics to machine learning. He worked in near-total isolation at Yale, publishing in an obscure journal, and quietly built half the vocabulary I use to think about energy and probability.
 
 ## Thomas Bayes (1701–1761)
 
