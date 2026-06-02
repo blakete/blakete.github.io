@@ -67,21 +67,39 @@ People whose work I keep returning to. Most sit at the seams between fields — 
     learning:{label:'Learning & intelligence',color:'#e06ca0'},
     life:{label:'Life & biology',color:'#4fb286'},
     physics:{label:'Physics & fields',color:'#6aa6e0'},
+    mathematics:{label:'Mathematics & foundations',color:'#e3cd63'},
     philosophy:{label:'Philosophy & forms',color:'#b3a7d6'}
   };
   var NODES=[
     {n:'Plato',s:'Plato',y:-428,ap:1,t:['philosophy'],d:'Theory of Forms — perfect forms beyond the noisy instances we encounter.'},
     {n:'Marcus Aurelius',s:'Aurelius',y:121,t:['philosophy'],d:'Stoic emperor; the Meditations on the internal work of being a person.'},
+    {n:'Gottfried Wilhelm Leibniz',s:'Leibniz',y:1646,t:['computation','mathematics'],d:'Dreamed of a calculus ratiocinator — reducing reasoning to calculation — and gave us binary arithmetic.'},
     {n:'Thomas Bayes',s:'Bayes',y:1701,t:['bayesian'],d:"Bayes' theorem — the rule for updating beliefs in light of evidence."},
+    {n:'Charles Babbage',s:'Babbage',y:1791,t:['computation'],d:'The Analytical Engine — a general-purpose, programmable mechanical computer, a century before electronics.'},
+    {n:'Ada Lovelace',s:'Lovelace',y:1815,t:['computation'],d:'First algorithm written for a machine; saw that computers could manipulate symbols, not just numbers.'},
+    {n:'Hermann von Helmholtz',s:'Helmholtz',y:1821,t:['statmech','physics','bayesian'],d:'Conservation of energy, free energy, and perception as unconscious inference.'},
+    {n:'James Clerk Maxwell',s:'Maxwell',y:1831,t:['physics','statmech','information'],d:"Unified electricity, magnetism, and light; the Maxwell–Boltzmann distribution and Maxwell's demon."},
     {n:'Josiah Willard Gibbs',s:'Gibbs',y:1839,t:['statmech','information'],d:'Statistical mechanics, free energy, and the Gibbs distribution.'},
     {n:'Ludwig Boltzmann',s:'Boltzmann',y:1844,t:['statmech','information'],d:'S = k log W — entropy bridging microscopic chaos and macroscopic order.'},
+    {n:'Felix Klein',s:'Klein',y:1849,t:['mathematics'],d:'The Erlangen Program — geometry as the study of invariants under groups of transformations.'},
+    {n:'Hendrik Lorentz',s:'Lorentz',y:1853,t:['physics'],d:'The Lorentz transformations underlying special relativity.'},
     {n:'Nikola Tesla',s:'Tesla',y:1856,t:['physics'],d:'Alternating current and an intuitive feel for electromagnetism.'},
-    {n:'George Pólya',s:'Pólya',y:1887,t:['bayesian'],d:'Plausible inference and heuristics — plausibility as extended logic.'},
+    {n:'Heinrich Hertz',s:'Hertz',y:1857,t:['physics'],d:'Generated and detected electromagnetic waves, confirming Maxwell experimentally.'},
+    {n:'Max Planck',s:'Planck',y:1858,t:['physics','statmech'],d:'Quantized energy to explain blackbody radiation — the seed of quantum theory.'},
+    {n:'Giuseppe Peano',s:'Peano',y:1858,t:['mathematics'],d:'The Peano axioms — a formal foundation for arithmetic — and a symbolic language for logic.'},
+    {n:'David Hilbert',s:'Hilbert',y:1862,t:['mathematics','computation'],d:'The 23 problems, formalism, Hilbert spaces, and the Entscheidungsproblem.'},
+    {n:'Hermann Minkowski',s:'Minkowski',y:1864,t:['physics','mathematics'],d:'Recast special relativity as the geometry of four-dimensional spacetime.'},
+    {n:'Ernst Zermelo',s:'Zermelo',y:1871,t:['mathematics'],d:'Axiomatized set theory; the Z in ZFC and the axiom of choice.'},
+    {n:'Albert Einstein',s:'Einstein',y:1879,t:['physics','statmech'],d:'Relativity, the photoelectric effect, and Brownian motion as proof of atoms.'},
+    {n:'George Pólya',s:'Pólya',y:1887,t:['bayesian','mathematics'],d:'Plausible inference and heuristics — plausibility as extended logic.'},
     {n:'Erwin Schrödinger',s:'Schrödinger',y:1887,t:['physics','life','information'],d:'The wave equation and What Is Life? — physics giving rise to living order.'},
+    {n:'Abraham Fraenkel',s:'Fraenkel',y:1891,t:['mathematics'],d:'Completed the axioms of set theory — the F in ZFC.'},
     {n:'Harold Jeffreys',s:'Jeffreys',y:1891,t:['bayesian'],d:'Built modern Bayesian statistics — priors, posterior odds, the Jeffreys prior.'},
+    {n:'Norbert Wiener',s:'Wiener',y:1894,t:['information','computation','learning'],d:'Founded cybernetics — control and communication in the animal and the machine.'},
+    {n:'Buckminster Fuller',s:'Fuller',y:1895,t:['complexity'],d:'Synergetics, geodesic domes, tensegrity — doing more with less by design.'},
     {n:'R.T. Cox',s:'Cox',y:1898,t:['bayesian'],d:"Cox's theorem — probability is the unique calculus of consistent belief."},
-    {n:'Andrey Kolmogorov',s:'Kolmogorov',y:1903,t:['bayesian','computation','information'],d:'Axiomatized probability; co-founded algorithmic information theory.'},
-    {n:'John von Neumann',s:'von Neumann',y:1903,t:['computation','complexity','physics'],d:'Computer architecture, game theory, self-replicating automata, QM foundations.'},
+    {n:'Andrey Kolmogorov',s:'Kolmogorov',y:1903,t:['bayesian','computation','information','mathematics'],d:'Axiomatized probability; co-founded algorithmic information theory.'},
+    {n:'John von Neumann',s:'von Neumann',y:1903,t:['computation','complexity','physics','mathematics'],d:'Computer architecture, game theory, self-replicating automata, QM foundations.'},
     {n:'Alan Turing',s:'Turing',y:1912,t:['computation','learning','life'],d:'Defined computation; asked if machines think; modeled morphogenesis.'},
     {n:'Claude Shannon',s:'Shannon',y:1916,t:['information','computation'],d:'Invented information theory — entropy, channel capacity, error correction.'},
     {n:'Ilya Prigogine',s:'Prigogine',y:1917,t:['statmech','complexity','life'],d:'Dissipative structures — order emerging far from equilibrium.'},
@@ -98,7 +116,7 @@ People whose work I keep returning to. Most sit at the seams between fields — 
   ];
 
   var PRESENT=2026;
-  var DEATH={'Plato':-348,'Marcus Aurelius':180,'Thomas Bayes':1761,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Nikola Tesla':1943,'George Pólya':1985,'Erwin Schrödinger':1961,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
+  var DEATH={'Plato':-348,'Marcus Aurelius':180,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
 
   // Build idea-lineage edges: within each theme, link consecutive thinkers in time.
   var byTheme={};
@@ -349,9 +367,21 @@ Soviet polymath. Axiomatized probability theory in 1933, then half a century lat
 
 Showed that any system of plausible reasoning consistent with a few mild desiderata must obey the rules of probability — *Cox's theorem* (1946). The clearest derivation of why probability *is* the calculus of belief, not just one option among many.
 
+## Buckminster Fuller (1895–1983)
+
+Designer, inventor, and relentless generalist who treated the whole planet as an engineering problem — geodesic domes, tensegrity, synergetics, "doing more with less." *Operating Manual for Spaceship Earth* is the systems-thinking manifesto I keep recommending. Few people insisted so hard that design is a moral act.
+
+## Norbert Wiener (1894–1964)
+
+Founded cybernetics — the study of control and communication in the animal and the machine — and in doing so put feedback, prediction, and information at the center of how we understand both biology and engineering. The intellectual headwater that learning, control, and the free energy principle all flow down from.
+
 ## Harold Jeffreys (1891–1989)
 
 Geophysicist who, in *Theory of Probability* (1939), built modern Bayesian statistics — priors, posterior odds, model comparison — decades before any of it was respectable. The *Jeffreys prior* still bears his name.
+
+## Abraham Fraenkel (1891–1965)
+
+Refined and completed Zermelo's axioms into the system we now call ZFC — the *F* is his. Most working mathematicians never think about the foundations they stand on, which is exactly the measure of how well he and Zermelo poured them.
 
 ## George Pólya (1887–1985)
 
@@ -361,9 +391,45 @@ Wrote *How to Solve It*, the field manual for mathematical thinking. *Patterns o
 
 Wrote down the wave equation, then in *What Is Life?* (1944) asked how the laws of physics could give rise to the informational order of living systems. That question helped seed molecular biology, and I think it is still the right question.
 
+## Albert Einstein (1879–1955)
+
+Relativity rewrote space and time; the photoelectric effect helped launch quantum theory; and his 1905 paper on Brownian motion turned the random jitter of suspended particles into the decisive evidence that atoms are real. Three revolutions in a single year, and the one I keep returning to is the statistical-mechanics argument that made the invisible countable.
+
+## Ernst Zermelo (1871–1953)
+
+Gave set theory its first axioms in 1908 — the *Z* in ZFC — and isolated the axiom of choice as the load-bearing assumption it really is. The foundation most of mathematics quietly stands on was poured here. He also picked the famous recurrence fight with Boltzmann over whether entropy could truly increase, which is its own kind of inspiring.
+
+## Hermann Minkowski (1864–1909)
+
+Einstein's former teacher, who saw that special relativity was really a statement about geometry — that space and time fuse into a single four-dimensional fabric. "Henceforth space by itself, and time by itself, are doomed to fade away." He gave relativity the language it still speaks in.
+
+## David Hilbert (1862–1943)
+
+German mathematician who set the agenda for twentieth-century mathematics — the 23 problems, the formalist program, and Hilbert spaces, the infinite-dimensional geometry that both quantum mechanics and modern machine learning live in. His *Entscheidungsproblem* — is there a procedure to decide any mathematical statement? — is the question Turing answered by inventing the computer.
+
+## Max Planck (1858–1947)
+
+To explain the spectrum of blackbody radiation, he was forced to assume energy comes in discrete packets — a move he called an act of desperation, and which cracked open the quantum era he never fully made peace with. The constant that bears his name sets the scale of the small.
+
+## Giuseppe Peano (1858–1932)
+
+Gave arithmetic its axioms — the small set of assumptions from which the natural numbers and induction follow — and invented much of the symbolic notation that modern logic and set theory are written in. Foundations built so cleanly they became invisible, which is the highest compliment.
+
+## Heinrich Hertz (1857–1894)
+
+Took Maxwell's equations off the page and into the lab — generating and detecting electromagnetic waves, proving that light and radio are the same phenomenon at different wavelengths. The experiment that turned a beautiful theory into an undeniable fact. Dead at 36.
+
 ## Nikola Tesla (1856–1943)
 
 Engineer-visionary with an almost preternatural feel for electromagnetic phenomena. Alternating current, the induction motor, polyphase distribution — the substrate of modern electrification. Imagined wireless power transmission decades before the math caught up.
+
+## Hendrik Lorentz (1853–1928)
+
+Worked out the transformations that carry one observer's space and time into another's — the mathematical machinery Einstein later reinterpreted as relativity. A bridge figure between classical electromagnetism and the new physics, and by all accounts the gentlest of its founders.
+
+## Felix Klein (1849–1925)
+
+His Erlangen Program recast all of geometry as the study of what stays invariant under a group of transformations — a unifying idea so deep it still structures how I think about symmetry in physics and machine learning alike. Geometry *is* group theory, seen from the right angle.
 
 ## Ludwig Boltzmann (1844–1906)
 
@@ -373,9 +439,29 @@ Built statistical mechanics. *S = k log W* carved entropy into the bridge betwee
 
 American physicist who founded statistical mechanics and chemical thermodynamics almost single-handedly — ensembles, free energy, the *Gibbs distribution* that still shows up everywhere from physics to machine learning. He worked in near-total isolation at Yale, publishing in an obscure journal, and quietly built half the vocabulary I use to think about energy and probability.
 
+## James Clerk Maxwell (1831–1879)
+
+Unified electricity, magnetism, and light into a single set of equations — the first true field theory, and the template for every one since. His kinetic theory gave us the Maxwell–Boltzmann distribution, and *Maxwell's demon* still frames how I think about the link between entropy, information, and the cost of knowing.
+
+## Hermann von Helmholtz (1821–1894)
+
+One of the last people to be a master of physics and physiology at once. He stated the conservation of energy with full generality, introduced the free energy that still bears his name, and framed perception as *unconscious inference* — the brain as a prediction machine — a century before that became the going theory. A direct ancestor of how I think about both thermodynamics and the mind.
+
+## Ada Lovelace (1815–1852)
+
+Writing about Babbage's Analytical Engine, she published what is generally called the first algorithm intended for a machine — and, more strikingly, grasped that such a machine could manipulate *any* symbols, not just numbers: music, language, anything representable. The first person to see the computer rather than the calculator.
+
+## Charles Babbage (1791–1871)
+
+Designed the Difference Engine, then the far more ambitious Analytical Engine — a general-purpose, programmable mechanical computer, conceived from the early 1830s, with a store, a mill, and punched-card control. The truly revolutionary idea: a single machine that could be told to compute anything. He never finished building it; the design was a century ahead of the tools to realize it.
+
 ## Thomas Bayes (1701–1761)
 
 British minister and mathematician. *An Essay towards solving a Problem in the Doctrine of Chances*, published posthumously in 1763, gave us Bayes' theorem — the rule for updating beliefs in light of evidence. Probabilistic inference, machine learning, and the platonic optimal agent all trace back to one short paper.
+
+## Gottfried Wilhelm Leibniz (1646–1716)
+
+In the 1670s he built a machine that could multiply and divide, and — more importantly — dreamed of a *calculus ratiocinator*, a mechanical method for reasoning, alongside the binary arithmetic that every computer now runs on. He is the key conceptual ancestor: the first to imagine reducing reasoning itself to calculation.
 
 ## Marcus Aurelius (121–180)
 
