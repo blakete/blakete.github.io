@@ -1,6 +1,151 @@
 {% comment %}
-  Placeholder to allow defining custom head, in principle, you can add anything here, e.g. favicons:
-
-  1. Head over to https://realfavicongenerator.net/ to add your own favicons.
-  2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
+  Custom head: light/dark theme toggle.
+  The `auto` minima skin emits both palettes as `--minima-*` custom properties
+  (dark behind a prefers-color-scheme media query). We add `html[data-theme]`
+  overrides that outrank the media query, and a button that sets that attribute.
+  No attribute = follow the OS (auto default).
 {% endcomment %}
+
+<script>
+  // Apply a saved manual override before first paint to avoid a flash.
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<style>
+  /* Manual overrides: higher specificity than :root, so they beat the
+     prefers-color-scheme media query in the compiled minima skin. */
+  html[data-theme="light"] {
+    --minima-brand-color: #828282;
+    --minima-brand-color-light: #b5b5b5;
+    --minima-brand-color-dark: #404040;
+    --minima-site-title-color: #404040;
+    --minima-text-color: #111111;
+    --minima-background-color: #f8f8e5;
+    --minima-code-background-color: #ffffff;
+    --minima-link-base-color: #2a7ae2;
+    --minima-link-visited-color: #1756a9;
+    --minima-link-hover-color: #111111;
+    --minima-border-color-01: #b5b5b5;
+    --minima-border-color-02: #d0d0d0;
+    --minima-border-color-03: #b5b5b5;
+    --minima-table-text-color: #3a3a3a;
+    --minima-table-zebra-color: #f4f4f4;
+    --minima-table-header-bg-color: #ededed;
+    --minima-table-header-border: #dedede;
+    --minima-table-border-color: #b5b5b5;
+  }
+  html[data-theme="dark"] {
+    --minima-brand-color: #999999;
+    --minima-brand-color-light: #a6a6a6;
+    --minima-brand-color-dark: #404040;
+    --minima-site-title-color: #a6a6a6;
+    --minima-text-color: #bbbbbb;
+    --minima-background-color: #181818;
+    --minima-code-background-color: #212121;
+    --minima-link-base-color: #79b8ff;
+    --minima-link-visited-color: #79b8ff;
+    --minima-link-hover-color: #bbbbbb;
+    --minima-border-color-01: #404040;
+    --minima-border-color-02: #a6a6a6;
+    --minima-border-color-03: #999999;
+    --minima-table-text-color: #bbbbbb;
+    --minima-table-zebra-color: #252525;
+    --minima-table-header-bg-color: #333333;
+    --minima-table-header-border: #4d4d4d;
+    --minima-table-border-color: #404040;
+  }
+
+  /* Toggle button — mirrors .source-code-link so they sit together. */
+  .theme-toggle {
+    float: left;
+    margin: 0 0 0 14px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--minima-brand-color, #999);
+    opacity: 0.6;
+    line-height: inherit;
+    transition: opacity 0.2s ease, color 0.2s ease;
+  }
+  .theme-toggle:hover {
+    opacity: 1;
+    color: var(--minima-brand-color-light, #a6a6a6);
+  }
+  .theme-toggle svg { vertical-align: middle; }
+
+  /* Keep the source-code icon the brand gray, beating minima's a:visited rule
+     (which otherwise paints it link-blue once visited). */
+  .source-code-link,
+  .source-code-link:visited {
+    color: var(--minima-brand-color, #999);
+  }
+  .source-code-link:hover {
+    color: var(--minima-brand-color-light, #a6a6a6);
+  }
+
+  /* Show sun in dark mode (click -> light), moon in light mode (click -> dark).
+     Pure CSS, so the icon is correct for both auto and manual states. */
+  .theme-toggle .icon-sun { display: none; }
+  .theme-toggle .icon-moon { display: inline-block; }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .theme-toggle .icon-sun { display: inline-block; }
+    html:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+  }
+  html[data-theme="dark"] .theme-toggle .icon-sun { display: inline-block; }
+  html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+  html[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+  html[data-theme="light"] .theme-toggle .icon-moon { display: inline-block; }
+
+  /* Keep the header pinned to the top of the viewport while scrolling.
+     Needs an opaque background and a z-index above page content (the D3 graph
+     tooltip sits at z-index 5). */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--minima-background-color, #181818);
+  }
+
+  @media screen and (max-width: 600px) {
+    .theme-toggle {
+      float: none;
+      position: absolute;
+      top: 16px;
+      left: calc(15px + 46px);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--minima-border-color-01, #404040);
+      border-radius: 5px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var root = document.documentElement;
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    function current() {
+      var t = root.getAttribute('data-theme');
+      if (t === 'light' || t === 'dark') return t;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  });
+</script>
