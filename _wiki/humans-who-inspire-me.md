@@ -139,6 +139,7 @@ html[data-theme="dark"] .minds-constellation{
   };
   var NODES=[
     {n:'Plato',s:'Plato',y:-428,ap:1,t:['philosophy'],d:'Theory of Forms — perfect forms beyond the noisy instances we encounter.'},
+    {n:'Aristotle',s:'Aristotle',y:-384,t:['philosophy','life'],d:'Founded formal logic — the syllogism — and systematic biology; breadth across nearly every field.'},
     {n:'Marcus Aurelius',s:'Aurelius',y:121,t:['philosophy'],d:'Stoic emperor; the Meditations on the internal work of being a person.'},
     {n:'Isaac Newton',s:'Newton',y:1643,t:['physics','mathematics'],d:'Calculus, the laws of motion, universal gravitation, and optics — the Principia.'},
     {n:'Gottfried Wilhelm Leibniz',s:'Leibniz',y:1646,t:['computation','mathematics'],d:'Dreamed of a calculus ratiocinator — reducing reasoning to calculation — and gave us binary arithmetic.'},
@@ -185,7 +186,7 @@ html[data-theme="dark"] .minds-constellation{
   ];
 
   var PRESENT=2026;
-  var DEATH={'Plato':-348,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
+  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
 
   // Build idea-lineage edges: within each theme, link consecutive thinkers in time.
   var byTheme={};
