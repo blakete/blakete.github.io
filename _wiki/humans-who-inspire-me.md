@@ -177,11 +177,13 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Ray Solomonoff',s:'Solomonoff',y:1926,t:['computation','bayesian','information'],d:'Universal induction — Bayes-optimal prediction weighted by description length.'},
     {n:'Geoffrey Hinton',s:'Hinton',y:1947,t:['learning','statmech'],d:'Boltzmann machines and backprop — statistical physics into learning.'},
     {n:'Avi Wigderson',s:'Wigderson',y:1956,t:['computation','complexity','information'],d:'Computational complexity and the deep role of randomness — when it helps, and when it can be removed.'},
+    {n:'Hilbert J. Kappen',s:'Kappen',y:1958,ap:1,t:['bayesian','statmech','learning'],d:'KL-control and path-integral control — optimal control as Bayesian inference, the control cost as a free energy.'},
     {n:'Stephen Wolfram',s:'Wolfram',y:1959,t:['computation','complexity'],d:'Simple computational rules generating natural complexity — rule 30.'},
     {n:'Karl Friston',s:'Friston',y:1959,t:['bayesian','statmech','learning'],d:'The free energy principle — perception, action, and learning as inference.'},
     {n:'Yann LeCun',s:'LeCun',y:1960,t:['learning','computation'],d:'Convolutional networks, and a push toward world models and self-supervised learning.'},
     {n:'Michael Levin',s:'M. Levin',y:1969,ap:1,t:['life','complexity','philosophy'],d:'Bioelectricity and regeneration — cells navigating a platonic space of forms.'},
     {n:'Joshua Tenenbaum',s:'Tenenbaum',y:1972,t:['bayesian','learning'],d:'Bayesian models of cognition — intuitive physics, concept learning, and a Bayesian theory of mind.'},
+    {n:'Marc Toussaint',s:'Toussaint',y:1974,ap:1,t:['bayesian','learning'],d:'Planning and trajectory optimization as approximate inference — solving MDPs by message passing.'},
     {n:'Richard Sutton',s:'Sutton',y:1978,t:['learning','computation'],d:'Reinforcement learning and The Bitter Lesson — general methods that scale.'},
     {n:'Sergey Levine',s:'S. Levine',y:1984,ap:1,t:['learning','bayesian'],d:'RL, control, and planning as variational inference under one Bayesian frame.'}
   ];
@@ -373,11 +375,15 @@ html[data-theme="dark"] .minds-constellation{
 
 ## Sergey Levine
 
-Berkeley professor whose work casts reinforcement learning, control, and planning as variational inference under one Bayesian frame. The 2018 *RL and Control as Probabilistic Inference* tutorial pulled together threads I keep returning to whenever I think about decision-making under uncertainty.
+Berkeley professor whose work casts reinforcement learning, control, and planning as variational inference under one Bayesian frame. His 2018 *RL and Control as Probabilistic Inference* tutorial made the equivalence exact rather than analogical: a maximum-entropy control objective *is* a variational free energy — the same evidence lower bound that turns up in approximate inference. That identity is the thread I keep returning to whenever I think about decision-making under uncertainty.
 
 ## Richard Sutton (1978– )
 
 Co-author, with Andrew Barto, of *Reinforcement Learning: An Introduction* and the temporal-difference methods at the core of the field — work that earned them the 2024 Turing Award. *The Bitter Lesson* is the essay I keep coming back to: the long-run winners are general methods that scale with computation, not the cleverness we hand-build into them.
+
+## Marc Toussaint
+
+Roboticist (TU Berlin) who turned planning and trajectory optimization into approximate inference — solving Markov decision problems by message passing on a graphical model rather than by dynamic programming. The work made *planning as inference* a usable engineering tool, and is part of why casting control as Bayesian computation reads less like a metaphor than like the right level of description.
 
 ## Joshua Tenenbaum (1972– )
 
@@ -397,7 +403,11 @@ Built Mathematica, then spent decades arguing that simple computational rules �
 
 ## Karl Friston (1959– )
 
-The free energy principle and active inference — a single variational quantity unifying perception, action, and learning under Bayesian inference. Living evidence that big foundational frames are still being written.
+The free energy principle and active inference — a single variational quantity unifying perception, action, and learning under Bayesian inference. It is the same quantity the control-as-inference line (Kappen, Toussaint, Levine) reaches from the other side: maximum-entropy and KL-regularized control objectives *are* free energies, not merely analogous to them. Living evidence that big foundational frames are still being written.
+
+## Hilbert J. Kappen
+
+Biophysicist at Radboud University whose work on KL-control and path-integral control showed that a whole class of stochastic optimal-control problems becomes *linearly solvable* once the cost is written as a Kullback–Leibler divergence. One of the cleanest demonstrations that control and inference are a single problem — the optimal controller is a posterior, the control cost a free energy — and a direct root of the maximum-entropy reinforcement learning that came after.
 
 ## Avi Wigderson (1956– )
 
