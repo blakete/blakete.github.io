@@ -182,7 +182,7 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Karl Friston',s:'Friston',y:1959,t:['bayesian','statmech','learning'],d:'The free energy principle — perception, action, and learning as inference.'},
     {n:'Yann LeCun',s:'LeCun',y:1960,t:['learning','computation'],d:'Convolutional networks, and a push toward world models and self-supervised learning.'},
     {n:'Michael Levin',s:'M. Levin',y:1969,ap:1,t:['life','complexity','philosophy'],d:'Bioelectricity and regeneration — cells navigating a platonic space of forms.'},
-    {n:'Joshua Tenenbaum',s:'Tenenbaum',y:1972,t:['bayesian','learning'],d:'Bayesian models of cognition — intuitive physics, concept learning, and a Bayesian theory of mind.'},
+    {n:'Joshua Tenenbaum',s:'Tenenbaum',y:1972,t:['bayesian','statmech','learning'],d:'Bayesian models of cognition — intuitive physics, concept learning, and a Bayesian theory of mind; Bayesian updating as free-energy minimization.'},
     {n:'Marc Toussaint',s:'Toussaint',y:1974,ap:1,t:['bayesian','learning'],d:'Planning and trajectory optimization as approximate inference — solving MDPs by message passing.'},
     {n:'Richard Sutton',s:'Sutton',y:1978,t:['learning','computation'],d:'Reinforcement learning and The Bitter Lesson — general methods that scale.'},
     {n:'Sergey Levine',s:'S. Levine',y:1984,ap:1,t:['learning','bayesian'],d:'RL, control, and planning as variational inference under one Bayesian frame.'}
@@ -387,7 +387,7 @@ Roboticist (TU Berlin) who turned planning and trajectory optimization into appr
 
 ## Joshua Tenenbaum (1972– )
 
-MIT cognitive scientist reverse-engineering the mind as Bayesian inference — intuitive physics, concept learning from a single example, and a *Bayesian theory of mind* that casts how we read other people's beliefs and goals as inverse planning over generative models. The clearest demonstration I know that the structured, few-shot character of human thought is itself a form of probabilistic inference.
+MIT cognitive scientist reverse-engineering the mind as Bayesian inference — intuitive physics, concept learning from a single example, and a *Bayesian theory of mind* that casts how we read other people's beliefs and goals as inverse planning over generative models. Because Bayesian updating is itself variational free-energy minimization, this sits on the same footing as Friston's free energy and the control-as-inference line (Kappen, Toussaint, Levine) — the clearest demonstration I know that the structured, few-shot character of human thought is itself probabilistic inference.
 
 ## Michael Levin
 
