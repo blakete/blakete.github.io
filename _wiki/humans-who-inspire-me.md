@@ -541,6 +541,10 @@ Invented calculus (alongside Leibniz), wrote down the laws of motion and univers
 
 Roman emperor and Stoic. The *Meditations* — written to himself, never meant for publication — are the clearest reminder I know that the work of being a person is mostly internal, and that most of the obstacles in the way are you. Two millennia later, still useful at 6 AM.
 
+## Aristotle (384–322 BCE)
+
+Plato's student and the first to make logic itself an object of study — the syllogism and the rules of valid inference, which stood essentially unrevised for two thousand years. But the range is the thing: physics, biology, ethics, poetics, politics, metaphysics, each one founded or reshaped, much of it built up from direct observation of the world. The original case that a single mind can take all of knowledge as its subject.
+
 ## Plato (c. 428–348 BCE)
 
 *The Republic*, the Theory of Forms, the dialogue as a method of inquiry. Most of Western philosophy is still working in his vocabulary, and the *platonic* in "platonic ideal" is not metaphorical — it is the conviction that perfect forms exist beyond the noisy instances we encounter, and that thinking is partly the work of remembering them.
