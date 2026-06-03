@@ -181,6 +181,7 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Karl Friston',s:'Friston',y:1959,t:['bayesian','statmech','learning'],d:'The free energy principle — perception, action, and learning as inference.'},
     {n:'Yann LeCun',s:'LeCun',y:1960,t:['learning','computation'],d:'Convolutional networks, and a push toward world models and self-supervised learning.'},
     {n:'Michael Levin',s:'M. Levin',y:1969,ap:1,t:['life','complexity','philosophy'],d:'Bioelectricity and regeneration — cells navigating a platonic space of forms.'},
+    {n:'Joshua Tenenbaum',s:'Tenenbaum',y:1972,t:['bayesian','learning'],d:'Bayesian models of cognition — intuitive physics, concept learning, and a Bayesian theory of mind.'},
     {n:'Richard Sutton',s:'Sutton',y:1978,t:['learning','computation'],d:'Reinforcement learning and The Bitter Lesson — general methods that scale.'},
     {n:'Sergey Levine',s:'S. Levine',y:1984,ap:1,t:['learning','bayesian'],d:'RL, control, and planning as variational inference under one Bayesian frame.'}
   ];
@@ -377,6 +378,10 @@ Berkeley professor whose work casts reinforcement learning, control, and plannin
 ## Richard Sutton (1978– )
 
 Co-author, with Andrew Barto, of *Reinforcement Learning: An Introduction* and the temporal-difference methods at the core of the field — work that earned them the 2024 Turing Award. *The Bitter Lesson* is the essay I keep coming back to: the long-run winners are general methods that scale with computation, not the cleverness we hand-build into them.
+
+## Joshua Tenenbaum (1972– )
+
+MIT cognitive scientist reverse-engineering the mind as Bayesian inference — intuitive physics, concept learning from a single example, and a *Bayesian theory of mind* that casts how we read other people's beliefs and goals as inverse planning over generative models. The clearest demonstration I know that the structured, few-shot character of human thought is itself a form of probabilistic inference.
 
 ## Michael Levin
 
