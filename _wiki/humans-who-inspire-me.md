@@ -147,6 +147,7 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Charles Babbage',s:'Babbage',y:1791,t:['computation'],d:'The Analytical Engine — a general-purpose, programmable mechanical computer, a century before electronics.'},
     {n:'Ada Lovelace',s:'Lovelace',y:1815,t:['computation'],d:'First algorithm written for a machine; saw that computers could manipulate symbols, not just numbers.'},
     {n:'Hermann von Helmholtz',s:'Helmholtz',y:1821,t:['statmech','physics','bayesian'],d:'Conservation of energy, free energy, and perception as unconscious inference.'},
+    {n:'Jules Antoine Lissajous',s:'Lissajous',y:1822,t:['physics'],d:'Studied vibration and sound; Lissajous figures made harmonic motion visible.'},
     {n:'James Clerk Maxwell',s:'Maxwell',y:1831,t:['physics','statmech','information'],d:"Unified electricity, magnetism, and light; the Maxwell–Boltzmann distribution and Maxwell's demon."},
     {n:'Josiah Willard Gibbs',s:'Gibbs',y:1839,t:['statmech','information'],d:'Statistical mechanics, free energy, and the Gibbs distribution.'},
     {n:'Ludwig Boltzmann',s:'Boltzmann',y:1844,t:['statmech','information'],d:'S = k log W — entropy bridging microscopic chaos and macroscopic order.'},
@@ -189,7 +190,7 @@ html[data-theme="dark"] .minds-constellation{
   ];
 
   var PRESENT=2026;
-  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
+  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
 
   // Build idea-lineage edges: within each theme, link consecutive thinkers in time.
   var byTheme={};
@@ -528,6 +529,10 @@ American physicist who founded statistical mechanics and chemical thermodynamics
 ## James Clerk Maxwell (1831–1879)
 
 Unified electricity, magnetism, and light into a single set of equations — the first true field theory, and the template for every one since. His kinetic theory gave us the Maxwell–Boltzmann distribution, and *Maxwell's demon* still frames how I think about the link between entropy, information, and the cost of knowing.
+
+## Jules Antoine Lissajous (1822–1880)
+
+French physicist who studied vibration and sound — and found a way to *see* it. By bouncing light off small mirrors fixed to two vibrating tuning forks, he turned a pair of perpendicular oscillations into the standing curves that now bear his name. *Lissajous figures* are still how we read frequency and phase off an oscilloscope — an early, beautiful case of making an invisible dynamical relationship visible.
 
 ## Hermann von Helmholtz (1821–1894)
 
