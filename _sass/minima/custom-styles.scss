@@ -52,6 +52,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+// Safari Reader-style prose: ragged-right with hyphenation and roomy paragraphs.
+.post-content,
+.page-content {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+  p {
+    margin-bottom: 1.15em;
+  }
+}
+
 .growth-stages {
   display: flex;
   flex-wrap: wrap;

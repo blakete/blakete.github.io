@@ -1,2 +1,6 @@
 // Placeholder to allow overriding predefined variables smoothly.
-$base-font-size: 18px;
+// Tuned to approximate the Safari Reader view: a narrow measure, airy line
+// height, and a slightly larger body, on top of the system serif stack.
+$base-font-size: 19px;
+$base-line-height: 1.65;
+$content-width: 760px;
