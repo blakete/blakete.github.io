@@ -149,6 +149,7 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Joseph-Louis Lagrange',s:'Lagrange',y:1736,t:['mathematics','physics'],d:'Analytical mechanics and the calculus of variations — recasting physics as the extremization of an action.'},
     {n:'Pierre-Simon Laplace',s:'Laplace',y:1749,t:['bayesian','mathematics','physics'],d:'Turned Bayes into a working science — the rule of succession, flat priors, and probability applied to the heavens.'},
     {n:'Charles Babbage',s:'Babbage',y:1791,t:['computation'],d:'The Analytical Engine — a general-purpose, programmable mechanical computer, a century before electronics.'},
+    {n:'Charles Darwin',s:'Darwin',y:1809,t:['life','complexity'],d:'Evolution by natural selection — descent with modification, the algorithm that builds complex adaptation with no designer.'},
     {n:'Ada Lovelace',s:'Lovelace',y:1815,t:['computation'],d:'First algorithm written for a machine; saw that computers could manipulate symbols, not just numbers.'},
     {n:'Hermann von Helmholtz',s:'Helmholtz',y:1821,t:['statmech','physics','bayesian'],d:'Conservation of energy, free energy, and perception as unconscious inference.'},
     {n:'Jules Antoine Lissajous',s:'Lissajous',y:1822,t:['physics'],d:'Studied vibration and sound; Lissajous figures made harmonic motion visible.'},
@@ -195,7 +196,7 @@ html[data-theme="dark"] .minds-constellation{
   ];
 
   var PRESENT=2026;
-  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Jacob Bernoulli':1705,'Thomas Bayes':1761,'Leonhard Euler':1783,'Joseph-Louis Lagrange':1813,'Pierre-Simon Laplace':1827,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
+  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Jacob Bernoulli':1705,'Thomas Bayes':1761,'Leonhard Euler':1783,'Joseph-Louis Lagrange':1813,'Pierre-Simon Laplace':1827,'Charles Babbage':1871,'Charles Darwin':1882,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
 
   // Build idea-lineage edges: within each theme, link consecutive thinkers in time.
   var byTheme={};
@@ -555,6 +556,10 @@ One of the last people to be a master of physics and physiology at once. He stat
 ## Ada Lovelace (1815–1852)
 
 Writing about Babbage's Analytical Engine, she published what is generally called the first algorithm intended for a machine — and, more strikingly, grasped that such a machine could manipulate *any* symbols, not just numbers: music, language, anything representable. The first person to see the computer rather than the calculator.
+
+## Charles Darwin (1809–1882)
+
+Showed that the staggering complexity and apparent design of living things needs no designer — only descent with modification under natural selection, run for long enough. *On the Origin of Species* is the clearest demonstration I know that a simple, mechanical process, iterated, can climb toward complex adaptation, and it sits underneath nearly every later idea here about how intelligence and order arise without being put there on purpose.
 
 ## Charles Babbage (1791–1871)
 
