@@ -141,11 +141,13 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Plato',s:'Plato',y:-428,ap:1,t:['philosophy'],d:'Theory of Forms — perfect forms beyond the noisy instances we encounter.'},
     {n:'Aristotle',s:'Aristotle',y:-384,t:['philosophy','life'],d:'Founded formal logic — the syllogism — and systematic biology; breadth across nearly every field.'},
     {n:'Marcus Aurelius',s:'Aurelius',y:121,t:['philosophy'],d:'Stoic emperor; the Meditations on the internal work of being a person.'},
+    {n:'Francis Bacon',s:'Bacon',y:1561,t:['philosophy','bayesian'],d:'Father of empiricism and the scientific method — inductive reasoning, drawing general laws from systematic observation.'},
     {n:'Isaac Newton',s:'Newton',y:1643,t:['physics','mathematics'],d:'Calculus, the laws of motion, universal gravitation, and optics — the Principia.'},
     {n:'Gottfried Wilhelm Leibniz',s:'Leibniz',y:1646,t:['computation','mathematics'],d:'Dreamed of a calculus ratiocinator — reducing reasoning to calculation — and gave us binary arithmetic.'},
     {n:'Jacob Bernoulli',s:'Bernoulli',y:1655,t:['bayesian','mathematics'],d:'The law of large numbers — Ars Conjectandi turned chance into a calculable science.'},
     {n:'Thomas Bayes',s:'Bayes',y:1701,t:['bayesian'],d:"Bayes' theorem — the rule for updating beliefs in light of evidence."},
     {n:'Leonhard Euler',s:'Euler',y:1707,t:['mathematics','physics'],d:'The most prolific mathematician ever — analysis, modern notation, graph theory, and the Euler–Lagrange equations.'},
+    {n:'David Hume',s:'Hume',y:1711,t:['philosophy','bayesian'],d:'Empiricist skeptic — causation as habit, and the problem of induction: past patterns cannot logically guarantee the future.'},
     {n:'Joseph-Louis Lagrange',s:'Lagrange',y:1736,t:['mathematics','physics'],d:'Analytical mechanics and the calculus of variations — recasting physics as the extremization of an action.'},
     {n:'Pierre-Simon Laplace',s:'Laplace',y:1749,t:['bayesian','mathematics','physics'],d:'Turned Bayes into a working science — the rule of succession, flat priors, and probability applied to the heavens.'},
     {n:'Charles Babbage',s:'Babbage',y:1791,t:['computation'],d:'The Analytical Engine — a general-purpose, programmable mechanical computer, a century before electronics.'},
@@ -196,7 +198,7 @@ html[data-theme="dark"] .minds-constellation{
   ];
 
   var PRESENT=2026;
-  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Jacob Bernoulli':1705,'Thomas Bayes':1761,'Leonhard Euler':1783,'Joseph-Louis Lagrange':1813,'Pierre-Simon Laplace':1827,'Charles Babbage':1871,'Charles Darwin':1882,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
+  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Francis Bacon':1626,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Jacob Bernoulli':1705,'Thomas Bayes':1761,'David Hume':1776,'Leonhard Euler':1783,'Joseph-Louis Lagrange':1813,'Pierre-Simon Laplace':1827,'Charles Babbage':1871,'Charles Darwin':1882,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
 
   // Build idea-lineage edges: within each theme, link consecutive thinkers in time.
   var byTheme={};
@@ -573,6 +575,10 @@ French mathematician and astronomer who did more than anyone to turn Bayes' insi
 
 Italian-French mathematician who recast Newtonian mechanics as a variational principle: nature extremizes an action, and the equations of motion fall out of it. The *Mécanique analytique* did all of physics with calculus and no diagrams, and the calculus of variations he built with Euler is the same machinery that turns up later in least action, optimal control, and free-energy objectives.
 
+## David Hume (1711–1776)
+
+Scottish Enlightenment philosopher and empiricist whose skepticism cut to the root of inference. He argued that we never observe causation itself, only constant conjunction — our sense of cause and effect is a habit of mind, not a logical necessity — and posed the *problem of induction*: no number of past observations can logically guarantee the next one. It is the sharpest challenge any account of learning from data has to answer, and the reason the replies that followed (Bayes, Laplace, Jaynes) had to be probabilistic rather than certain.
+
 ## Leonhard Euler (1707–1783)
 
 The most prolific mathematician who ever lived, and the source of much of the notation we still use — *e*, *i*, *f(x)*, Σ. He founded graph theory with the bridges of Königsberg, did foundational work across analysis and mechanics, and kept producing after going blind. The Euler–Lagrange equations are a quiet ancestor of nearly every optimization principle on this page.
@@ -592,6 +598,10 @@ In the 1670s he built a machine that could multiply and divide, and — more imp
 ## Isaac Newton (1643–1727)
 
 Invented calculus (alongside Leibniz), wrote down the laws of motion and universal gravitation, and unified the heavens and the earth under a single mathematics — the *Principia*. The prototype of the whole enterprise: that the world is law-governed and the laws are writable down. Almost everyone else here is working in the space he opened.
+
+## Francis Bacon (1561–1626)
+
+English philosopher and statesman, the father of empiricism and the scientific method. In *Novum Organum* he championed inductive reasoning — drawing general laws from systematic observation and experiment — against reliance on pure deduction. That turn, from authority and pure logic toward learning from data, is the philosophical seed of nearly everything downstream here: Bernoulli's frequencies, Bayes' updating, and inference as a way of knowing the world.
 
 ## Marcus Aurelius (121–180)
 
