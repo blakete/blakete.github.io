@@ -261,6 +261,10 @@ html[data-theme="dark"] .minds-constellation{
       nd.x=nd.colX;nd.y=(nd.bY+nd.eY)/2;
     });
     var barW=Math.max(5,Math.min(13,colW*0.46));
+    // labels are rotated -90deg, so their horizontal thickness ~ font size; scale it to the
+    // column width so names stay near their bar and don't overlap as more people are added.
+    var labelFs=Math.max(6.5,Math.min(10.5,colW*0.68));
+    var labelHalo=Math.max(1.4,labelFs*0.25);
 
     // lifespan bars (birth -> death/present), node sits at the midpoint
     var barSel=svg.append('g').selectAll('rect').data(NODES).enter().append('rect')
@@ -292,6 +296,7 @@ html[data-theme="dark"] .minds-constellation{
       .attr('class','mc-label')
       .attr('transform',function(d){var ly=Math.max(padT+48,Math.min(height-padB-48,d.y));return 'translate('+d.x+','+ly+') rotate(-90)';})
       .attr('text-anchor','middle').attr('dominant-baseline','central')
+      .style('font-size',labelFs+'px').style('stroke-width',labelHalo+'px')
       .text(function(d){return d.s;});
 
     function over(e,d){focusNode(d);showTip(d);moveTip(e);}
