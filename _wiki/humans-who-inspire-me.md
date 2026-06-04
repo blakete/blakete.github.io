@@ -143,7 +143,10 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Marcus Aurelius',s:'Aurelius',y:121,t:['philosophy'],d:'Stoic emperor; the Meditations on the internal work of being a person.'},
     {n:'Isaac Newton',s:'Newton',y:1643,t:['physics','mathematics'],d:'Calculus, the laws of motion, universal gravitation, and optics — the Principia.'},
     {n:'Gottfried Wilhelm Leibniz',s:'Leibniz',y:1646,t:['computation','mathematics'],d:'Dreamed of a calculus ratiocinator — reducing reasoning to calculation — and gave us binary arithmetic.'},
+    {n:'Jacob Bernoulli',s:'Bernoulli',y:1655,t:['bayesian','mathematics'],d:'The law of large numbers — Ars Conjectandi turned chance into a calculable science.'},
     {n:'Thomas Bayes',s:'Bayes',y:1701,t:['bayesian'],d:"Bayes' theorem — the rule for updating beliefs in light of evidence."},
+    {n:'Leonhard Euler',s:'Euler',y:1707,t:['mathematics','physics'],d:'The most prolific mathematician ever — analysis, modern notation, graph theory, and the Euler–Lagrange equations.'},
+    {n:'Joseph-Louis Lagrange',s:'Lagrange',y:1736,t:['mathematics','physics'],d:'Analytical mechanics and the calculus of variations — recasting physics as the extremization of an action.'},
     {n:'Pierre-Simon Laplace',s:'Laplace',y:1749,t:['bayesian','mathematics','physics'],d:'Turned Bayes into a working science — the rule of succession, flat priors, and probability applied to the heavens.'},
     {n:'Charles Babbage',s:'Babbage',y:1791,t:['computation'],d:'The Analytical Engine — a general-purpose, programmable mechanical computer, a century before electronics.'},
     {n:'Ada Lovelace',s:'Lovelace',y:1815,t:['computation'],d:'First algorithm written for a machine; saw that computers could manipulate symbols, not just numbers.'},
@@ -191,7 +194,7 @@ html[data-theme="dark"] .minds-constellation{
   ];
 
   var PRESENT=2026;
-  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Pierre-Simon Laplace':1827,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
+  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Jacob Bernoulli':1705,'Thomas Bayes':1761,'Leonhard Euler':1783,'Joseph-Louis Lagrange':1813,'Pierre-Simon Laplace':1827,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
 
   // Build idea-lineage edges: within each theme, link consecutive thinkers in time.
   var byTheme={};
@@ -551,9 +554,21 @@ Designed the Difference Engine, then the far more ambitious Analytical Engine �
 
 French mathematician and astronomer who did more than anyone to turn Bayes' insight into a working science. He independently derived the rule for updating on evidence, gave us the *rule of succession* and the principle that flat priors encode ignorance, and put it to work — estimating the mass of Saturn from noisy observations and bounding his own error. His *Laplace's demon* is still the cleanest statement of what perfect prediction would mean, and the foil every account of probability and chaos has had to answer since.
 
+## Joseph-Louis Lagrange (1736–1813)
+
+Italian-French mathematician who recast Newtonian mechanics as a variational principle: nature extremizes an action, and the equations of motion fall out of it. The *Mécanique analytique* did all of physics with calculus and no diagrams, and the calculus of variations he built with Euler is the same machinery that turns up later in least action, optimal control, and free-energy objectives.
+
+## Leonhard Euler (1707–1783)
+
+The most prolific mathematician who ever lived, and the source of much of the notation we still use — *e*, *i*, *f(x)*, Σ. He founded graph theory with the bridges of Königsberg, did foundational work across analysis and mechanics, and kept producing after going blind. The Euler–Lagrange equations are a quiet ancestor of nearly every optimization principle on this page.
+
 ## Thomas Bayes (1701–1761)
 
 British minister and mathematician. *An Essay towards solving a Problem in the Doctrine of Chances*, published posthumously in 1763, gave us Bayes' theorem — the rule for updating beliefs in light of evidence. Probabilistic inference, machine learning, and the platonic optimal agent all trace back to one short paper.
+
+## Jacob Bernoulli (1655–1705)
+
+Swiss mathematician whose posthumous *Ars Conjectandi* gave probability its first limit theorem — the law of large numbers, the proof that long-run frequencies converge on the underlying chances. It is the bridge between Bayes' rule for a single update and the idea that probability is something the world will reveal if you watch it long enough.
 
 ## Gottfried Wilhelm Leibniz (1646–1716)
 
