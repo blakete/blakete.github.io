@@ -186,6 +186,7 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Stephen Wolfram',s:'Wolfram',y:1959,t:['computation','complexity'],d:'Simple computational rules generating natural complexity — rule 30.'},
     {n:'Karl Friston',s:'Friston',y:1959,t:['bayesian','statmech','learning'],d:'The free energy principle — perception, action, and learning as inference.'},
     {n:'Yann LeCun',s:'LeCun',y:1960,t:['learning','computation'],d:'Convolutional networks, and a push toward world models and self-supervised learning.'},
+    {n:'David Krakauer',s:'Krakauer',y:1967,t:['complexity','information','life'],d:'The evolution of intelligence and complexity — how information processing emerges, accumulates, and undergoes major transitions across life and culture.'},
     {n:'Michael Levin',s:'M. Levin',y:1969,ap:1,t:['life','complexity','philosophy'],d:'Bioelectricity and regeneration — cells navigating a platonic space of forms.'},
     {n:'Joshua Tenenbaum',s:'Tenenbaum',y:1972,t:['bayesian','statmech','learning'],d:'Bayesian models of cognition — intuitive physics, concept learning, and a Bayesian theory of mind; Bayesian updating as free-energy minimization.'},
     {n:'Marc Toussaint',s:'Toussaint',y:1974,ap:1,t:['bayesian','learning'],d:'Planning and trajectory optimization as approximate inference — solving MDPs by message passing.'},
@@ -402,6 +403,10 @@ MIT cognitive scientist reverse-engineering the mind as Bayesian inference — i
 ## Michael Levin
 
 Tufts biologist studying bioelectricity, regeneration, and the agency of non-neural tissue — xenobots, anthrobots, and a body of work arguing that cells navigate a platonic space of possible forms. The clearest current case I know that intelligence and goal-directedness predate brains by a long way.
+
+## David Krakauer (1967– )
+
+Evolutionary theorist and president of the Santa Fe Institute, where he studies the deep history of intelligence as a problem in information and complexity — how living and cultural systems acquire, store, and process information, and how that capacity undergoes major evolutionary transitions. He gives the loose intuition that life is "information that copies itself" a rigorous shape, and his framing of complexity science is a big part of how I think about where intelligence comes from.
 
 ## Yann LeCun (1960– )
 
