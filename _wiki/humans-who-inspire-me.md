@@ -144,6 +144,7 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Isaac Newton',s:'Newton',y:1643,t:['physics','mathematics'],d:'Calculus, the laws of motion, universal gravitation, and optics — the Principia.'},
     {n:'Gottfried Wilhelm Leibniz',s:'Leibniz',y:1646,t:['computation','mathematics'],d:'Dreamed of a calculus ratiocinator — reducing reasoning to calculation — and gave us binary arithmetic.'},
     {n:'Thomas Bayes',s:'Bayes',y:1701,t:['bayesian'],d:"Bayes' theorem — the rule for updating beliefs in light of evidence."},
+    {n:'Pierre-Simon Laplace',s:'Laplace',y:1749,t:['bayesian','mathematics','physics'],d:'Turned Bayes into a working science — the rule of succession, flat priors, and probability applied to the heavens.'},
     {n:'Charles Babbage',s:'Babbage',y:1791,t:['computation'],d:'The Analytical Engine — a general-purpose, programmable mechanical computer, a century before electronics.'},
     {n:'Ada Lovelace',s:'Lovelace',y:1815,t:['computation'],d:'First algorithm written for a machine; saw that computers could manipulate symbols, not just numbers.'},
     {n:'Hermann von Helmholtz',s:'Helmholtz',y:1821,t:['statmech','physics','bayesian'],d:'Conservation of energy, free energy, and perception as unconscious inference.'},
@@ -190,7 +191,7 @@ html[data-theme="dark"] .minds-constellation{
   ];
 
   var PRESENT=2026;
-  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
+  var DEATH={'Plato':-348,'Aristotle':-322,'Marcus Aurelius':180,'Isaac Newton':1727,'Gottfried Wilhelm Leibniz':1716,'Thomas Bayes':1761,'Pierre-Simon Laplace':1827,'Charles Babbage':1871,'Ada Lovelace':1852,'Hermann von Helmholtz':1894,'Jules Antoine Lissajous':1880,'James Clerk Maxwell':1879,'Josiah Willard Gibbs':1903,'Ludwig Boltzmann':1906,'Felix Klein':1925,'Hendrik Lorentz':1928,'Nikola Tesla':1943,'Heinrich Hertz':1894,'Max Planck':1947,'Giuseppe Peano':1932,'Norbert Wiener':1964,'Buckminster Fuller':1983,'David Hilbert':1943,'Hermann Minkowski':1909,'Ernst Zermelo':1953,'Albert Einstein':1955,'George Pólya':1985,'Erwin Schrödinger':1961,'Abraham Fraenkel':1965,'Harold Jeffreys':1989,'R.T. Cox':1991,'Andrey Kolmogorov':1987,'John von Neumann':1957,'Alan Turing':1954,'Claude Shannon':2001,'Ilya Prigogine':2003,'Richard Feynman':1988,'Edwin T. Jaynes':1998,'Ray Solomonoff':2009};
 
   // Build idea-lineage edges: within each theme, link consecutive thinkers in time.
   var byTheme={};
@@ -545,6 +546,10 @@ Writing about Babbage's Analytical Engine, she published what is generally calle
 ## Charles Babbage (1791–1871)
 
 Designed the Difference Engine, then the far more ambitious Analytical Engine — a general-purpose, programmable mechanical computer, conceived from the early 1830s, with a store, a mill, and punched-card control. The truly revolutionary idea: a single machine that could be told to compute anything. He never finished building it; the design was a century ahead of the tools to realize it.
+
+## Pierre-Simon Laplace (1749–1827)
+
+French mathematician and astronomer who did more than anyone to turn Bayes' insight into a working science. He independently derived the rule for updating on evidence, gave us the *rule of succession* and the principle that flat priors encode ignorance, and put it to work — estimating the mass of Saturn from noisy observations and bounding his own error. His *Laplace's demon* is still the cleanest statement of what perfect prediction would mean, and the foil every account of probability and chaos has had to answer since.
 
 ## Thomas Bayes (1701–1761)
 
