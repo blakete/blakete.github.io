@@ -193,6 +193,7 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Michael Levin',s:'M. Levin',y:1969,ap:1,t:['life','complexity','philosophy'],d:'Bioelectricity and regeneration — cells navigating a platonic space of forms.'},
     {n:'Joshua Tenenbaum',s:'Tenenbaum',y:1972,t:['bayesian','statmech','learning'],d:'Bayesian models of cognition — intuitive physics, concept learning, and a Bayesian theory of mind; Bayesian updating as free-energy minimization.'},
     {n:'Marc Toussaint',s:'Toussaint',y:1974,ap:1,t:['bayesian','learning'],d:'Planning and trajectory optimization as approximate inference — solving MDPs by message passing.'},
+    {n:'Satoshi Nakamoto',s:'Nakamoto',y:1975,ap:1,t:['computation','complexity'],d:'Hash-linked blocks, Merkle trees, and proof-of-work — Nakamoto consensus solving Byzantine agreement among strangers, no trusted third party.'},
     {n:'Richard Sutton',s:'Sutton',y:1978,t:['learning','computation'],d:'Reinforcement learning and The Bitter Lesson — general methods that scale.'},
     {n:'Sergey Levine',s:'S. Levine',y:1984,ap:1,t:['learning','bayesian'],d:'RL, control, and planning as variational inference under one Bayesian frame.'}
   ];
@@ -394,6 +395,10 @@ Berkeley professor whose work casts reinforcement learning, control, and plannin
 ## Richard Sutton (1978– )
 
 Co-author, with Andrew Barto, of *Reinforcement Learning: An Introduction* and the temporal-difference methods at the core of the field — work that earned them the 2024 Turing Award. *The Bitter Lesson* is the essay I keep coming back to: the long-run winners are general methods that scale with computation, not the cleverness we hand-build into them.
+
+## Satoshi Nakamoto
+
+Pseudonymous author of the 2008 Bitcoin white paper, and — whoever they were — the architect of a genuinely new data structure: a hash-linked chain of blocks, each sealed by a Merkle tree of its transactions, extended by proof-of-work and kept honest by the rule that the longest valid chain wins. What I keep returning to is not the currency but the algorithm beneath it — *Nakamoto consensus*, the first practical solution to the Byzantine Generals Problem in an open network where anyone can join, no one is trusted, and there is no central authority to call the vote. It made distributed agreement among mutually suspicious strangers an engineering reality, assembling a handful of old cryptographic primitives — hashing, Merkle trees, Hashcash-style proof-of-work — into something nobody had quite seen before.
 
 ## Marc Toussaint
 
