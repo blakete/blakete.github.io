@@ -183,6 +183,7 @@ html[data-theme="dark"] .minds-constellation{
     {n:'Richard Feynman',s:'Feynman',y:1918,t:['physics'],d:'QED and path integrals; the joy of understanding things from scratch.'},
     {n:'Edwin T. Jaynes',s:'Jaynes',y:1922,t:['bayesian','information','statmech'],d:'Maximum entropy — statistical mechanics and inference as one activity.'},
     {n:'Ray Solomonoff',s:'Solomonoff',y:1926,t:['computation','bayesian','information'],d:'Universal induction — Bayes-optimal prediction weighted by description length.'},
+    {n:'Denis Noble',s:'Noble',y:1936,t:['life','complexity','philosophy'],d:'First mathematical model of the heartbeat; biological relativity — no privileged level of causation in a living thing.'},
     {n:'Geoffrey Hinton',s:'Hinton',y:1947,t:['learning','statmech'],d:'Boltzmann machines and backprop — statistical physics into learning.'},
     {n:'Avi Wigderson',s:'Wigderson',y:1956,t:['computation','complexity','information'],d:'Computational complexity and the deep role of randomness — when it helps, and when it can be removed.'},
     {n:'Hilbert J. Kappen',s:'Kappen',y:1958,ap:1,t:['bayesian','statmech','learning'],d:'KL-control and path-integral control — optimal control as Bayesian inference, the control cost as a free energy.'},
@@ -439,6 +440,10 @@ Computational complexity theorist who, more than anyone, mapped the role of rand
 ## Geoffrey Hinton (1947– )
 
 Decades of work on neural networks before they were fashionable — Boltzmann machines, backpropagation as a learning rule, and the AlexNet moment that finally vindicated it all. Nobel in physics, 2024. The patience and the breadth — statistical physics into learning into language — is what I keep noticing.
+
+## Denis Noble (1936– )
+
+Oxford physiologist and a founder of systems biology, who in 1960 built the first mathematical model of the heartbeat — reconstructing the heart's pacemaker rhythm from the ionic currents crossing the cell membrane, on one of the earliest computers put to biological work. What I keep returning to is his case for *biological relativity*: that there is no privileged level of causation in a living thing — that causes run downward, from whole organism to gene, as surely as they run up. It is a direct challenge to the gene-centric story and one of the clearest arguments that life is irreducibly a systems phenomenon.
 
 ## Ray Solomonoff (1926–2009)
 
