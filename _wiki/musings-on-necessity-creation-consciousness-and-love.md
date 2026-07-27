@@ -20,4 +20,4 @@ Love might be the moment a dissipative structure stops merely maintaining its bo
 ## References
 
 1. <a id="ref1"></a>Chat session with Claude Opus 4.7 (adaptive thinking mode), Anthropic, 2026-05-23.
-2. <a id="ref2"></a>Conversation with my brother, Mitchell Edwards.
+2. <a id="ref2"></a>Conversation with my brother, [Mitchell Edwards](https://www.cravinadventure.com/).
