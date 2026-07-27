@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The VPGS Method of Introduction"
+title: "VPGS – A Better Way to Introduce Yourself"
 date: 2026-07-27
 last_updated: 2026-07-27
 author:
