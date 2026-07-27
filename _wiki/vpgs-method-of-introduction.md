@@ -19,7 +19,7 @@ What I want the world to be. What am I doing, and how do I want to change the wo
 
 ## Profile
 
-Who I am and what I do. For example: "I'm a founder of such and such, and we're building this to do that." This is the concrete anchor — but it comes in service of the vision, not as a resume recital.
+Who I am and what I do. For example: "I'm a founder of such and such, and we're building this to do that." This is the concrete anchor, but it comes in service of the vision, not as a resume recital.
 
 ## Gratitude
 
@@ -27,12 +27,12 @@ Express how fortunate you feel to do the work. For example: "I am so lucky that 
 
 ## Service
 
-Who I serve, and what it looks like when the work goes well. Paint the picture of the impact — the person or group whose life is better because of what you do.
+Who I serve, and what it looks like when the work goes well. Paint the picture of the impact: the person or group whose life is better because of what you do.
 
 ## Lean Into the Future
 
-A related tip: introduce yourself leaning into the future — what you will become, what you want to become, and what inspires you. People connect with trajectory and aspiration far more than with a list of past credentials.
+A related tip: introduce yourself leaning into the future: what you will become, what you want to become, and what inspires you. People connect with trajectory and aspiration far more than with a list of past credentials.
 
 ## References
 
-- Method by [Adam Delehanty](https://x.com/adam__xyz) — [his post on the VPGS method](https://x.com/adam__xyz/status/2080655817779421509)
+- Method by [Adam Delehanty](https://x.com/adam__xyz), [his post on the VPGS method](https://x.com/adam__xyz/status/2080655817779421509)
