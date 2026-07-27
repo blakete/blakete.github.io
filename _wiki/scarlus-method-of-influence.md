@@ -11,7 +11,7 @@ show_on_wiki: true
 show_on_secret_wiki: false
 ---
 
-SCARLUS is a mnemonic for the seven principles of influence from Robert Cialdini's research: Scarcity, Consistency, Authority, Reciprocity, Likeability, Unity, and Social proof. Each one describes a shortcut people use to decide, and each can be applied ethically to persuade.
+SCARLUS is a mnemonic I came up with a few years ago for the seven principles of influence from Robert Cialdini's research: Scarcity, Consistency, Authority, Reciprocity, Likeability, Unity, and Social proof. Each one describes a shortcut people use to decide, and each can be applied ethically to persuade.
 
 ## Scarcity
 
