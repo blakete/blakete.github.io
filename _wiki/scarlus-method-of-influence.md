@@ -58,3 +58,4 @@ Example: "Most guests reuse their towels" outperforms environmental appeals in g
 ## References
 
 - Robert B. Cialdini, [*Influence: The Psychology of Persuasion*](https://www.harpercollins.com/products/influence-new-and-expanded-robert-b-cialdini) (New and Expanded edition, 2021)
+- IJK Podcast, ["Dr. Robert Cialdini | The Psychology of Influence: Timeless Persuasion Principles | Ep 23"](https://youtu.be/DP46hJrjSKY)
