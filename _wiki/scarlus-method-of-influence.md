@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The SCARLUS Method of Influence"
+title: "SCARLUS – Timeless Principles of Influence"
 date: 2026-07-27
 last_updated: 2026-07-27
 author:
