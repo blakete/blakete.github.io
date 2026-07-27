@@ -32,3 +32,7 @@ Who I serve, and what it looks like when the work goes well. Paint the picture o
 ## Lean Into the Future
 
 A related tip: introduce yourself leaning into the future — what you will become, what you want to become, and what inspires you. People connect with trajectory and aspiration far more than with a list of past credentials.
+
+## References
+
+- Method by [Adam Delehanty](https://x.com/adam__xyz) — [his post on the VPGS method](https://x.com/adam__xyz/status/2080655817779421509)
