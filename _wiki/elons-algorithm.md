@@ -21,3 +21,5 @@ pinned: true
 **Golden rule:** Never optimize something that shouldn't exist.
 
 **Sequence:** Question → Delete → Simplify → Accelerate → Automate.
+
+**Source:** [Starbase Tour with Elon Musk, Part 1 (Everyday Astronaut, July 2021)](https://youtu.be/t705r8ICkRw?t=809), around the 13:30 mark.
