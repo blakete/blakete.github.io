@@ -18,4 +18,6 @@ show_on_secret_wiki: false
 
 With all four, performance looks like magic. Without them, you get "experts" who do no better than chance or novices, like many political forecasters and active fund managers.
 
-**Source:** [The Expert Myth / The 4 things it takes to be an expert (Veritasium)](https://www.youtube.com/watch?v=5eW6Eagr9XA)
+## References
+
+- [The Expert Myth / The 4 things it takes to be an expert (Veritasium)](https://www.youtube.com/watch?v=5eW6Eagr9XA)
