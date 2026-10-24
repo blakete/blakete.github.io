@@ -12,7 +12,7 @@ show_on_secret_wiki: false
 ---
 
 1. **Many repeated attempts:** Thousands of games, shots, or problems, each with a clear outcome.
-2. **A valid environment:** The domain must have learnable, predictable patterns. Chess and physics qualify; short-term stock picking and roulette don't.
+2. **A valid environment:** The domain must have learnable, predictable patterns. Chess and physics qualify; roulette and lottery numbers don't.
 3. **Timely feedback:** Fast enough that you can connect action to result.
 4. **Deliberate practice:** Thousands of hours at the edge of your ability, attacking weaknesses rather than repeating what's comfortable.
 
