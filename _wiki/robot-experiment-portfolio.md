@@ -60,3 +60,11 @@ Ten UGVs swapping positions while deconflicting their paths with each other, als
 </div>
 
 Teleoperating a UGV I built through an obstacle course, just for fun.
+
+## Drone-Based Infrastructure Inspection Demo
+
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/SYnKGT6zxgA" title="Drone-based infrastructure inspection demo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+A demo of using a drone to inspect infrastructure.
