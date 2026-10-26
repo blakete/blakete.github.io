@@ -36,3 +36,11 @@ Multiple robots simultaneously localizing, building a shared map, and planning t
 </div>
 
 An arm I built from 3D printed components and trained to clean up pins on my apartment table.
+
+## 6 UGV Swap with Obstacle Avoidance
+
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/7HSQr3DeaVE" title="6 UGV swap with obstacle avoidance" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+Six UGVs swapping positions while avoiding obstacles, using WarpWeaver, the decentralized real-time multi-agent planner from a paper I co-authored, [Dispersive Tree Agreements for Multi-Robot Coordination](https://arxiv.org/abs/2610.31540).
