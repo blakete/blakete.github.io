@@ -13,6 +13,14 @@ show_on_secret_wiki: false
 
 A running collection of robot experiments I've run, each with a video and a short description.
 
+## Search-Then-Commit: Multitask Belief Space Planning Applied to Robotic Manipulation
+
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/V52oAkkwmnc" title="Search-Then-Commit: Multitask Belief Space Planning Applied to Robotic Manipulation" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+A successful execution of our belief space planning algorithm on our challenge task. More info on the [GitHub page](https://github.com/thiago-jvds/mit-6.4212-belief-space-rrt).
+
 ## MIT ACL Outdoor AGV Exploration Mission
 
 <div class="video-container">
