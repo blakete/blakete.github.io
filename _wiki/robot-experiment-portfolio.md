@@ -44,3 +44,11 @@ An arm I built from 3D printed components and trained to clean up pins on my apa
 </div>
 
 Six UGVs swapping positions while avoiding obstacles, using WarpWeaver, the decentralized real-time multi-agent planner from a paper I co-authored, [Dispersive Tree Agreements for Multi-Robot Coordination](https://arxiv.org/abs/2610.31540).
+
+## 10 UGV Swap with Deconfliction
+
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/Uujd_qd_fCg" title="10 UGV swap with deconfliction" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+Ten UGVs swapping positions while deconflicting their paths with each other, also using [WarpWeaver](https://arxiv.org/abs/2610.31540).
