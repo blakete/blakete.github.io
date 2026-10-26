@@ -68,3 +68,13 @@ Teleoperating a UGV I built through an obstacle course, just for fun.
 </div>
 
 A demo of using a drone to inspect infrastructure.
+
+## UGV Dynamic Obstacle Avoidance with MIGHTY and Custom Mapping
+
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/Zg21d7vabIs" title="UGV Dynamic Obstacle Avoidance with MIGHTY and Custom Mapping" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+This is a UGV I built demonstrating dynamic obstacle avoidance using MIGHTY, a planning algorithm developed in our lab, and a custom mapper I created. My mapper combines ground elevation mapping to assess terrain traversability with 3D voxel mapping to capture obstacles above the ground, including overhangs and moving objects. The fused map helps the planner navigate traversable terrain while avoiding obstacles.
+
+Planner paper: [“MIGHTY: Hermite Spline-based Efficient Trajectory Planning”](https://arxiv.org/abs/2511.10822) by Kota Kondo et al.
