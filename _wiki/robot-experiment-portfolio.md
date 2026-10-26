@@ -9,6 +9,7 @@ tags: [robotics, experiments, portfolio]
 permalink: /wiki/robot-experiment-portfolio
 show_on_wiki: true
 show_on_secret_wiki: false
+pinned: true
 ---
 
 A running collection of robot experiments I've run, each with a video and a short description.
