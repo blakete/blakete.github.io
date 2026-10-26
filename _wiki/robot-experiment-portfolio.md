@@ -19,7 +19,7 @@ A running collection of robot experiments I've run, each with a video and a shor
   <iframe src="https://www.youtube.com/embed/61FGbmwditA" title="MIT ACL Outdoor AGV Exploration Mission" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-First outdoor demo of GPS-denied, mesh comms, decentralized exploration and mapping mission.
+Demo of outdoor, GPS-denied, mesh comms, decentralized exploration and mapping mission.
 
 ## Multi-Agent SLAM and Planning
 
