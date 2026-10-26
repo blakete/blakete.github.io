@@ -52,3 +52,11 @@ Six UGVs swapping positions while avoiding obstacles, using WarpWeaver, the dece
 </div>
 
 Ten UGVs swapping positions while deconflicting their paths with each other, also using [WarpWeaver](https://arxiv.org/abs/2610.31540).
+
+## Fun Obstacle Course Teleoperation of UGV I Built
+
+<div class="video-container vertical">
+  <iframe src="https://www.youtube.com/embed/cryw6AiRgqM" title="Fun obstacle course teleoperation of UGV I built" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+Teleoperating a UGV I built through an obstacle course, just for fun.
