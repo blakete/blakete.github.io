@@ -20,3 +20,11 @@ A running collection of robot experiments I've run, each with a video and a shor
 </div>
 
 Multiple robots simultaneously localizing, building a shared map, and planning their motion through the environment.
+
+## 3D Printed Arm & Table Cleanup Policy
+
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/hLJG_Wah8tg" title="3D printed arm &amp; table cleanup policy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+An arm I built from 3D printed components and trained to clean up pins on my apartment table.
